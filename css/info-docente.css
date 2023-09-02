@@ -29,7 +29,6 @@
     gap: 50px;
 }
 
-
 .title{
     margin: 35px 0px;
     color:rgb(34, 79, 177);
@@ -69,5 +68,15 @@
 .table{
     width: 100%;
     margin-top: 15px;
+    
+}
+.datos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:15px
+}
+.dato{
+    display: flex;
+    justify-content: flex-start;
     
 }
