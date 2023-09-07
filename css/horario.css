@@ -9,3 +9,25 @@
     
     float: right;  
 }
+.content-table{
+    overflow: auto;
+   
+}
+.table{
+    width: 100%;
+    margin-top: 15px;
+    
+}
+@media (max-width:600px) {
+    .content-clase{
+        display: grid;
+        grid-template-rows: 1fr 1fr;   
+    }
+    .content-año{
+        padding-top: 20px;
+    }
+    
+}
+   
+   
+    

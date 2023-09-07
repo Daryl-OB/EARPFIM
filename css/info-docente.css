@@ -8,12 +8,12 @@
     border-radius: 5px;
     margin-right:20px;
 }
-.name{
-    margin-top: 10px;
-}
-.button-option{
-    padding: 15px 10px;
+
+.button-option .btn{
+    
+    margin-bottom: 10px;
     font-size: 15px;
+
 }
 .frame{
     border-bottom: 1px solid#dee2e6;
@@ -28,11 +28,15 @@
     grid-template-columns: 1fr 1fr;
     gap: 50px;
 }
-
+.contacto{
+    margin-bottom: 20px;
+}
+h5{
+    color:rgb(34, 79, 177); 
+}
 .title{
     margin: 35px 0px;
-    color:rgb(34, 79, 177);
-    
+    color:rgb(34, 79, 177);    
 }
 .form-select{
     height: 40px;
@@ -79,4 +83,24 @@
     display: flex;
     justify-content: flex-start;
     
+}
+@media (max-width:600px) {
+    .content-info{
+        display: grid;
+        place-items: center;
+        text-align: center;
+    }
+    .frame{
+        overflow: hidden;
+    }
+    .button-option{
+        display: flex;
+        justify-content: center;
+    }
+    .content-columm {
+        grid-template-columns: 1fr;
+    }
+    .datos{
+        grid-template-columns: 1fr;
+    }
 }

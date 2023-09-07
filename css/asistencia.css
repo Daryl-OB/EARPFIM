@@ -32,3 +32,31 @@ background: #224fb1;
 margin: 10px 5px;
 
 }
+@media(max-width:720px){
+    .content-asist-button{
+        overflow: hidden;
+        margin: 0px 1px;
+        
+        
+    } 
+    button[type="button"]{
+        padding: 10px 20px; 
+        font-size: 12px;
+    }
+    
+    .semestre{
+      width: 100%;
+    }
+}
+@media(min-width:760px){
+    .content-asist-button{
+        overflow: hidden;
+        margin: 0px 1px;          
+    } 
+    
+    
+    .semestre{
+      
+      
+    }
+}
