@@ -133,14 +133,10 @@
         </div>
     </nav>
     <main class="home">
-        <section class="content-nav">
-            <ul class="nav">
-                <li class="nav-item">
-                    <i class="bx bx-menu toggle"></i>
-                </li>
-                <li class="nav-item">
-                    <span class="name">OBREGON RAMOS, MAXIMO</span>
-            </ul>
+        <section class="content-nav">  
+            <i class="bx bx-menu toggle"></i>
+            <p class="name">OBREGON RAMOS, MAXIMO</p>
+            <div class="vertical-rounded">
             <div class="dropdown ms-3 dots-vertical-rounded">
                 <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
                     aria-expanded="false" data-bs-display="static">
@@ -148,16 +144,17 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
                     <li>Roles</li>
-                    <li><img src="/img/perfil.jpg"> DOCENTE</li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">Mi información</a></li>
-                    <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
-                    <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
-                </ul>
+                <li><img src="/img/perfil.jpg"> DOCENTE</li>
+                <li>
+                    <hr class="dropdown-divider">
                 </li>
+                <li><a class="dropdown-item" href="#">Mi información</a></li>
+                <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
+                <li><a class="dropdown-item" href="#">Cerrar Sesion</a></li>
+                </ul>
+            </li>
             </div>
+        </div>
         </section>
         <section class="content">
             <section class="">
@@ -304,16 +301,16 @@
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example">
                                         <option selected>Seleccionar</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
+                                        <option value="1">Otro país</option>
+                                        <option value="2">Perú</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <b>Departamento</b>
                                 <div class="form">
-                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                                    <select class="form-select form-select-lg mb-3 fs-6 "
+                                        aria-label=".form-select-lg example" disabled>
                                         <option selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -324,7 +321,7 @@
                                 <b>Provincia</b>
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                                        aria-label=".form-select-lg example" disabled>
                                         <option selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -335,7 +332,7 @@
                                 <b>Distrito</b>
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                                        aria-label=".form-select-lg example " disabled>
                                         <option selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
@@ -372,8 +369,8 @@
                                                     <select class="form-select form-select-lg mb-3 fs-6"
                                                         aria-label=".form-select-lg example">
                                                         <option selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
+                                                        <option value="1">Perú</option>
+                                                        <option value="2">Otra país</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -381,7 +378,7 @@
                                                 <b>Departamento</b>
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
+                                                        aria-label=".form-select-lg example" disabled>
                                                         <option selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -392,7 +389,7 @@
                                                 <b>Provincia</b>
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
+                                                        aria-label=".form-select-lg example" disabled>
                                                         <option selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -401,9 +398,9 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <b>Distrito</b>
-                                                <div class="form">
+                                                <div class="form" disabled>
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
+                                                        aria-label=".form-select-lg example" disabled>
                                                         <option selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
@@ -412,7 +409,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <b>Tipo de Vía</b>
-                                                <div class="form">
+                                                <div class="form" disabled>
                                                     <select class="form-select form-select-lg mb-3 fs-6"
                                                         aria-label=".form-select-lg example">
                                                         <option selected>Seleccionar</option>
