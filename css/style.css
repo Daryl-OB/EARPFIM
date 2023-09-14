@@ -151,7 +151,7 @@ i {
   height: 64px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   background-color: rgb(34, 79, 177);
   box-shadow:  4px 1px 10px 5px rgb(197, 197, 197);
   color: white;
@@ -173,20 +173,7 @@ i {
 .content{
   margin:20px 50px;
 }
-@media (max-width:600px) {
-  .sidebar{
-    min-width: 1px;
-  }
-  .content-nav .vertical-rounded {
-    margin-left: 6px;
-  }
-}
-@media (min-width:768px) and (max-width:1023px){
-  .content-nav .vertical-rounded {
-    margin-left: 350px; 
-    
-  }
-}
+
 
  /*
   .sidebar{
