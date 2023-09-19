@@ -1,0 +1,340 @@
+[
+    {
+      "id": "1",
+      "Departamento": "Amazonas",
+      "Amazonas": {
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "2",
+      "Departamento": "Ancash",
+      "Ancash": {
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "3",
+      "Departamento": "Apurimac",
+      "Apurimac":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "4",
+      "Departamento": "Arequipa",
+      "Arequipa":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "5",
+      "Departamento": "Ayacucho",
+      "Ayacucho":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+
+    },
+    {
+      "id": "6",
+      "Departamento": "Callao",
+      "Callao":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "7",
+      "Departamento": "Cusco",
+      "Cusco":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "8",
+      "Departamento": "Huancavelica",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "9",
+      "Departamento": "Huanuco",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "10",
+      "Departamento": "Ica",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "11",
+      "Departamento": "Junín",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "12",
+      "Departamento": "La Libertad",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "13",
+      "Departamento": "Lambayeque",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+        "departamentos": [
+          {
+            "nombre": "Lima",
+            "provincias": [
+              {
+                "nombre": "Lima",
+                "distritos": [
+                  {
+                    "nombre": "Lima",
+                    "otrosDatos": "Información adicional sobre Lima"
+                  },
+                  {
+                    "nombre": "San Isidro",
+                    "otrosDatos": "Información adicional sobre San Isidro"
+                  },
+                  {
+                    "nombre": "Miraflores",
+                    "otrosDatos": "Información adicional sobre Miraflores"
+                  }
+                  
+                ]
+              },
+              {
+                "nombre": "Cajatambo",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },
+              {
+                "nombre": "Canta",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },
+              {
+                "nombre": "Cañete",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },
+              {
+                "nombre": "Huaral",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },
+              {
+                "nombre": "Huarochirí",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },{
+                "nombre": "Huaura",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },{
+                "nombre": "Oyón",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              },{
+                "nombre": "Yauyos",
+                "distritos": [
+                  {
+                    "nombre": "Callao",
+                    "otrosDatos": "Información adicional sobre Callao"
+                  }
+                  
+                ]
+              }
+              
+            ]
+          }
+          
+        ]
+      },
+      
+    {
+      "id": "15",
+      "Departamento": "Loreto",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "16",
+      "Departamento": "Madre de Dios",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "17",
+      "Departamento": "Moquegua",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "18",
+      "Departamento": "Pasco",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "19",
+      "Departamento": "Piura",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "20",
+      "Departamento": "Puno",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "21",
+      "Departamento": "San Martín",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "22",
+      "Departamento": "Tacna",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "23",
+      "Departamento": "Tumbes",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    },
+    {
+      "id": "24",
+      "Departamento": "Ucayali",
+      "Huancavelica":{
+        "c": "#0ff",
+        "m": "#f0f",
+        "a": "#ff0",
+        "n": "#000"
+      }
+    }
+  ]

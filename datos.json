@@ -1,0 +1,120 @@
+[
+  
+  {    
+      
+          "id":"1",
+          "Departamento": "Lima",
+          "provincias": [
+            {
+              "id":"1",
+              "nombre": "Lima",
+              "distritos": [
+                {
+                  "id":"1",
+                  "nombre": "Lima",
+                  "otrosDatos": "Información adicional sobre Lima"
+                },
+                {
+                  "id":"2",
+                  "nombre": "San Isidro",
+                  "otrosDatos": "Información adicional sobre San Isidro"
+                },
+                {
+                  "id":"3",
+                  "nombre": "Miraflores",
+                  "otrosDatos": "Información adicional sobre Miraflores"
+                }
+                
+              ]
+            },
+            {
+              "id":"2",
+              "nombre": "Cajatambo",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },
+            {
+              "id":"3",
+              "nombre": "Canta",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },
+            {
+              "id":"4",
+              "nombre": "Cañete",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },
+            {
+              "id":"5",
+              "nombre": "Huaral",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },
+            {
+              "id":"6",
+              "nombre": "Huarochirí",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },{
+              "id":"7",
+              "nombre": "Huaura",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },{
+              "id":"8",
+              "nombre": "Oyón",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            },{
+              "id":"9",
+              "nombre": "Yauyos",
+              "distritos": [
+                {
+                  "nombre": "Callao",
+                  "otrosDatos": "Información adicional sobre Callao"
+                }
+                
+              ]
+            }
+            
+          ]
+        }
+        
+      ]
+    

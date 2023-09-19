@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <select id="selectDepartamento">
+    <option value="" disabled selected>Selecciona un departamento</option>
+  </select>
+  
+  <select id="selectProvincia">
+    <option value="" disabled selected>Selecciona una provincia</option>
+  </select>
+  
+  <select id="selectDistrito">
+    <option value="" disabled selected>Selecciona un distrito</option>
+  </select>
+<script>document.addEventListener("DOMContentLoaded", function () {
+  // Obtén referencias a los elementos select
+  var selectDepartamento = document.getElementById("selectDepartamento");
+  var selectProvincia = document.getElementById("selectProvincia");
+  var selectDistrito = document.getElementById("selectDistrito");
+
+  // Cargar el archivo JSON (reemplaza "tu-archivo.json" con la ruta correcta)
+  fetch("/datos.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // Llenar el primer select con opciones de departamentos
+      data.forEach(function (departamento) {
+        var option = document.createElement("option");
+        option.value = departamento.id;
+        option.textContent = departamento.Departamento;
+        selectDepartamento.appendChild(option);
+      });
+
+      // Agregar un evento de cambio al primer select
+      selectDepartamento.addEventListener("change", function () {
+        // Limpiar los select de provincias y distritos
+        selectProvincia.innerHTML = '<option value="" disabled selected>Selecciona una provincia</option>';
+        selectDistrito.innerHTML = '<option value="" disabled selected>Selecciona un distrito</option>';
+
+        // Obtener el ID del departamento seleccionado
+        var selectedDepartamentoId = selectDepartamento.value;
+
+        // Buscar las provincias correspondientes al departamento seleccionado
+        var selectedDepartamento = data.find(function (departamento) {
+          return departamento.id === selectedDepartamentoId;
+        });
+
+        if (selectedDepartamento) {
+          // Llenar el segundo select con opciones de provincias
+          selectedDepartamento.provincias.forEach(function (provincia) {
+            var option = document.createElement("option");
+            option.value = provincia.id;
+            option.textContent = provincia.nombre;
+            selectProvincia.appendChild(option);
+          });
+
+          // Agregar un evento de cambio al segundo select (provincias)
+          selectProvincia.addEventListener("change", function () {
+            // Limpiar el select de distritos
+            selectDistrito.innerHTML = '<option value="" disabled selected>Selecciona un distrito</option>';
+
+            // Obtener el ID de la provincia seleccionada
+            var selectedProvinciaId = selectProvincia.value;
+
+            // Buscar los distritos correspondientes a la provincia seleccionada
+            var selectedProvincia = selectedDepartamento.provincias.find(function (provincia) {
+              return provincia.id === selectedProvinciaId;
+            });
+
+            if (selectedProvincia) {
+              // Llenar el tercer select con opciones de distritos
+              selectedProvincia.distritos.forEach(function (distrito) {
+                var option = document.createElement("option");
+                option.value = distrito.id;
+                option.textContent = distrito.nombre;
+                selectDistrito.appendChild(option);
+              });
+            }
+          });
+        }
+      });
+    });
+});
+</script>  
+      
+        
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

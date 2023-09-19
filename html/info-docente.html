@@ -131,30 +131,31 @@
                 </li>
             </ul>
         </div>
+        <div class="pant" id="toggle"></div>
     </nav>
     <main class="home">
-        <section class="content-nav">  
+        <section class="content-nav">
             <i class="bx bx-menu toggle"></i>
             <p class="name">OBREGON RAMOS, MAXIMO</p>
             <div class="vertical-rounded">
-            <div class="dropdown ms-3 dots-vertical-rounded">
-                <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
-                    aria-expanded="false" data-bs-display="static">
-                    <i class='bx bx-dots-vertical-rounded' style="color: white;"></i>
-                </button>
-                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
-                    <li>Roles</li>
-                <li><img src="/img/perfil.jpg"> DOCENTE</li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Mi información</a></li>
-                <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
-                <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
-                </ul>
-            </li>
+                <div class="dropdown ms-3 dots-vertical-rounded">
+                    <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
+                        aria-expanded="false" data-bs-display="static">
+                        <i class='bx bx-dots-vertical-rounded' style="color: white;"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
+                        <li>Roles</li>
+                        <li><img src="/img/perfil.jpg"> DOCENTE</li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Mi información</a></li>
+                        <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
+                    </ul>
+                    </li>
+                </div>
             </div>
-        </div>
         </section>
         <section class="content">
             <section class="">
@@ -204,7 +205,7 @@
                         <a class="nav-link" href="#">4to</a>
                     </li>
                 </ul>
-                <article class="frame">
+                <article class="frame" >
                     <article class="content-datos">
                         <h4 class="title">1.- DATOS PERSONALES</h4>
                         <div class="content-columm">
@@ -215,7 +216,7 @@
                                         <div class="form">
                                             <select class="form-select form-select-lg mb-3 fs-6 fs-6"
                                                 aria-label=".form-select-lg example">
-                                                <option selected>Seleccionar</option>
+                                                <option  value="" disabled selected>Seleccionar</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                             </select>
@@ -238,7 +239,7 @@
                                         <div class="form">
                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                 aria-label=".form-select-lg example">
-                                                <option selected>Seleccionar</option>
+                                                <option  value="" disabled selected>Seleccionar</option>
                                                 <option value="1">Soltero</option>
                                                 <option value="2">Casado</option>
                                                 <option value="3">Viudo</option>
@@ -300,7 +301,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example">
-                                        <option selected>Seleccionar</option>
+                                        <option disabled selected>Seleccionar</option>
                                         <option value="1">Otro país</option>
                                         <option value="2">Perú</option>
                                     </select>
@@ -311,7 +312,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6 "
                                         aria-label=".form-select-lg example" disabled>
-                                        <option selected>Seleccionar</option>
+                                        <option value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
@@ -322,7 +323,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example" disabled>
-                                        <option selected>Seleccionar</option>
+                                        <option  value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
@@ -333,7 +334,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example " disabled>
-                                        <option selected>Seleccionar</option>
+                                        <option  value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
@@ -348,7 +349,6 @@
                             data-bs-target="#staticBackdrop">
                             Añadir Registro
                         </button>
-
                         <!-- Modal -->
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
                             tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -361,14 +361,13 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body ">
-
                                         <div class="row g-9 ">
                                             <div class="col-md-6">
                                                 <b>País</b>
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option selected>Seleccionar</option>
+                                                        aria-label=".form-select-lg example" id="pais">
+                                                        <option value="" disabled selected>Seleccionar</option>
                                                         <option value="1">Perú</option>
                                                         <option value="2">Otra país</option>
                                                     </select>
@@ -378,8 +377,8 @@
                                                 <b>Departamento</b>
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" disabled>
-                                                        <option selected>Seleccionar</option>
+                                                        aria-label=".form-select-lg example" id="departamento" disabled>
+                                                        <option  value="" disabled selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -389,8 +388,8 @@
                                                 <b>Provincia</b>
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" disabled>
-                                                        <option selected>Seleccionar</option>
+                                                        aria-label=".form-select-lg example" id="provincia" disabled>
+                                                        <option value="" selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -400,8 +399,8 @@
                                                 <b>Distrito</b>
                                                 <div class="form" disabled>
                                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" disabled>
-                                                        <option selected>Seleccionar</option>
+                                                        aria-label=".form-select-lg example" id="distrito" disabled>
+                                                        <option  value="" disabled selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -412,7 +411,7 @@
                                                 <div class="form" disabled>
                                                     <select class="form-select form-select-lg mb-3 fs-6"
                                                         aria-label=".form-select-lg example">
-                                                        <option selected>Seleccionar</option>
+                                                        <option  value="" disabled selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -429,7 +428,7 @@
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
                                                         aria-label=".form-select-lg example">
-                                                        <option selected>Seleccionar</option>
+                                                        <option   value="" disabled selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -446,7 +445,7 @@
                                                 <div class="form">
                                                     <select class="form-select form-select-lg mb-3 fs-6"
                                                         aria-label=".form-select-lg example">
-                                                        <option selected>Seleccionar</option>
+                                                        <option  value="" disabled selected>Seleccionar</option>
                                                         <option value="1">One</option>
                                                         <option value="2">Two</option>
                                                     </select>
@@ -461,7 +460,8 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary" onclick="mensaje()">Guardar</button>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="mensaje()">Guardar</button>
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cerrar</button>
                                     </div>
@@ -501,18 +501,109 @@
                             </table>
                         </div>
                     </article>
+                    <article class="content-familiar">
+                        <h3 class="title">Familiar</h3>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Agregar Registro
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" style="max-width: 900px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar Familiar</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body w-5">
+                                        <div class="row g-9 ">
+                                            <div class="col-md-6">
+                                                <b>Apellidos y Nombres</b>
+                                                <div class="form">
+                                                    <input type="text" class="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Parantesco</b>
+                                                <div class="form">
+                                                    <select class="form-select form-select-lg mb-3 fs-6"
+                                                        aria-label=".form-select-lg example">
+                                                        <option disabled selected>Seleccionar</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Fecha de Nacimiento</b>
+                                                <div class="form">
+                                                    <input type="date" class="date" name="" id="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Estado Civil</b>
+                                                <div class="form">
+                                                    <select class="form-select form-select-lg mb-3 fs-6"
+                                                        aria-label=".form-select-lg example">
+                                                        <option disabled selected>Seleccionar</option>
+                                                        <option value="1">Soltero</option>
+                                                        <option value="2">Casado</option>
+                                                        <option value="3">Viudo</option>
+                                                        <option value="4">Divorciado</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Nivel de estudios</b>
+                                                <div class="form">
+                                                    <select class="form-select form-select-lg mb-3 fs-6"
+                                                        aria-label=".form-select-lg example">
+                                                        <option disabled selected>Seleccionar</option>
+                                                        <option value="1"></option>
+                                                        <option value="2"></option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>Ocupación</b>
+                                                <div class="form">
+                                                    <input type="text" class="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <b>¿Dependes economicamente de Ud.?</b>
+                                                <div class="form">
+                                                    <input type="radio" name="" id="">Si
+                                                    <input type="radio" name="" id="">No
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="mensaje()">Guardar</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Cerrar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                     <article class="content-caso-sos">
                         <h3 class="title">1.1.-PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
                         <div class="contacto">
                             <h5>Contacto 1 (*)</h5>
                             <div class="content-columm">
                                 <b>Apellidos y Nombres
-                                <input type="text" class="text"></b>
+                                    <input type="text" class="text"></b>
                                 <div class="content-columm">
                                     <b>Parentesco
-                                    <input type="text" class="text"></b>
+                                        <input type="text" class="text"></b>
                                     <b>Celular
-                                    <input type="tel" class="text"></b>
+                                        <input type="tel" class="text"></b>
                                 </div>
                             </div>
                         </div>
@@ -520,12 +611,12 @@
                             <h5>Contacto 2 (*)</h5>
                             <div class="content-columm">
                                 <b>Apellidos y Nombres
-                                <input type="text" class="text"></b>
+                                    <input type="text" class="text"></b>
                                 <div class="content-columm">
                                     <b>Parentesco
-                                    <input type="text" class="text"></b>
+                                        <input type="text" class="text"></b>
                                     <b>Celular
-                                    <input type="tel" class="text"></b>
+                                        <input type="tel" class="text"></b>
                                 </div>
                             </div>
                         </div>
@@ -533,16 +624,15 @@
                             <h5>Contacto 3 (*)</h5>
                             <div class="content-columm">
                                 <b>Apellidos y Nombres
-                                <input type="text" class="text"></b>
+                                    <input type="text" class="text"></b>
                                 <div class="content-columm">
                                     <b>Parentesco
-                                    <input type="text" class="text"></b>
+                                        <input type="text" class="text"></b>
                                     <b>Celular
-                                    <input type="tel" class="text"></b>
+                                        <input type="tel" class="text"></b>
                                 </div>
                             </div>
                         </div>
-
                     </article>
                     <article class="content-datos-laborales">
                         <h3 class="title">2.- DATOS LABORABLES</h3>
@@ -550,34 +640,32 @@
                             <b>Condición (C/N)
                                 <select class="form-select form-select-lg mb-3 fs-6"
                                     aria-label=".form-select-lg example">
-                                    <option selected>Seleccionar</option>
+                                    <option disabled selected>Seleccionar</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                 </select></b>
                             <b>Categoria
                                 <select class="form-select form-select-lg mb-3 fs-6"
                                     aria-label=".form-select-lg example">
-                                    <option selected>Seleccionar</option>
+                                    <option disabled selected>Seleccionar</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                 </select></b>
                             <b>Dedicación
                                 <select class="form-select form-select-lg mb-3 fs-6"
                                     aria-label=".form-select-lg example">
-                                    <option selected>Seleccionar</option>
+                                    <option disabled selected>Seleccionar</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                 </select></b>
                             <b>Horas<br>
                                 <input type="number" class="text"></b>
-
                         </div>
                         <div class="dato">
                             <b>Horas Lectivas
                                 <input type="text" class="text"></b>
                             <b style="padding-left: 40px;">Dependecia donde Laboral(Actual)
                                 <input type="text" class="text"></b>
-
                         </div>
                         <div class="datos">
                             <b>Fecha de ingreso FIM
@@ -587,12 +675,11 @@
                             <b>Regimen Seminario
                                 <select class="form-select form-select-lg mb-3 fs-6"
                                     aria-label=".form-select-lg example">
-                                    <option selected>Seleccionar</option>
+                                    <option disabled selected>Seleccionar</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                 </select>
                             </b>
-
                         </div>
                         <div class="datos">
                             <b>AFP (Nombre)
@@ -610,7 +697,8 @@
         </section>
 
     </main>
-    <script src="/script.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/info-docente.js"> </script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -619,8 +707,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
         integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
         </script>
-        <!-- Swee alert2 -->
-     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>   
+    <!-- Swee alert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </body>
 
 </html>
