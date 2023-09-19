@@ -1,120 +1,258 @@
 [
-  
-  {    
-      
-          "id":"1",
-          "Departamento": "Lima",
-          "provincias": [
-            {
-              "id":"1",
-              "nombre": "Lima",
-              "distritos": [
-                {
-                  "id":"1",
-                  "nombre": "Lima",
-                  "otrosDatos": "Información adicional sobre Lima"
-                },
-                {
-                  "id":"2",
-                  "nombre": "San Isidro",
-                  "otrosDatos": "Información adicional sobre San Isidro"
-                },
-                {
-                  "id":"3",
-                  "nombre": "Miraflores",
-                  "otrosDatos": "Información adicional sobre Miraflores"
-                }
-                
-              ]
-            },
-            {
-              "id":"2",
-              "nombre": "Cajatambo",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },
-            {
-              "id":"3",
-              "nombre": "Canta",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },
-            {
-              "id":"4",
-              "nombre": "Cañete",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },
-            {
-              "id":"5",
-              "nombre": "Huaral",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },
-            {
-              "id":"6",
-              "nombre": "Huarochirí",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },{
-              "id":"7",
-              "nombre": "Huaura",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },{
-              "id":"8",
-              "nombre": "Oyón",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            },{
-              "id":"9",
-              "nombre": "Yauyos",
-              "distritos": [
-                {
-                  "nombre": "Callao",
-                  "otrosDatos": "Información adicional sobre Callao"
-                }
-                
-              ]
-            }
-            
-          ]
-        }
+  {
+    "id": "1",
+      "Departamento": "Amazonas",
+      "provincias": {
         
-      ]
-    
+      }
+    },
+    {
+      "id": "2",
+      "Departamento": "Ancash",
+      "Ancash": {
+        
+      }
+    },
+    {
+      "id": "3",
+      "Departamento": "Apurimac",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "4",
+      "Departamento": "Arequipa",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "5",
+      "Departamento": "Ayacucho",
+      "provincias":{
+        
+      }
+
+    },
+    {
+      "id": "6",
+      "Departamento": "Callao",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "7",
+      "Departamento": "Cusco",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "8",
+      "Departamento": "Huancavelica",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "9",
+      "Departamento": "Huanuco",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "10",
+      "Departamento": "Ica",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "11",
+      "Departamento": "Junín",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "12",
+      "Departamento": "La Libertad",
+      "provincias":{
+        
+      }
+    },
+    {
+      "id": "13",
+      "Departamento": "Lambayeque",
+      "provincias":{
+        
+      }
+    },{
+    "id": "14",
+    "Departamento": "Lima",
+    "provincias": [
+      {
+        "id": "1",
+        "nombre": "Lima",
+        "distritos": [
+          {
+            
+            "nombre": "Lima"
+          },
+          {
+            
+            "nombre": "San Isidro"
+          },
+          {
+            
+            "nombre": "Miraflores"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "nombre": "Cajatambo",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "nombre": "Canta",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "nombre": "Cañete",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "nombre": "Huaral",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "nombre": "Huarochirí",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "nombre": "Huaura",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "nombre": "Oyón",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "nombre": "Yauyos",
+        "distritos": [
+          {
+            "nombre": "Callao"
+          }
+        ]
+      }
+    ]
+  },{
+    "id": "15",
+    "Departamento": "Loreto",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "16",
+    "Departamento": "Madre de Dios",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "17",
+    "Departamento": "Moquegua",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "18",
+    "Departamento": "Pasco",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "19",
+    "Departamento": "Piura",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "20",
+    "Departamento": "Puno",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "21",
+    "Departamento": "San Martín",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "22",
+    "Departamento": "Tacna",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "23",
+    "Departamento": "Tumbes",
+    "provincias":{
+      
+    }
+  },
+  {
+    "id": "24",
+    "Departamento": "Ucayali",
+    "provincias":{
+      
+    }
+  }
+]

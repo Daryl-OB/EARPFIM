@@ -205,7 +205,7 @@
                         <a class="nav-link" href="#">4to</a>
                     </li>
                 </ul>
-                <article class="frame" >
+                <article class="frame">
                     <article class="content-datos">
                         <h4 class="title">1.- DATOS PERSONALES</h4>
                         <div class="content-columm">
@@ -216,7 +216,7 @@
                                         <div class="form">
                                             <select class="form-select form-select-lg mb-3 fs-6 fs-6"
                                                 aria-label=".form-select-lg example">
-                                                <option  value="" disabled selected>Seleccionar</option>
+                                                <option value="" disabled selected>Seleccionar</option>
                                                 <option value="1">One</option>
                                                 <option value="2">Two</option>
                                             </select>
@@ -239,7 +239,7 @@
                                         <div class="form">
                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                 aria-label=".form-select-lg example">
-                                                <option  value="" disabled selected>Seleccionar</option>
+                                                <option value="" disabled selected>Seleccionar</option>
                                                 <option value="1">Soltero</option>
                                                 <option value="2">Casado</option>
                                                 <option value="3">Viudo</option>
@@ -323,7 +323,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example" disabled>
-                                        <option  value="" selected>Seleccionar</option>
+                                        <option value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
@@ -334,7 +334,7 @@
                                 <div class="form">
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example " disabled>
-                                        <option  value="" selected>Seleccionar</option>
+                                        <option value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
@@ -361,106 +361,104 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body ">
-                                        <div class="row g-9 ">
-                                            <div class="col-md-6">
-                                                <b>País</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" id="pais">
-                                                        <option value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">Perú</option>
-                                                        <option value="2">Otra país</option>
-                                                    </select>
+                                        <form method="post" id="DomicilioForm">
+                                            <div class="row g-9 ">
+                                                <div class="col-md-6">
+                                                    <b>País</b>
+                                                    <div class="form">
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example" id="pais">
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                            <option value="1">Perú</option>
+                                                            <option value="2">Otro país</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Departamento</b>
+                                                    <div class="form">
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example" id="departamento"
+                                                            disabled>
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Provincia</b>
+                                                    <div class="form">
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example" id="provincia"
+                                                            disabled>
+                                                            <option value="" selected>Seleccionar</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Distrito</b>
+                                                    <div class="form" disabled>
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example" id="distrito" disabled>
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Tipo de Vía</b>
+                                                    <div class="form" disabled>
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example">
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Nombre de Vía</b>
+                                                    <div class="form">
+                                                        <input type="text" class="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Tipo</b>
+                                                    <div class="form">
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example">
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Número de Inmueblo</b>
+                                                    <div class="form">
+                                                        <input type="text" class="text" required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Tipo de Zona</b>
+                                                    <div class="form">
+                                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                                            aria-label=".form-select-lg example">
+                                                            <option value="" disabled selected>Seleccionar</option>
+                                                            <option value="1">One</option>
+                                                            <option value="2">Two</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <b>Nombre de la Zona</b>
+                                                    <div class="form">
+                                                        <input type="text" class="text" required>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <b>Departamento</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" id="departamento" disabled>
-                                                        <option  value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Provincia</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" id="provincia" disabled>
-                                                        <option value="" selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Distrito</b>
-                                                <div class="form" disabled>
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example" id="distrito" disabled>
-                                                        <option  value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Tipo de Vía</b>
-                                                <div class="form" disabled>
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option  value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Nombre de Vía</b>
-                                                <div class="form">
-                                                    <input type="text" class="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Tipo</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option   value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Número de Inmueblo</b>
-                                                <div class="form">
-                                                    <input type="text" class="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Tipo de Zona</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option  value="" disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Nombre de la Zona</b>
-                                                <div class="form">
-                                                    <input type="text" class="text">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
+                                        <button type="submit" class="btn btn-primary"
                                             onclick="mensaje()">Guardar</button>
                                         <button type="button" class="btn btn-secondary"
                                             data-bs-dismiss="modal">Cerrar</button>
@@ -469,7 +467,7 @@
                             </div>
                         </div>
                         <div class="content-table">
-                            <table class="table table-bordered">
+                            <table class="table table-bordered" id="DomicilioTable">
                                 <thead>
                                     <tr>
                                         <th scope="col">Orden</th>
@@ -576,8 +574,8 @@
                                             <div class="col-md-6">
                                                 <b>¿Dependes economicamente de Ud.?</b>
                                                 <div class="form">
-                                                    <input type="radio" name="" id="">Si
-                                                    <input type="radio" name="" id="">No
+                                                    <input type="radio" name="tsSelector" id="">Si
+                                                    <input type="radio" name="tsSelector" id="">No
                                                 </div>
                                             </div>
                                         </div>
@@ -709,7 +707,7 @@
         </script>
     <!-- Swee alert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
+
 </body>
 
 </html>
