@@ -43,7 +43,7 @@ function cerrar_sesion() {
     }
   });
 }
-function mensaje() {
+/*function mensaje() {
   Swal.fire({
     position: "center",
     icon: "success",
@@ -51,7 +51,8 @@ function mensaje() {
     showConfirmButton: false,
     timer: 1500,
   });
-}
+}*/
+
 // Cargar el archivo JSON
 fetch('/d.json')
   .then(response => response.json())

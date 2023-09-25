@@ -25,8 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
       distritoSelect.removeAttribute("disabled");
     });
 
-
-
      
     fetch("/datos.json")
     .then(function (response) {
@@ -89,7 +87,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-   /*Table*/
-   
+  })
 
-  });
+   
+   /*Table*/
+   const form = document.getElementById("DomicilioForm");
+
+   form.addEventListener("submit",function(event){
+    event.preventDefault();/*evita que se actualise la pagina*/
+     let DomicilioForm = new FormData(form);
+     let DomicilioTabletRef =  document.getElementById("DomicilioTable");
+     let newDomicilioRowRef = DomicilioTabletRef.insertRow(-1);
+
+     let newTypeCellRef = newDomicilioRowRef.insertCell(0);
+     newTypeCellRef.textContent = DomicilioForm.get("pais")
+ 
+     newTypeCellRef = newDomicilioRowRef.insertCell(1);
+     newTypeCellRef.textContent = DomicilioForm.get("departamento")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(2);
+     newTypeCellRef.textContent = DomicilioForm.get("provincia")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(3);
+     newTypeCellRef.textContent = DomicilioForm.get("distrito")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(4);
+     newTypeCellRef.textContent = DomicilioForm.get("Tip_via")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(5);
+     newTypeCellRef.textContent = DomicilioForm.get("Nom_via")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(6);
+     newTypeCellRef.textContent = DomicilioForm.get("tipo")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(7);
+     newTypeCellRef.textContent = DomicilioForm.get("N_inmueble")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(8);
+     newTypeCellRef.textContent = DomicilioForm.get("tipo_zona")
+
+     newTypeCellRef = newDomicilioRowRef.insertCell(9);
+     newTypeCellRef.textContent = DomicilioForm.get("N_zona")
+
+     
+
+   })
