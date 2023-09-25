@@ -1,32 +1,35 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
-    var paisSelect = document.getElementById("pais");
-    var departamentoSelect = document.getElementById("departamento");
-    var provinciaSelect = document.getElementById("provincia");
-    var distritoSelect = document.getElementById("distrito");
-  
-    // Agrega un evento "change" al select de id "pais"
-    paisSelect.addEventListener("change", function () {
-      // Verifica si la opción seleccionada es "Perú"
-      if (paisSelect.value === "1") { // Cambia "1" al valor correcto para "Perú"
-        // Habilita el select de id "departamento"
-        departamentoSelect.removeAttribute("disabled");
-      } else {
-        // Desactiva el select de id "departamento"
-        departamentoSelect.setAttribute("disabled", "disabled");
-      }
-    });
+  desbloqueo();
+  ocultar();
+});
 
-    departamentoSelect.addEventListener("change", function () {
-        provinciaSelect.removeAttribute("disabled");
-    });
+function desbloqueo() {
+  // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
+  var paisSelect = document.getElementById("pais");
+  var departamentoSelect = document.getElementById("departamento");
+  var provinciaSelect = document.getElementById("provincia");
+  var distritoSelect = document.getElementById("distrito");
 
-    provinciaSelect.addEventListener("change", function () {
-      distritoSelect.removeAttribute("disabled");
-    });
+  // Agrega un evento "change" al select de id "pais"
+  paisSelect.addEventListener("change", function () {
+    // Verifica si la opción seleccionada es "Perú"
+    if (paisSelect.value === "1") {
+      // Cambia "1" al valor correcto para "Perú"
+      departamentoSelect.removeAttribute("disabled"); // Habilita el select de id "departamento"
+    } else {
+      departamentoSelect.setAttribute("disabled", "disabled"); // Desactiva el select de id "departamento"
+    }
+  });
 
-     
-    fetch("/datos.json")
+  departamentoSelect.addEventListener("change", function () {
+    provinciaSelect.removeAttribute("disabled");
+  });
+
+  provinciaSelect.addEventListener("change", function () {
+    distritoSelect.removeAttribute("disabled");
+  });
+
+  fetch("/datos.json")
     .then(function (response) {
       return response.json();
     })
@@ -42,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // Agregar un evento de cambio al primer select
       departamentoSelect.addEventListener("change", function () {
         // Limpiar los select de provincias y distritos
-        
 
         // Obtener el ID del departamento seleccionado
         var selectedDepartamentoId = departamentoSelect.value;
@@ -64,15 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
           // Agregar un evento de cambio al segundo select (provincias)
           provinciaSelect.addEventListener("change", function () {
             // Limpiar el select de distritos
-            
 
             // Obtener el ID de la provincia seleccionada
             var selectedProvinciaId = provinciaSelect.value;
 
             // Buscar los distritos correspondientes a la provincia seleccionada
-            var selectedProvincia = selectedDepartamento.provincias.find(function (provincia) {
-              return provincia.id === selectedProvinciaId;
-            });
+            var selectedProvincia = selectedDepartamento.provincias.find(
+              function (provincia) {
+                return provincia.id === selectedProvinciaId;
+              }
+            );
 
             if (selectedProvincia) {
               // Llenar el tercer select con opciones de distritos
@@ -87,48 +90,73 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       });
     });
-  })
+}
+function ocultar() {
+  const btn1 = body.querySelector(".btn1"),
+    btn2 = body.querySelector(".btn2"),
+    contentUno = body.querySelector(".content-uno"),
+    contentDos = body.querySelector(".content-dos");
 
-   
-   /*Table*/
-   const form = document.getElementById("DomicilioForm");
+  btn1.addEventListener("click", () => {
+    contentUno.classList.remove("d-none"),
+    contentDos.classList.add("d-none"),
 
-   form.addEventListener("submit",function(event){
-    event.preventDefault();/*evita que se actualise la pagina*/
-     let DomicilioForm = new FormData(form);
-     let DomicilioTabletRef =  document.getElementById("DomicilioTable");
-     let newDomicilioRowRef = DomicilioTabletRef.insertRow(-1);
+    btn1.classList.add("active"),
+    btn2.classList.remove("active");
+  });
+  btn2.addEventListener("click", () => {
+    contentUno.classList.add("d-none"),
+    contentDos.classList.remove("d-none"),
 
-     let newTypeCellRef = newDomicilioRowRef.insertCell(0);
-     newTypeCellRef.textContent = DomicilioForm.get("pais")
- 
-     newTypeCellRef = newDomicilioRowRef.insertCell(1);
-     newTypeCellRef.textContent = DomicilioForm.get("departamento")
+    btn1.classList.remove("active"),
+    btn2.classList.add("active");
+  });
+}
 
-     newTypeCellRef = newDomicilioRowRef.insertCell(2);
-     newTypeCellRef.textContent = DomicilioForm.get("provincia")
+/*Table*/
+function mensaje() {
+  // Capturar los valores de los campos del formulario
+  var pais = document.getElementById("pais").value;
+  var departamento = document.getElementById("departamento").value;
+  var provincia = document.getElementById("provincia").value;
+  var distrito = document.getElementById("distrito").value;
+  var tipoVia = document.getElementById("Tip_vía").value;
+  var nombreVia = document.getElementById("Nom_via").value;
+  var tipo = document.getElementById("tipo").value;
+  var numeroInmueble = document.getElementById("N_inmueblo").value;
+  var tipoZona = document.getElementById("tipo_zona").value;
+  var nombreZona = document.getElementById("N_zona").value;
+  var table = document
+    .getElementById("DomicilioTable")
+    .getElementsByTagName("tbody")[0];
 
-     newTypeCellRef = newDomicilioRowRef.insertCell(3);
-     newTypeCellRef.textContent = DomicilioForm.get("distrito")
+  // Crear una nueva fila
+  var newRow = table.insertRow(table.rows.length);
 
-     newTypeCellRef = newDomicilioRowRef.insertCell(4);
-     newTypeCellRef.textContent = DomicilioForm.get("Tip_via")
-
-     newTypeCellRef = newDomicilioRowRef.insertCell(5);
-     newTypeCellRef.textContent = DomicilioForm.get("Nom_via")
-
-     newTypeCellRef = newDomicilioRowRef.insertCell(6);
-     newTypeCellRef.textContent = DomicilioForm.get("tipo")
-
-     newTypeCellRef = newDomicilioRowRef.insertCell(7);
-     newTypeCellRef.textContent = DomicilioForm.get("N_inmueble")
-
-     newTypeCellRef = newDomicilioRowRef.insertCell(8);
-     newTypeCellRef.textContent = DomicilioForm.get("tipo_zona")
-
-     newTypeCellRef = newDomicilioRowRef.insertCell(9);
-     newTypeCellRef.textContent = DomicilioForm.get("N_zona")
-
-     
-
-   })
+  // Insertar celdas con los valores capturados
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(1);
+  var cell3 = newRow.insertCell(2);
+  var cell4 = newRow.insertCell(3);
+  var cell5 = newRow.insertCell(4);
+  var cell6 = newRow.insertCell(5);
+  var cell7 = newRow.insertCell(6);
+  var cell8 = newRow.insertCell(7);
+  var cell9 = newRow.insertCell(8);
+  var cell10 = newRow.insertCell(9);
+  var cell11 = newRow.insertCell(10);
+  var cell12 = newRow.insertCell(11);
+  // Establecer el contenido de las celdas
+  cell1.innerHTML = table.rows.length - 1; // Contador de orden
+  cell2.innerHTML = pais;
+  cell3.innerHTML = pais;
+  cell4.innerHTML = departamento;
+  cell5.innerHTML = provincia;
+  cell6.innerHTML = distrito;
+  cell7.innerHTML = tipoVia;
+  cell8.innerHTML = nombreVia; // Cambia esto según el campo que quieras mostrar
+  cell9.innerHTML = tipo;
+  cell10.innerHTML = numeroInmueble;
+  cell11.innerHTML = tipoZona;
+  cell12.innerHTML = nombreZona;
+}

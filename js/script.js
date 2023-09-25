@@ -3,7 +3,7 @@ const body = document.querySelector("body"),
   sidebar = body.querySelector(".sidebar"),
   toggle = body.querySelector(".toggle"),
   pant = body.querySelector(".pant");
-
+  
   toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     if (window.innerWidth <= 800) {
@@ -52,22 +52,4 @@ function cerrar_sesion() {
     timer: 1500,
   });
 }*/
-
-// Cargar el archivo JSON
-fetch('/d.json')
-  .then(response => response.json())
-  .then(data => {
-    // Acceder a los datos del JSON como objetos JavaScript
-    const id = data.id;
-    const edad = data.edad;
-    const ciudad = data.ciudad;
-
-    // Hacer algo con los datos
-    console.log(`Nombre: ${id}`);
-    console.log(`Edad: ${edad}`);
-    console.log(`Ciudad: ${ciudad}`);
-  })
-  .catch(error => {
-    console.error('Error al cargar el archivo JSON:', error);
-  });
 

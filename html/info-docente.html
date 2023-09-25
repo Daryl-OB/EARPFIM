@@ -193,10 +193,10 @@
             <section class="">
                 <ul class="nav nav-tabs ">
                     <li class="nav-item ">
-                        <a class="nav-link active" aria-current="page" href="#">1er</a>
+                        <a class="nav-link btn1 active" aria-current="page" href="#">1er</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">2do</a>
+                        <a class="nav-link btn2" href="#">2do</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">3er</a>
@@ -205,489 +205,607 @@
                         <a class="nav-link" href="#">4to</a>
                     </li>
                 </ul>
-                <article class="frame">
-                    <article class="content-datos">
-                        <h4 class="title">1.- DATOS PERSONALES</h4>
-                        <div class="content-columm">
-                            <div class="datos-column-1">
-                                <div class="row g-4">
-                                    <div class="col-md">
-                                        <b>Sexo</b>
-                                        <div class="form">
-                                            <select class="form-select form-select-lg mb-3 fs-6 fs-6"
-                                                aria-label=".form-select-lg example">
-                                                <option value="" disabled selected>Seleccionar</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                            </select>
+                <article class="frame ">
+                    <article class="content-uno" id="content-uno">
+                        <article class="content-datos">
+                            <h4 class="title">1.- DATOS PERSONALES</h4>
+                            <div class="content-columm">
+                                <div class="datos-column-1">
+                                    <div class="row g-4">
+                                        <div class="col-md">
+                                            <b>Sexo</b>
+                                            <div class="form">
+                                                <select class="form-select form-select-lg mb-3 fs-6 fs-6"
+                                                    aria-label=".form-select-lg example">
+                                                    <option value="" disabled selected>Seleccionar</option>
+                                                    <option value="1">One</option>
+                                                    <option value="2">Two</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <b>Fecha Nacimiento</b>
+                                            <div class="form">
+                                                <input type="date" class="date">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-md">
-                                        <b>Fecha Nacimiento</b>
-                                        <div class="form">
-                                            <input type="date" class="date">
+                                    <b>Telefono Fijo<i class='bx bxs-pencil' style='color:#4178f0'></i><input
+                                            class="text" type="text"></b>
+                                    <b>RUC<input class="text" type="text"></b>
+                                    <b>Brevete y Categoria<input class="text" type="text"></b>
+                                    <div class="row g-4">
+                                        <div class="col-md">
+                                            <b>Estado Civil</b>
+                                            <div class="form">
+                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                    aria-label=".form-select-lg example">
+                                                    <option value="" disabled selected>Seleccionar</option>
+                                                    <option value="1">Soltero</option>
+                                                    <option value="2">Casado</option>
+                                                    <option value="3">Viudo</option>
+                                                    <option value="4">Divorciado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <b>Fecha de Matrimonio</b>
+                                            <div class="form">
+                                                <input type="date" class="date">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row g-4">
+                                        <div class="col-md">
+                                            <div class="form">
+                                                <b>E-mail (S)<input class="text" type="email"></b>
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <div class="form">
+                                                <br><input class="text" type="email"></br>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <b>Telefono Fijo<i class='bx bxs-pencil' style='color:#4178f0'></i><input class="text"
-                                        type="text"></b>
-                                <b>RUC<input class="text" type="text"></b>
-                                <b>Brevete y Categoria<input class="text" type="text"></b>
-                                <div class="row g-4">
-                                    <div class="col-md">
-                                        <b>Estado Civil</b>
-                                        <div class="form">
-                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                aria-label=".form-select-lg example">
-                                                <option value="" disabled selected>Seleccionar</option>
-                                                <option value="1">Soltero</option>
-                                                <option value="2">Casado</option>
-                                                <option value="3">Viudo</option>
-                                                <option value="4">Divorciado</option>
-                                            </select>
+                                <div class="datos-column-2 ">
+                                    <div class="row g-4">
+                                        <div class="col-md">
+                                            <b>DNI</b><i class='bx bx-check-circle' style='color:#228903'></i>
+                                            <div class="form">
+                                                <input type="text" name="" id="" class="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-md">
+                                            <button type="button" class="btn btn-outline-secondary"><i
+                                                    class='bx bxs-cloud-upload'></i></button>
+                                            <button type="reset" class="btn btn-outline-secondary"><i
+                                                    class='bx bxs-show'></i></button>
+                                            <button type="button" class="btn btn-outline-secondary"><i
+                                                    class='bx bx-trash-alt'></i></button>
                                         </div>
                                     </div>
-                                    <div class="col-md">
-                                        <b>Fecha de Matrimonio</b>
-                                        <div class="form">
-                                            <input type="date" class="date">
-                                        </div>
+                                    <b>Celular<i class='bx bxs-pencil' style='color:#4178f0'></i><input type="tel"
+                                            class="text"></b>
+                                    <b>Lib Militar<input type="text" class="text"></b>
+                                    <b>Si cuenta con vehiculo,indicar modelo,placa,año,color<input type="text"
+                                            class="text"></b>
+                                    <b>Grupo Sanguineo<input type="text" class="text"></b>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="content-lugar-naci">
+                            <h3 class="title">Lugar de Nacimiento</h3>
+                            <div class="row g-9 ">
+                                <div class="col-md-6">
+                                    <b>País</b>
+                                    <div class="form">
+                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                            aria-label=".form-select-lg example" id="">
+                                            <option disabled selected>Seleccionar</option>
+                                            <option value="1">Perú</option>
+                                            <option value="2">Otro país</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="row g-4">
-                                    <div class="col-md">
-                                        <div class="form">
-                                            <b>E-mail (S)<input class="text" type="email"></b>
-                                        </div>
+                                <div class="col-md-6">
+                                    <b>Departamento</b>
+                                    <div class="form">
+                                        <select class="form-select form-select-lg mb-3 fs-6 "
+                                            aria-label=".form-select-lg example" id="" disabled>
+                                            <option value="" selected>Seleccionar</option>
+
+                                        </select>
                                     </div>
-                                    <div class="col-md">
-                                        <div class="form">
-                                            <br><input class="text" type="email"></br>
+                                </div>
+                                <div class="col-md-6">
+                                    <b>Provincia</b>
+                                    <div class="form">
+                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                            aria-label=".form-select-lg example" id="" disabled>
+                                            <option value="" selected>Seleccionar</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <b>Distrito</b>
+                                    <div class="form">
+                                        <select class="form-select form-select-lg mb-3 fs-6"
+                                            aria-label=".form-select-lg example" id="" disabled>
+                                            <option value="" selected>Seleccionar</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="content-domicilio">
+                            <h3 class="title">Domicilio</h3>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#staticBackdrop">
+                                Añadir Registro
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
+                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
+                                    style="max-width: 900px;">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Domicilio</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" id="DomicilioForm">
+                                                <div class="row g-9 ">
+                                                    <div class="col-md-6">
+                                                        <b>País</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="pais"
+                                                                name="pais">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">Perú</option>
+                                                                <option value="2">Otro país</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Departamento</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="departamento"
+                                                                name="departamento" disabled>
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Provincia</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="provincia"
+                                                                name="provincia" disabled>
+                                                                <option value="" selected>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Distrito</b>
+                                                        <div class="form" disabled>
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="distrito"
+                                                                name="distrito" disabled>
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Tipo de Vía</b>
+                                                        <div class="form" disabled>
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="Tip_vía">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Nombre de Vía</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="Nom_via">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Tipo</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="tipo">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Número de Inmueblo</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="N_inmueblo" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Tipo de Zona</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="tipo_zona">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Nombre de la Zona</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="N_zona">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary"
+                                                onclick="mensaje()">Guardar</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Cerrar</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="datos-column-2 ">
-                                <div class="row g-4">
-                                    <div class="col-md">
-                                        <b>DNI</b><i class='bx bx-check-circle' style='color:#228903'></i>
-                                        <div class="form">
-                                            <input type="text" name="" id="" class="text">
+                            <div class="content-table">
+                                <table class="table table-bordered" id="DomicilioTable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Orden</th>
+                                            <th scope="col">País</th>
+                                            <th scope="col">Dirección extrajera</th>
+                                            <th scope="col">Departamento</th>
+                                            <th scope="col">Provincia</th>
+                                            <th scope="col">Distrito</th>
+                                            <th scope="col">Tipo de vía</th>
+                                            <th scope="col">Nombre de vía</th>
+                                            <th scope="col">Tipo</th>
+                                            <th scope="col">Número de Inmueble</th>
+                                            <th scope="col">Tipo de Zona</th>
+                                            <th scope="col">Nombre de Zonas </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr> </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+                        <article class="content-familiar">
+                            <h3 class="title">Familiar</h3>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">
+                            Añadir Registro
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" style="max-width: 900px;">
+                                <div class="modal-content">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
+                                                Profesional</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body p-4">
+                                            <form>
+                                                <div class="row g-9 ">
+                                                    <div class="col-md-6">
+                                                        <b>Apellidos y Nombres</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Parantesco</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example">
+                                                                <option disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Fecha de Nacimiento</b>
+                                                        <div class="form">
+                                                            <input type="date" class="date" name="" id="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Estado Civil</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example">
+                                                                <option disabled selected>Seleccionar</option>
+                                                                <option value="1">Soltero</option>
+                                                                <option value="2">Casado</option>
+                                                                <option value="3">Viudo</option>
+                                                                <option value="4">Divorciado</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Nivel de estudios</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example">
+                                                                <option disabled selected>Seleccionar</option>
+                                                                <option value="1"></option>
+                                                                <option value="2"></option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>Ocupación</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <b>¿Dependes economicamente de Ud.?</b>
+                                                        <div class="form">
+                                                            <input type="radio" name="tsSelector" id="">Si
+                                                            <input type="radio" name="tsSelector" id="">No
+                                                        </div>
+                                                    </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onclick="datos()">Save
+                                                changes</button>
                                         </div>
                                     </div>
-                                    <div class="col-md">
-                                        <button type="button" class="btn btn-outline-secondary"><i
-                                                class='bx bxs-cloud-upload'></i></button>
-                                        <button type="reset" class="btn btn-outline-secondary"><i
-                                                class='bx bxs-show'></i></button>
-                                        <button type="button" class="btn btn-outline-secondary"><i
-                                                class='bx bx-trash-alt'></i></button>
+                                </div>
+                            </div>
+                        </div>    
+                            
+                        </article>
+
+                        <article class="content-caso-sos">
+                            <h3 class="title">1.1.-PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
+                            <div class="contacto">
+                                <h5>Contacto 1 (*)</h5>
+                                <div class="content-columm">
+                                    <b>Apellidos y Nombres
+                                        <input type="text" class="text"></b>
+                                    <div class="content-columm">
+                                        <b>Parentesco
+                                            <input type="text" class="text"></b>
+                                        <b>Celular
+                                            <input type="tel" class="text"></b>
                                     </div>
                                 </div>
-                                <b>Celular<i class='bx bxs-pencil' style='color:#4178f0'></i><input type="tel"
-                                        class="text"></b>
-                                <b>Lib Militar<input type="text" class="text"></b>
-                                <b>Si cuenta con vehiculo,indicar modelo,placa,año,color<input type="text"
-                                        class="text"></b>
-                                <b>Grupo Sanguineo<input type="text" class="text"></b>
                             </div>
-                        </div>
-                    </article>
-                    <article class="content-lugar-naci">
-                        <h3 class="title">Lugar de Nacimiento</h3>
-                        <div class="row g-9 ">
-                            <div class="col-md-6">
-                                <b>País</b>
-                                <div class="form">
+                            <div class="contacto">
+                                <h5>Contacto 2 (*)</h5>
+                                <div class="content-columm">
+                                    <b>Apellidos y Nombres
+                                        <input type="text" class="text"></b>
+                                    <div class="content-columm">
+                                        <b>Parentesco
+                                            <input type="text" class="text"></b>
+                                        <b>Celular
+                                            <input type="tel" class="text"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contacto">
+                                <h5>Contacto 3 (*)</h5>
+                                <div class="content-columm">
+                                    <b>Apellidos y Nombres
+                                        <input type="text" class="text"></b>
+                                    <div class="content-columm">
+                                        <b>Parentesco
+                                            <input type="text" class="text"></b>
+                                        <b>Celular
+                                            <input type="tel" class="text"></b>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="content-datos-laborales">
+                            <h3 class="title">2.- DATOS LABORABLES</h3>
+                            <div class="datos">
+                                <b>Condición (C/N)
                                     <select class="form-select form-select-lg mb-3 fs-6"
                                         aria-label=".form-select-lg example">
                                         <option disabled selected>Seleccionar</option>
-                                        <option value="1">Otro país</option>
-                                        <option value="2">Perú</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <b>Departamento</b>
-                                <div class="form">
-                                    <select class="form-select form-select-lg mb-3 fs-6 "
-                                        aria-label=".form-select-lg example" disabled>
-                                        <option value="" selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <b>Provincia</b>
-                                <div class="form">
+                                    </select></b>
+                                <b>Categoria
                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example" disabled>
-                                        <option value="" selected>Seleccionar</option>
+                                        aria-label=".form-select-lg example">
+                                        <option disabled selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <b>Distrito</b>
-                                <div class="form">
+                                    </select></b>
+                                <b>Dedicación
                                     <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example " disabled>
-                                        <option value="" selected>Seleccionar</option>
+                                        aria-label=".form-select-lg example">
+                                        <option disabled selected>Seleccionar</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                    </select></b>
+                                <b>Horas<br>
+                                    <input type="number" class="text"></b>
+                            </div>
+                            <div class="dato">
+                                <b>Horas Lectivas
+                                    <input type="text" class="text"></b>
+                                <b style="padding-left: 40px;">Dependecia donde Laboral(Actual)
+                                    <input type="text" class="text"></b>
+                            </div>
+                            <div class="datos">
+                                <b>Fecha de ingreso FIM
+                                    <input type="date" class="date"></b>
+                                <b>Fecha.Nombramiento
+                                    <input type="date" class="date"></b>
+                                <b>Regimen Seminario
+                                    <select class="form-select form-select-lg mb-3 fs-6"
+                                        aria-label=".form-select-lg example">
+                                        <option disabled selected>Seleccionar</option>
                                         <option value="1">One</option>
                                         <option value="2">Two</option>
                                     </select>
-                                </div>
+                                </b>
                             </div>
-                        </div>
+                            <div class="datos">
+                                <b>AFP (Nombre)
+                                    <input type="text" name="" id="" class="text"></b>
+                                <b>Cód.AFP
+                                    <input type="text" name="" id="" class="text"></b>
+                                <b>Cód.EsSalud
+                                    <input type="text" name="" id="" class="text"></b>
+                                <b>Otro tipo de Seguro
+                                    <input type="text" name="" id="" class="text"></b>
+                            </div>
+                        </article>
+
+
+
+
                     </article>
-                    <article class="content-domicilio">
-                        <h3 class="title">Domicilio</h3>
+                    <article class="content-dos d-none" id="content-dos">
+                        <h4 class="title">3.-DATOS DE FORMACIÓN PROFESIONAL: Indicar Grados y Títulos
+                            obtenidos,señalando
+                            Fercha de Revalidación para el caso de Títulos y Grados otorgados en el Extranjero</h4>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#staticBackdrop">
+                            data-bs-target="#exampleModal">
                             Añadir Registro
                         </button>
+
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                                style="max-width: 900px;">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog" style="max-width: 800px;">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="staticBackdropLabel">Agregar Domicilio</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body ">
-                                        <form method="post" id="DomicilioForm">
-                                            <div class="row g-9 ">
-                                                <div class="col-md-6">
-                                                    <b>País</b>
-                                                    <div class="form">
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="pais" name="pais">
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                            <option value="1">Perú</option>
-                                                            <option value="2">Otro país</option>
-                                                        </select>
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
+                                                Profesional</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body p-4">
+                                            <form>
+                                                <div class="row g-9 ">
+                                                    <div class="col-md-6">
+                                                        <b>Formación profesional</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="form_profe">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Departamento</b>
-                                                    <div class="form">
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="departamento" name="departamento"
-                                                            disabled>
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                        </select>
+                                                    <div class="col-md-6">
+                                                        <b>Pais</b>
+                                                        <div class="form">
+                                                            <select class="form-select form-select-lg mb-3 fs-6"
+                                                                aria-label=".form-select-lg example" id="Pais">
+                                                                <option value="" disabled selected>Seleccionar</option>
+                                                                <option value="1">One</option>
+                                                                <option value="2">Two</option>
+                                                            </select>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Provincia</b>
-                                                    <div class="form">
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="provincia" name="provincia"
-                                                            disabled>
-                                                            <option value="" selected>Seleccionar</option>
-                                                        </select>
+                                                    <div class="col-md-6">
+                                                        <b>Universidad
+                                                            <input type="text" class="text" id="universidad"> </b>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Distrito</b>
-                                                    <div class="form" disabled>
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="distrito" name="distrito" disabled>
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                        </select>
+
+                                                    <div class="col-md-6">
+                                                        <b>Especialidad
+                                                            <input type="text" class="text" id="especialidad"></b>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Tipo de Vía</b>
-                                                    <div class="form" disabled>
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="Tip_vía">
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                        </select>
+                                                    <div class="col-md-6">
+                                                        <b>Fecha Inicio
+                                                            <input type="date" class="date" id="fech_ini"></b>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Nombre de Vía</b>
-                                                    <div class="form">
-                                                        <input type="text" class="text" id="Nom_via">
+                                                    <div class="col-md-6">
+                                                        <b>Fecha Final</b>
+                                                        <input type="date" class="date" id="fech_fin">
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Tipo</b>
-                                                    <div class="form">
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="tipo">
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                        </select>
+                                                    <div class="col-md-6 p-3">
+                                                        <b>Grado Obtenido
+                                                            <input type="text" class="text" id="grado"></b>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Número de Inmueblo</b>
-                                                    <div class="form">
-                                                        <input type="text" class="text" id="N_inmueblo" required >
+                                                    <div class="col-md-6 p-3">
+                                                        <b>Documento Sustentado</b><br>
+                                                        <button type="button" class="btn btn-outline-secondary"
+                                                            id="document_sus">
+                                                            <i class='bx bxs-cloud-upload'></i>
+                                                        </button>
                                                     </div>
+                                                    <b>Observación:</b>
+                                                    <textarea id="miTextarea"
+                                                        placeholder="Escribe algo aquí..."></textarea>
+
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <b>Tipo de Zona</b>
-                                                    <div class="form">
-                                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                                            aria-label=".form-select-lg example" id="tipo_zona">
-                                                            <option value="" disabled selected>Seleccionar</option>
-                                                            <option value="1">One</option>
-                                                            <option value="2">Two</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <b>Nombre de la Zona</b>
-                                                    <div class="form">
-                                                        <input type="text" class="text" id="N_zona" >
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-primary"
-                                            onclick="mensaje()">Guardar</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerrar</button>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onclick="datos()">Save
+                                                changes</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="content-table">
-                            <table class="table table-bordered" id="DomicilioTable">
+                            <table class="table table-bordered" id="FormacionTable">
                                 <thead>
                                     <tr>
                                         <th scope="col">Orden</th>
+                                        <th scope="col">Formación Profesional</th>
                                         <th scope="col">País</th>
-                                        <th scope="col">Dirección extrajera</th>
-                                        <th scope="col">Departamento</th>
-                                        <th scope="col">Provincia</th>
-                                        <th scope="col">Distrito</th>
-                                        <th scope="col">Tipo de vía</th>
-                                        <th scope="col">Nombre de vía</th>
-                                        <th scope="col">Tipo</th>
-                                        <th scope="col">Número de Inmueble</th>
+                                        <th scope="col">Universidad</th>
+                                        <th scope="col">Especialidad</th>
+                                        <th scope="col">Fecha Inicio</th>
+                                        <th scope="col">Fecha Final</th>
+                                        <th scope="col">Grado Obtenido</th>
+                                        <th scope="col">Documento sustentatorio</th>
+                                        <th scope="col">Observación</th>
+                                        <th scope="col">Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1</th>
-                                        <td>Markvvvvv</td>
-                                        <td>Ottovvvvvvvvvvvvvvvv</td>
-                                        <td>@mdovvvvvvvvvvvvvvvvv</td>
-                                        <td>Jacobvvvvvvvvvvvvvvvvvvv</td>
-                                        <td>Thorntonvvvvvvvvvvvvvvv</td>
-                                        <td>@fatvvvvvvvvvvvvvvv</td>
-                                        <td>Larry the Birdvvvvvvvvvvvvvvv</td>
-                                        <td>@twittervvvvvvvvvvvvvvvv</td>
-                                        <td>@twittercvccvvvvvvvvvvvvvvvvvvvvvvvv</td>
-                                    </tr>
+                                    <tr> </tr>
                                 </tbody>
                             </table>
-                        </div>
-                    </article>
-                    <article class="content-familiar">
-                        <h3 class="title">Familiar</h3>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            Agregar Registro
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" style="max-width: 900px;">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Agregar Familiar</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body w-5">
-                                        <div class="row g-9 ">
-                                            <div class="col-md-6">
-                                                <b>Apellidos y Nombres</b>
-                                                <div class="form">
-                                                    <input type="text" class="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Parantesco</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option disabled selected>Seleccionar</option>
-                                                        <option value="1">One</option>
-                                                        <option value="2">Two</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Fecha de Nacimiento</b>
-                                                <div class="form">
-                                                    <input type="date" class="date" name="" id="">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Estado Civil</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option disabled selected>Seleccionar</option>
-                                                        <option value="1">Soltero</option>
-                                                        <option value="2">Casado</option>
-                                                        <option value="3">Viudo</option>
-                                                        <option value="4">Divorciado</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Nivel de estudios</b>
-                                                <div class="form">
-                                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                                        aria-label=".form-select-lg example">
-                                                        <option disabled selected>Seleccionar</option>
-                                                        <option value="1"></option>
-                                                        <option value="2"></option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>Ocupación</b>
-                                                <div class="form">
-                                                    <input type="text" class="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <b>¿Dependes economicamente de Ud.?</b>
-                                                <div class="form">
-                                                    <input type="radio" name="tsSelector" id="">Si
-                                                    <input type="radio" name="tsSelector" id="">No
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-primary"
-                                            onclick="mensaje()">Guardar</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Cerrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="content-caso-sos">
-                        <h3 class="title">1.1.-PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
-                        <div class="contacto">
-                            <h5>Contacto 1 (*)</h5>
-                            <div class="content-columm">
-                                <b>Apellidos y Nombres
-                                    <input type="text" class="text"></b>
-                                <div class="content-columm">
-                                    <b>Parentesco
-                                        <input type="text" class="text"></b>
-                                    <b>Celular
-                                        <input type="tel" class="text"></b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contacto">
-                            <h5>Contacto 2 (*)</h5>
-                            <div class="content-columm">
-                                <b>Apellidos y Nombres
-                                    <input type="text" class="text"></b>
-                                <div class="content-columm">
-                                    <b>Parentesco
-                                        <input type="text" class="text"></b>
-                                    <b>Celular
-                                        <input type="tel" class="text"></b>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contacto">
-                            <h5>Contacto 3 (*)</h5>
-                            <div class="content-columm">
-                                <b>Apellidos y Nombres
-                                    <input type="text" class="text"></b>
-                                <div class="content-columm">
-                                    <b>Parentesco
-                                        <input type="text" class="text"></b>
-                                    <b>Celular
-                                        <input type="tel" class="text"></b>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="content-datos-laborales">
-                        <h3 class="title">2.- DATOS LABORABLES</h3>
-                        <div class="datos">
-                            <b>Condición (C/N)
-                                <select class="form-select form-select-lg mb-3 fs-6"
-                                    aria-label=".form-select-lg example">
-                                    <option disabled selected>Seleccionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                </select></b>
-                            <b>Categoria
-                                <select class="form-select form-select-lg mb-3 fs-6"
-                                    aria-label=".form-select-lg example">
-                                    <option disabled selected>Seleccionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                </select></b>
-                            <b>Dedicación
-                                <select class="form-select form-select-lg mb-3 fs-6"
-                                    aria-label=".form-select-lg example">
-                                    <option disabled selected>Seleccionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                </select></b>
-                            <b>Horas<br>
-                                <input type="number" class="text"></b>
-                        </div>
-                        <div class="dato">
-                            <b>Horas Lectivas
-                                <input type="text" class="text"></b>
-                            <b style="padding-left: 40px;">Dependecia donde Laboral(Actual)
-                                <input type="text" class="text"></b>
-                        </div>
-                        <div class="datos">
-                            <b>Fecha de ingreso FIM
-                                <input type="date" class="date"></b>
-                            <b>Fecha.Nombramiento
-                                <input type="date" class="date"></b>
-                            <b>Regimen Seminario
-                                <select class="form-select form-select-lg mb-3 fs-6"
-                                    aria-label=".form-select-lg example">
-                                    <option disabled selected>Seleccionar</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                </select>
-                            </b>
-                        </div>
-                        <div class="datos">
-                            <b>AFP (Nombre)
-                                <input type="text" name="" id="" class="text"></b>
-                            <b>Cód.AFP
-                                <input type="text" name="" id="" class="text"></b>
-                            <b>Cód.EsSalud
-                                <input type="text" name="" id="" class="text"></b>
-                            <b>Otro tipo de Seguro
-                                <input type="text" name="" id="" class="text"></b>
                         </div>
                     </article>
                 </article>
@@ -697,14 +815,8 @@
     </main>
     <script src="/js/script.js"></script>
     <script src="/js/info-docente.js"> </script>
-    <!-- Bootstrap JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-        </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-        </script>
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     <!-- Swee alert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

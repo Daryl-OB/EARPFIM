@@ -72,6 +72,7 @@ h5{
 .table{
     width: 100%;
     margin-top: 15px;
+    text-align: center;
     
 }
 .datos{
@@ -84,6 +85,7 @@ h5{
     justify-content: flex-start;
     
 }
+
 @media (max-width:600px) {
     .content-info{
         display: grid;
