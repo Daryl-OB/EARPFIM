@@ -168,31 +168,18 @@
                 </div>
                 <div class="content-año">
                     <div>
-                        <div class="dropdown dropdown-año">
-                            <button class="btn border-dark  dropdown-toggle " id="bd-versions" data-bs-toggle="dropdown"
-                                aria-expanded="false" data-bs-display="static">
-                                <span class=" d-lg-inline">20222</span>
-                            </button>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
-                                <li>
-                                    <a class="dropdown-item" href="#">20221</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item current" href="#">20220</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">20219</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <select class="form-select form-select-lg mb-3 fs-6 fs-6" aria-label=".form-select-lg example">
+                            <option selected disabled>Seleccionar</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                        </select>
                         <b style="color: #224fb1;font-size: 20px;">DEFINITIVO</b>
                     </div>
             </article>
-
             <article class="content-table">
                 <h5 class="carga-horaria">CARGA HORARIA: 16 HRS</h5>
                 <div>
-                    <table class="table table-bordered text-center">
+                    <table class="table table-bordered text-center" id="horarioTable">
                         <thead>
                             <tr>
                                 <th scope="col">HORA</th>
@@ -207,10 +194,6 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row"></th>
-                                <td></td>
-                                <td></td>
-                                <td></td>
                             </tr>
                         </tbody>
                     </table>
@@ -219,6 +202,7 @@
         </section>
     </main>
     <script src="/js/script.js"></script>
+    <script src="/js/index.js"></script>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

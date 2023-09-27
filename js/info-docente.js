@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   desbloqueo();
   ocultar();
+  
 });
 
 function desbloqueo() {
@@ -114,7 +115,7 @@ function ocultar() {
 }
 
 /*Table*/
-function mensaje() {
+function insertarTableDomicilio() {
   // Capturar los valores de los campos del formulario
   var pais = document.getElementById("pais").value;
   var departamento = document.getElementById("departamento").value;
@@ -159,4 +160,51 @@ function mensaje() {
   cell10.innerHTML = numeroInmueble;
   cell11.innerHTML = tipoZona;
   cell12.innerHTML = nombreZona;
+}
+
+function insertarTableFormación() {
+  // Capturar los valores de los campos del formulario
+  var form_profe = document.getElementById("form_profe").value;
+  var Pais = document.getElementById("Pais").value;
+  var universidad = document.getElementById("universidad").value;
+  var especialidad = document.getElementById("especialidad").value;
+  var fech_ini = document.getElementById("fech_ini").value;
+  var fech_fin = document.getElementById("fech_fin").value;
+  var grado_obte = document.getElementById("grado").value;
+  var documen_sus = document.getElementById("document_sus").value;
+  var obser = document.getElementById("miTextarea").value;
+  
+  var table = document
+    .getElementById("FormacionTable")
+    .getElementsByTagName("tbody")[0];
+
+  // Crear una nueva fila
+  var newRow = table.insertRow(table.rows.length);
+
+  // Insertar celdas con los valores capturados
+  var cell1 = newRow.insertCell(0);
+  var cell2 = newRow.insertCell(1);
+  var cell3 = newRow.insertCell(2);
+  var cell4 = newRow.insertCell(3);
+  var cell5 = newRow.insertCell(4);
+  var cell6 = newRow.insertCell(5);
+  var cell7 = newRow.insertCell(6);
+  var cell8 = newRow.insertCell(7);
+  var cell9 = newRow.insertCell(8);
+  var cell10 = newRow.insertCell(9);
+  var cell11 = newRow.insertCell(10);
+  
+  // Establecer el contenido de las celdas
+  cell1.innerHTML = table.rows.length - 1; // Contador de orden
+  cell2.innerHTML = form_profe;
+  cell3.innerHTML = Pais;
+  cell4.innerHTML = universidad;
+  cell5.innerHTML = especialidad;
+  cell6.innerHTML = fech_ini;
+  cell7.innerHTML = fech_fin;
+  cell8.innerHTML = grado_obte; // Cambia esto según el campo que quieras mostrar
+  cell9.innerHTML = documen_sus;
+  cell10.innerHTML = obser;
+  cell11.innerHTML = opciones;
+ 
 }

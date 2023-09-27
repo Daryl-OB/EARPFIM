@@ -460,7 +460,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary"
-                                                onclick="mensaje()">Guardar</button>
+                                                onclick="insertarTableDomicilio()">Guardar</button>
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cerrar</button>
                                         </div>
@@ -494,100 +494,98 @@
                         <article class="content-familiar">
                             <h3 class="title">Familiar</h3>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal1">
-                            Añadir Registro
-                        </button>
+                                data-bs-target="#exampleModal1">
+                                Añadir Registro
+                            </button>
 
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" style="max-width: 900px;">
-                                <div class="modal-content">
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" style="max-width: 800px;">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
-                                                Profesional</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body p-4">
-                                            <form>
-                                                <div class="row g-9 ">
-                                                    <div class="col-md-6">
-                                                        <b>Apellidos y Nombres</b>
-                                                        <div class="form">
-                                                            <input type="text" class="text">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
+                                                    Profesional</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body p-4">
+                                                <form>
+                                                    <div class="row g-9 ">
+                                                        <div class="col-md-6">
+                                                            <b>Apellidos y Nombres</b>
+                                                            <div class="form">
+                                                                <input type="text" class="text">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Parantesco</b>
-                                                        <div class="form">
-                                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example">
-                                                                <option disabled selected>Seleccionar</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
-                                                            </select>
+                                                        <div class="col-md-6">
+                                                            <b>Parantesco</b>
+                                                            <div class="form">
+                                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                                    aria-label=".form-select-lg example">
+                                                                    <option disabled selected>Seleccionar</option>
+                                                                    <option value="1">One</option>
+                                                                    <option value="2">Two</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Fecha de Nacimiento</b>
-                                                        <div class="form">
-                                                            <input type="date" class="date" name="" id="">
+                                                        <div class="col-md-6">
+                                                            <b>Fecha de Nacimiento</b>
+                                                            <div class="form">
+                                                                <input type="date" class="date" name="" id="">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Estado Civil</b>
-                                                        <div class="form">
-                                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example">
-                                                                <option disabled selected>Seleccionar</option>
-                                                                <option value="1">Soltero</option>
-                                                                <option value="2">Casado</option>
-                                                                <option value="3">Viudo</option>
-                                                                <option value="4">Divorciado</option>
-                                                            </select>
+                                                        <div class="col-md-6">
+                                                            <b>Estado Civil</b>
+                                                            <div class="form">
+                                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                                    aria-label=".form-select-lg example">
+                                                                    <option disabled selected>Seleccionar</option>
+                                                                    <option value="1">Soltero</option>
+                                                                    <option value="2">Casado</option>
+                                                                    <option value="3">Viudo</option>
+                                                                    <option value="4">Divorciado</option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Nivel de estudios</b>
-                                                        <div class="form">
-                                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example">
-                                                                <option disabled selected>Seleccionar</option>
-                                                                <option value="1"></option>
-                                                                <option value="2"></option>
-                                                            </select>
+                                                        <div class="col-md-6">
+                                                            <b>Nivel de estudios</b>
+                                                            <div class="form">
+                                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                                    aria-label=".form-select-lg example">
+                                                                    <option disabled selected>Seleccionar</option>
+                                                                    <option value="1"></option>
+                                                                    <option value="2"></option>
+                                                                </select>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Ocupación</b>
-                                                        <div class="form">
-                                                            <input type="text" class="text">
+                                                        <div class="col-md-6">
+                                                            <b>Ocupación</b>
+                                                            <div class="form">
+                                                                <input type="text" class="text">
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>¿Dependes economicamente de Ud.?</b>
-                                                        <div class="form">
-                                                            <input type="radio" name="tsSelector" id="">Si
-                                                            <input type="radio" name="tsSelector" id="">No
+                                                        <div class="col-md-6">
+                                                            <b>¿Dependes economicamente de Ud.?</b>
+                                                            <div class="form">
+                                                                <input type="radio" name="tsSelector" id="">Si
+                                                                <input type="radio" name="tsSelector" id="">No
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onclick="datos()">Save
-                                                changes</button>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save
+                                                    changes</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>    
-                            
                         </article>
-
                         <article class="content-caso-sos">
                             <h3 class="title">1.1.-PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
                             <div class="contacto">
@@ -688,10 +686,6 @@
                                     <input type="text" name="" id="" class="text"></b>
                             </div>
                         </article>
-
-
-
-
                     </article>
                     <article class="content-dos d-none" id="content-dos">
                         <h4 class="title">3.-DATOS DE FORMACIÓN PROFESIONAL: Indicar Grados y Títulos
@@ -777,9 +771,8 @@
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" onclick="datos()">Save
-                                                changes</button>
+                                                data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-primary" onclick="insertarTableFormación()">Guardar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -815,8 +808,12 @@
     </main>
     <script src="/js/script.js"></script>
     <script src="/js/info-docente.js"> </script>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
     <!-- Swee alert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
