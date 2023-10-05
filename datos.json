@@ -9,7 +9,7 @@
     {
       "id": "2",
       "Departamento": "Ancash",
-      "Ancash": {
+      "provincias": {
         
       }
     },
@@ -99,15 +99,15 @@
         "nombre": "Lima",
         "distritos": [
           {
-            
+            "id":"1",
             "nombre": "Lima"
           },
           {
-          
+            "id":"2",
             "nombre": "San Isidro"
           },
           {
-            
+            "id":"3",
             "nombre": "Miraflores"
           }
         ]

@@ -6,12 +6,12 @@ const body = document.querySelector("body"),
   
   toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
-    if (window.innerWidth <= 800) {
+    if (window.innerWidth <= 1025) {
       pant.classList.toggle("d-none");   
     }
 });
 pant.addEventListener("click", () => {
-  if (window.innerWidth <= 800) {
+  if (window.innerWidth <= 1025) {
     pant.classList.toggle("d-none");
     sidebar.classList.toggle("close");
   }

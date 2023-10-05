@@ -1,31 +1,25 @@
-function cargarHorario() {
+
     fetch("/horario.json")
       .then(response => response.json())
       .then(data => {
-        const horario = data.horario;
-        const table = document.getElementById('horarioTable').getElementsByTagName('tbody')[0];
-  
-        // Recorre las horas (debes usar horario['Lunes'] en lugar de horario['lunes'])
-        for (const hora in horario['Lunes']) {
-          const row = table.insertRow();
-          const horaCell = row.insertCell(0);
-          horaCell.innerHTML = hora;
-  
-          // Recorre los días de la semana
-          for (const dia in horario) {
-            const cell = row.insertCell();
-            cell.style.width = '155px';
-            if (horario[dia][hora]) {
-              cell.innerHTML = horario[dia][hora];
-            } else {
-              cell.innerHTML = ''; // Deja las celdas vacías si no hay clase
-            }
-            
-          }
-        }
+         const curso=[]
+         const duración =[]
+         const table = document.getElementById('horarioTable').getElementsByTagName('tbody')[0];
+         data.forEach(objetosDatos => {
+          const html= `(${objetosDatos.tope}) ${objetosDatos.codCurso}-${objetosDatos.secCurso} / [${objetosDatos.codAula}](${objetosDatos.teopra})`;
+          var hora= `(${objetosDatos.hora})`;
+          //document.getElementById("horarioTable").innerHTML= html;
+            curso.push(html);   
+            duración.push(hora);
+        });
+        console.log(curso);
+        console.log(duración);
+      
+
       })
-      .catch(error => console.error('Error al cargar el horario:', error));
-  }
+      .catch((error)=>{
+        console.error("error ar cargar");
+      });
+
   
-  // Cargar el horario cuando se cargue la página
-  window.onload = cargarHorario;
+ 

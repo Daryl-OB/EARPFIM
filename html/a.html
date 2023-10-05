@@ -12,187 +12,53 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
+<div id="pagination">
+  <ul>
+    <li><a href="#">Anterior</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">Siguiente</a></li>
+  </ul>
+</div>
+
 
 <body>
-  <table id="horarioTable" class="table table-bordered text-center">
-    <thead>
-      <tr>
-        <th>Hora</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Aquí se llenarán los datos desde JavaScript -->
-    </tbody>
-  </table>
-  
-<script>
-// Ruta al archivo JSON
-/*const jsonFile = 'horario.json';
+<script>// Importa Pagination.js
+    import Pagination from "./pagination";
+    
+    // Crea un objeto de paginación
+    const pagination = new Pagination({
+      pages: 10,
+      itemsPerPage: 10,
+    });
+    
+    // Agrega el objeto de paginación a tu HTML
+    <div id="pagination">
+      {pagination.render()}
+    </div>
+    
+    // Actualiza el objeto de paginación con los datos de la paginación
+    pagination.update({
+      // Datos de la paginación
+      items: [
+        {
+          id: 1,
+          name: "Juan Pérez",
+          email: "juan.perez@example.com",
+        },
+        {
+          id: 2,
+          name: "María García",
+          email: "maria.garcia@example.com",
+        },
+        ...
+      ],
+    });
+    </script>
 
-// Función para cargar y procesar el archivo JSON
-// JSON con el horario de clases
-const horarioJSON = {
-  "horario": {
-    "lunes": {
-      "07-08" : "",
-        "08-09" : "BICO1-F/[virtual](T)",
-        "09-10" : "BICO1-F/[virtual](P)",
-        "10-11" : "BICO1-F/[virtual](P)",
-        "11-12" : "",
-        "12-13" : "",
-        "13-14" : "",
-        "14-15" : "",
-        "15-16" : "MB545-C/[virtual](P)",
-        "16-17" : "",
-        "17-18" : "",
-        "19-20" : "",
-        "21-22" : "",
-        "22-23" : "",
-        "23-24" : ""
-    },
-    "martes": {
-      "07-08" : "",
-        "08-09" : "BICO1-F/[virtual](T)",
-        "09-10" : "BICO1-F/[virtual](P)",
-        "10-11" : "BICO1-F/[virtual](P)",
-        "11-12" : "",
-        "12-13" : "",
-        "13-14" : "",
-        "14-15" : "",
-        "15-16" : "MB545-C/[virtual](P)",
-        "16-17" : "",
-        "17-18" : "",
-        "19-20" : "",
-        "21-22" : "",
-        "22-23" : "",
-        "23-24" : ""
-    },
-    "miércoles": {
-      "07-08" : "",
-        "08-09" : "BICO1-F/[virtual](T)",
-        "09-10" : "BICO1-F/[virtual](P)",
-        "10-11" : "BICO1-F/[virtual](P)",
-        "11-12" : "",
-        "12-13" : "",
-        "13-14" : "",
-        "14-15" : "",
-        "15-16" : "MB545-C/[virtual](P)",
-        "16-17" : "",
-        "17-18" : "",
-        "19-20" : "",
-        "21-22" : "",
-        "22-23" : "",
-        "23-24" : ""
-    },
-    "jueves": {
-      "07-08" : "",
-        "08-09" : "BICO1-F/[virtual](T)",
-        "09-10" : "BICO1-F/[virtual](P)",
-        "10-11" : "BICO1-F/[virtual](P)",
-        "11-12" : "",
-        "12-13" : "",
-        "13-14" : "",
-        "14-15" : "",
-        "15-16" : "MB545-C/[virtual](P)",
-        "16-17" : "",
-        "17-18" : "",
-        "19-20" : "",
-        "21-22" : "",
-        "22-23" : "",
-        "23-24" : ""
-    },
-    "viernes": {
-      "07-08" : "",
-        "08-09" : "BICO1-F/[virtual](T)",
-        "09-10" : "BICO1-F/[virtual](P)",
-        "10-11" : "BICO1-F/[virtual](P)",
-        "11-12" : "",
-        "12-13" : "",
-        "13-14" : "",
-        "14-15" : "",
-        "15-16" : "MB545-C/[virtual](P)",
-        "16-17" : "",
-        "17-18" : "",
-        "19-20" : "",
-        "21-22" : "",
-        "22-23" : "",
-        "23-24" : ""
-    }
-  }
-};
-
-function cargarHorario() {
-  const horario = horarioJSON.horario;
-  const table = document.getElementById('horarioTable').getElementsByTagName('tbody')[0];
-
-  // Recorre las horas
-  for (const hora in horario['lunes']) {
-    const row = table.insertRow();
-    const horaCell = row.insertCell(0);
-    horaCell.innerHTML = hora;
-
-    // Recorre los días de la semana
-    for (const dia in horario) {
-      const cell = row.insertCell();
-      if (horario[dia][hora]) {
-        cell.innerHTML = horario[dia][hora];
-      } else {
-        cell.innerHTML = ''; // Deja las celdas vacías si no hay clase
-      }
-    }
-  }
-}
-
-// Cargar el horario cuando se cargue la página
-window.onload = cargarHorario;*/
-
-
-// Ruta al archivo JSON
- // Reemplaza con la ruta correcta
-
-// Función para cargar el horario en la tabla
-function cargarHorario() {
-  fetch("/horario.json")
-    .then(response => response.json())
-    .then(data => {
-      const horario = data.horario;
-      const table = document.getElementById('horarioTable').getElementsByTagName('tbody')[0];
-
-      // Recorre las horas (debes usar horario['Lunes'] en lugar de horario['lunes'])
-      for (const hora in horario['Lunes']) {
-        const row = table.insertRow();
-        const horaCell = row.insertCell(0);
-        horaCell.innerHTML = hora;
-
-        // Recorre los días de la semana
-        for (const dia in horario) {
-          const cell = row.insertCell();
-          if (horario[dia][hora]) {
-            cell.innerHTML = horario[dia][hora];
-          } else {
-            cell.innerHTML = ''; // Deja las celdas vacías si no hay clase
-          }
-        }
-      }
-    })
-    .catch(error => console.error('Error al cargar el horario:', error));
-}
-
-// Cargar el horario cuando se cargue la página
-window.onload = cargarHorario;
-;
-
-
-
-  
-  </script>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

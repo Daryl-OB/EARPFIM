@@ -171,7 +171,7 @@ después de un elemento `.sidebar` con la clase `.close`. */
   margin:20px 50px;
 }
 
-@media (max-width: 800px) {
+@media (max-width:1025px) {
   
   .sidebar{
     width: 0px;

@@ -1,15 +1,21 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   desbloqueo();
   ocultar();
-  
+
 });
 
+var paisSelect = document.getElementById("pais");
+var departamentoSelect = document.getElementById("departamento");
+var provinciaSelect = document.getElementById("provincia");
+var distritoSelect = document.getElementById("distrito");
+var tip_viaSelect = document.getElementById("tip_via");
+var tipo_zonaSelect = document.getElementById("tipo_zona");
+var tipoSelect = document.getElementById("tipo");
+var tabla = document.getElementById("tabla");
 function desbloqueo() {
   // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
-  var paisSelect = document.getElementById("pais");
-  var departamentoSelect = document.getElementById("departamento");
-  var provinciaSelect = document.getElementById("provincia");
-  var distritoSelect = document.getElementById("distrito");
+
 
   // Agrega un evento "change" al select de id "pais"
   paisSelect.addEventListener("change", function () {
@@ -28,6 +34,12 @@ function desbloqueo() {
 
   provinciaSelect.addEventListener("change", function () {
     distritoSelect.removeAttribute("disabled");
+  });
+
+  distritoSelect.addEventListener("change", function () {
+    tipoSelect.removeAttribute("disabled");
+    tip_viaSelect.removeAttribute("disabled");
+    tipo_zonaSelect.removeAttribute("disabled");
   });
 
   fetch("/datos.json")
@@ -91,6 +103,7 @@ function desbloqueo() {
         }
       });
     });
+
 }
 function ocultar() {
   const btn1 = body.querySelector(".btn1"),
@@ -100,67 +113,75 @@ function ocultar() {
 
   btn1.addEventListener("click", () => {
     contentUno.classList.remove("d-none"),
-    contentDos.classList.add("d-none"),
-
-    btn1.classList.add("active"),
-    btn2.classList.remove("active");
+      contentDos.classList.add("d-none"),
+      btn1.classList.add("active"),
+      btn2.classList.remove("active");
   });
   btn2.addEventListener("click", () => {
     contentUno.classList.add("d-none"),
-    contentDos.classList.remove("d-none"),
-
-    btn1.classList.remove("active"),
-    btn2.classList.add("active");
+      contentDos.classList.remove("d-none"),
+      btn1.classList.remove("active"),
+      btn2.classList.add("active");
   });
 }
 
-/*Table*/
-function insertarTableDomicilio() {
-  // Capturar los valores de los campos del formulario
-  var pais = document.getElementById("pais").value;
-  var departamento = document.getElementById("departamento").value;
-  var provincia = document.getElementById("provincia").value;
-  var distrito = document.getElementById("distrito").value;
-  var tipoVia = document.getElementById("Tip_vía").value;
-  var nombreVia = document.getElementById("Nom_via").value;
-  var tipo = document.getElementById("tipo").value;
-  var numeroInmueble = document.getElementById("N_inmueblo").value;
-  var tipoZona = document.getElementById("tipo_zona").value;
-  var nombreZona = document.getElementById("N_zona").value;
-  var table = document
-    .getElementById("DomicilioTable")
-    .getElementsByTagName("tbody")[0];
 
-  // Crear una nueva fila
-  var newRow = table.insertRow(table.rows.length);
+const datoDomicilio = [];
 
-  // Insertar celdas con los valores capturados
-  var cell1 = newRow.insertCell(0);
-  var cell2 = newRow.insertCell(1);
-  var cell3 = newRow.insertCell(2);
-  var cell4 = newRow.insertCell(3);
-  var cell5 = newRow.insertCell(4);
-  var cell6 = newRow.insertCell(5);
-  var cell7 = newRow.insertCell(6);
-  var cell8 = newRow.insertCell(7);
-  var cell9 = newRow.insertCell(8);
-  var cell10 = newRow.insertCell(9);
-  var cell11 = newRow.insertCell(10);
-  var cell12 = newRow.insertCell(11);
-  // Establecer el contenido de las celdas
-  cell1.innerHTML = table.rows.length - 1; // Contador de orden
-  cell2.innerHTML = pais;
-  cell3.innerHTML = pais;
-  cell4.innerHTML = departamento;
-  cell5.innerHTML = provincia;
-  cell6.innerHTML = distrito;
-  cell7.innerHTML = tipoVia;
-  cell8.innerHTML = nombreVia; // Cambia esto según el campo que quieras mostrar
-  cell9.innerHTML = tipo;
-  cell10.innerHTML = numeroInmueble;
-  cell11.innerHTML = tipoZona;
-  cell12.innerHTML = nombreZona;
-}
+document.getElementById("DomicilioForm").addEventListener('submit', e => {
+  e.preventDefault();
+
+  const pais = paisSelect.options[paisSelect.selectedIndex].text
+  const depaDato = departamentoSelect.value + " " + departamentoSelect.options[departamentoSelect.selectedIndex].text;
+  const proviDato = provinciaSelect.value + " " + provinciaSelect.options[provinciaSelect.selectedIndex].text;
+  const distriDato = distritoSelect.value + " " + distritoSelect.options[distritoSelect.selectedIndex].text;
+  const tip_viaDato = tip_viaSelect.options[tip_viaSelect.selectedIndex].text;
+  const tipoDato = tipoSelect.options[tipoSelect.selectedIndex].text;
+  const tipo_zonaDato = tipo_zonaSelect.options[tipo_zonaSelect.selectedIndex].text;
+  const n_zonaDato = document.getElementById("N_zona").value;
+  const n_inmuebloDato = document.getElementById("N_inmueblo").value;
+  const nom_viaDato = document.getElementById("Nom_via").value;
+  const dire_extraDato = document.getElementById("dire_extrajera").value;
+
+  const orden = datoDomicilio.length + 1; // Sumamos 1 para el nuevo elemento
+
+  const dato = [orden, pais, dire_extraDato, depaDato, proviDato, distriDato, tip_viaDato, nom_viaDato, tipoDato, n_inmuebloDato, tipo_zonaDato, n_zonaDato];
+
+  datoDomicilio.push(dato);
+
+
+  // Limpia la tabla antes de agregar filas para evitar duplicados
+  while (tabla.rows.length > 0) { // Comienza desde 1 para no eliminar el encabezado
+    tabla.deleteRow(0);
+  }
+
+  for (var i = 0; i < datoDomicilio.length; i++) {
+    // Crea una fila
+    var fila = document.createElement("tr");
+
+    // Itera a través de los elementos de la fila
+
+    for (var j = 0; j < datoDomicilio[i].length; j++) {
+      // Crea una celda
+      var celda = document.createElement("td");
+
+      // Establece el contenido de la celda con el valor actual
+      celda.textContent = datoDomicilio[i][j];
+
+      // Agrega la celda a la fila
+      fila.appendChild(celda);
+    }
+
+    // Agrega la fila a la tabla
+    tabla.appendChild(fila);
+
+  }
+
+  console.log(datoDomicilio);
+});
+
+
+
 
 function insertarTableFormación() {
   // Capturar los valores de los campos del formulario
@@ -173,7 +194,7 @@ function insertarTableFormación() {
   var grado_obte = document.getElementById("grado").value;
   var documen_sus = document.getElementById("document_sus").value;
   var obser = document.getElementById("miTextarea").value;
-  
+  var form = document.getElementById("profesionalForm");
   var table = document
     .getElementById("FormacionTable")
     .getElementsByTagName("tbody")[0];
@@ -193,7 +214,7 @@ function insertarTableFormación() {
   var cell9 = newRow.insertCell(8);
   var cell10 = newRow.insertCell(9);
   var cell11 = newRow.insertCell(10);
-  
+
   // Establecer el contenido de las celdas
   cell1.innerHTML = table.rows.length - 1; // Contador de orden
   cell2.innerHTML = form_profe;
@@ -205,6 +226,8 @@ function insertarTableFormación() {
   cell8.innerHTML = grado_obte; // Cambia esto según el campo que quieras mostrar
   cell9.innerHTML = documen_sus;
   cell10.innerHTML = obser;
-  cell11.innerHTML = opciones;
- 
+  cell11.innerHTML =
+    '<button type="button" class="btn btn-primary"><i class="bx bxs-pencil"></i></button>';
+
+  form.reset();
 }

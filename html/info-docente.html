@@ -314,7 +314,6 @@
                                         <select class="form-select form-select-lg mb-3 fs-6 "
                                             aria-label=".form-select-lg example" id="" disabled>
                                             <option value="" selected>Seleccionar</option>
-
                                         </select>
                                     </div>
                                 </div>
@@ -334,7 +333,6 @@
                                         <select class="form-select form-select-lg mb-3 fs-6"
                                             aria-label=".form-select-lg example" id="" disabled>
                                             <option value="" selected>Seleccionar</option>
-
                                         </select>
                                     </div>
                                 </div>
@@ -359,19 +357,25 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body">
-                                            <form method="post" id="DomicilioForm">
+                                        <form  id="DomicilioForm">
+                                            <div class="modal-body">
                                                 <div class="row g-9 ">
                                                     <div class="col-md-6">
                                                         <b>País</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="pais"
-                                                                name="pais">
+                                                                >
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">Perú</option>
                                                                 <option value="2">Otro país</option>
                                                             </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6 d-none">
+                                                        <b>Dirección extrajera</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="dire_extrajera">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -379,7 +383,7 @@
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="departamento"
-                                                                name="departamento" disabled>
+                                                                 disabled selected>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -389,8 +393,8 @@
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="provincia"
-                                                                name="provincia" disabled>
-                                                                <option value="" selected>Seleccionar</option>
+                                                                 disabled>
+                                                                <option value="" selected disabled>Seleccionar</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -399,7 +403,7 @@
                                                         <div class="form" disabled>
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="distrito"
-                                                                name="distrito" disabled>
+                                                                 disabled>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -408,7 +412,8 @@
                                                         <b>Tipo de Vía</b>
                                                         <div class="form" disabled>
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="Tip_vía">
+                                                                aria-label=".form-select-lg example" id="tip_via"
+                                                                disabled>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -425,7 +430,7 @@
                                                         <b>Tipo</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="tipo">
+                                                                aria-label=".form-select-lg example" id="tipo" disabled>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -442,7 +447,8 @@
                                                         <b>Tipo de Zona</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="tipo_zona">
+                                                                aria-label=".form-select-lg example" id="tipo_zona"
+                                                                disabled>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -456,14 +462,13 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary"
-                                                onclick="insertarTableDomicilio()">Guardar</button>
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                        </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal">Cerrar</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -484,15 +489,15 @@
                                             <th scope="col">Tipo de Zona</th>
                                             <th scope="col">Nombre de Zonas </th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr> </tr>
+                                    </thead >
+                                    <tbody id="tabla">
+                                       <tr><td colspan="12" style="font-size: 20px;">NO HAY DATOS EN LA TABLA</td></tr>
                                     </tbody>
                                 </table>
                             </div>
                         </article>
                         <article class="content-familiar">
-                            <h3 class="title">Familiar</h3>
+                            <h3 class="title" id="title">Familiar</h3>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal1">
                                 Añadir Registro
@@ -505,13 +510,13 @@
                                     <div class="modal-content">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
+                                                <h5 class="modal-title" id="staticBackdropLabel">Agregar Formación
                                                     Profesional</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body p-4">
-                                                <form>
+                                                <form id="profesionalForm">
                                                     <div class="row g-9 ">
                                                         <div class="col-md-6">
                                                             <b>Apellidos y Nombres</b>
@@ -704,13 +709,13 @@
                                 <div class="modal-content">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formació
+                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formación
                                                 Profesional</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body p-4">
-                                            <form>
+                                            <form id="profesionalForm">
                                                 <div class="row g-9 ">
                                                     <div class="col-md-6">
                                                         <b>Formación profesional</b>
@@ -772,7 +777,8 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary" onclick="insertarTableFormación()">Guardar</button>
+                                            <button type="button" class="btn btn-primary"
+                                                onclick="insertarTableFormación()">Guardar</button>
                                         </div>
                                     </div>
                                 </div>
