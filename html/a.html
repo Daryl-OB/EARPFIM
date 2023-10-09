@@ -12,61 +12,41 @@
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
 </head>
-<div id="pagination">
-  <ul>
-    <li><a href="#">Anterior</a></li>
-    <li class="active"><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">Siguiente</a></li>
-  </ul>
-</div>
-
 
 <body>
-<script>// Importa Pagination.js
-    import Pagination from "./pagination";
-    
-    // Crea un objeto de paginación
-    const pagination = new Pagination({
-      pages: 10,
-      itemsPerPage: 10,
-    });
-    
-    // Agrega el objeto de paginación a tu HTML
-    <div id="pagination">
-      {pagination.render()}
-    </div>
-    
-    // Actualiza el objeto de paginación con los datos de la paginación
-    pagination.update({
-      // Datos de la paginación
-      items: [
-        {
-          id: 1,
-          name: "Juan Pérez",
-          email: "juan.perez@example.com",
-        },
-        {
-          id: 2,
-          name: "María García",
-          email: "maria.garcia@example.com",
-        },
-        ...
-      ],
+  <form id="miFormulario">
+    <select id="miSelect" disabled>
+      <option value="opcion1">Opción 1</option>
+      <option value="opcion2">Opción 2</option>
+      <option value="opcion3">Opción 3</option>
+    </select>
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const formulario = document.getElementById("miFormulario");
+      formulario.addEventListener("submit", function(event) {
+        const select = document.getElementById("miSelect");
+        
+        if (select.disabled) {
+          event.preventDefault(); // Evita que el formulario se envíe
+          alert("El campo select está bloqueado y no se puede enviar el formulario.");
+        }
+      });
     });
     </script>
+    
 
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 </body>
 
 </html>

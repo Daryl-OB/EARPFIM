@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 var paisSelect = document.getElementById("pais");
+var dire_extra = document.getElementById("dire_extrajera");
 var departamentoSelect = document.getElementById("departamento");
 var provinciaSelect = document.getElementById("provincia");
 var distritoSelect = document.getElementById("distrito");
@@ -13,18 +14,30 @@ var tip_viaSelect = document.getElementById("tip_via");
 var tipo_zonaSelect = document.getElementById("tipo_zona");
 var tipoSelect = document.getElementById("tipo");
 var tabla = document.getElementById("tabla");
+var tablaFormacion = document.getElementById("bobyFormacion");
+var colPais = document.getElementById("col-Pais");
+var colDirec = document.getElementById("col-Dire-extrajera");
+
+var formDomicilio = document.getElementById("DomicilioForm");
+var selects = formDomicilio.querySelectorAll('select');
+var inputs = formDomicilio.querySelectorAll('input');
+const datoDomicilio = [];
+
 function desbloqueo() {
   // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
 
-
-  // Agrega un evento "change" al select de id "pais"
   paisSelect.addEventListener("change", function () {
-    // Verifica si la opción seleccionada es "Perú"
+
     if (paisSelect.value === "1") {
-      // Cambia "1" al valor correcto para "Perú"
-      departamentoSelect.removeAttribute("disabled"); // Habilita el select de id "departamento"
+
+      departamentoSelect.removeAttribute("disabled");
     } else {
-      departamentoSelect.setAttribute("disabled", "disabled"); // Desactiva el select de id "departamento"
+
+      restablecer()
+      colDirec.classList.remove("d-none");
+      colPais.classList.add("d-none");
+      paisSelect.removeAttribute("required");
+
     }
   });
 
@@ -40,7 +53,12 @@ function desbloqueo() {
     tipoSelect.removeAttribute("disabled");
     tip_viaSelect.removeAttribute("disabled");
     tipo_zonaSelect.removeAttribute("disabled");
+    for (var i = 1; i < inputs.length; i++) {
+      inputs[i].disabled = false;
+    }
   });
+
+
 
   fetch("/datos.json")
     .then(function (response) {
@@ -55,12 +73,14 @@ function desbloqueo() {
         departamentoSelect.appendChild(option);
       });
 
-      // Agregar un evento de cambio al primer select
+      // Agregar un evento de cambio al primer select (departamento)
       departamentoSelect.addEventListener("change", function () {
-        // Limpiar los select de provincias y distritos
-
         // Obtener el ID del departamento seleccionado
         var selectedDepartamentoId = departamentoSelect.value;
+
+        // Limpiar los select de provincia y distrito
+        provinciaSelect.innerHTML = '<option value="" selected disabled>Seleccionar</option>';
+        distritoSelect.innerHTML = '<option value="" selected disabled>Seleccionar</option>';
 
         // Buscar las provincias correspondientes al departamento seleccionado
         var selectedDepartamento = data.find(function (departamento) {
@@ -75,36 +95,44 @@ function desbloqueo() {
             option.textContent = provincia.nombre;
             provinciaSelect.appendChild(option);
           });
+        }
+      });
 
-          // Agregar un evento de cambio al segundo select (provincias)
-          provinciaSelect.addEventListener("change", function () {
-            // Limpiar el select de distritos
+      // Agregar un evento de cambio al segundo select (provincias)
+      provinciaSelect.addEventListener("change", function () {
+        // Obtener el ID de la provincia seleccionada
+        var selectedProvinciaId = provinciaSelect.value;
 
-            // Obtener el ID de la provincia seleccionada
-            var selectedProvinciaId = provinciaSelect.value;
+        // Limpiar el select de distritos
+        distritoSelect.innerHTML = '<option value="" selected disabled>Seleccionar</option>';
 
-            // Buscar los distritos correspondientes a la provincia seleccionada
-            var selectedProvincia = selectedDepartamento.provincias.find(
-              function (provincia) {
-                return provincia.id === selectedProvinciaId;
-              }
-            );
+        // Obtener el ID del departamento seleccionado
+        var selectedDepartamentoId = departamentoSelect.value;
 
-            if (selectedProvincia) {
-              // Llenar el tercer select con opciones de distritos
-              selectedProvincia.distritos.forEach(function (distrito) {
-                var option = document.createElement("option");
-                option.value = distrito.id;
-                option.textContent = distrito.nombre;
-                distritoSelect.appendChild(option);
-              });
-            }
+        // Buscar los distritos correspondientes a la provincia seleccionada
+        var selectedDepartamento = data.find(function (departamento) {
+          return departamento.id === selectedDepartamentoId;
+        });
+
+        if (selectedDepartamento) {
+          var selectedProvincia = selectedDepartamento.provincias.find(function (provincia) {
+            return provincia.id === selectedProvinciaId;
           });
+
+          if (selectedProvincia) {
+            // Llenar el tercer select con opciones de distritos
+            selectedProvincia.distritos.forEach(function (distrito) {
+              var option = document.createElement("option");
+              option.value = distrito.id;
+              option.textContent = distrito.nombre;
+              distritoSelect.appendChild(option);
+            });
+          }
         }
       });
     });
-
 }
+
 function ocultar() {
   const btn1 = body.querySelector(".btn1"),
     btn2 = body.querySelector(".btn2"),
@@ -126,12 +154,13 @@ function ocultar() {
 }
 
 
-const datoDomicilio = [];
 
-document.getElementById("DomicilioForm").addEventListener('submit', e => {
+
+formDomicilio.addEventListener('submit', e => {
   e.preventDefault();
-
-  const pais = paisSelect.options[paisSelect.selectedIndex].text
+  
+  const orden = datoDomicilio.length + 1;
+  const pais = paisSelect.options[paisSelect.selectedIndex].text;
   const depaDato = departamentoSelect.value + " " + departamentoSelect.options[departamentoSelect.selectedIndex].text;
   const proviDato = provinciaSelect.value + " " + provinciaSelect.options[provinciaSelect.selectedIndex].text;
   const distriDato = distritoSelect.value + " " + distritoSelect.options[distritoSelect.selectedIndex].text;
@@ -141,93 +170,90 @@ document.getElementById("DomicilioForm").addEventListener('submit', e => {
   const n_zonaDato = document.getElementById("N_zona").value;
   const n_inmuebloDato = document.getElementById("N_inmueblo").value;
   const nom_viaDato = document.getElementById("Nom_via").value;
-  const dire_extraDato = document.getElementById("dire_extrajera").value;
-
-  const orden = datoDomicilio.length + 1; // Sumamos 1 para el nuevo elemento
+  const dire_extraDato = dire_extra.value;
 
   const dato = [orden, pais, dire_extraDato, depaDato, proviDato, distriDato, tip_viaDato, nom_viaDato, tipoDato, n_inmuebloDato, tipo_zonaDato, n_zonaDato];
 
   datoDomicilio.push(dato);
 
-
-  // Limpia la tabla antes de agregar filas para evitar duplicados
-  while (tabla.rows.length > 0) { // Comienza desde 1 para no eliminar el encabezado
+  // Resto del código sigue igual
+  while (tabla.rows.length > 0) {
     tabla.deleteRow(0);
   }
 
   for (var i = 0; i < datoDomicilio.length; i++) {
-    // Crea una fila
     var fila = document.createElement("tr");
 
-    // Itera a través de los elementos de la fila
-
     for (var j = 0; j < datoDomicilio[i].length; j++) {
-      // Crea una celda
       var celda = document.createElement("td");
-
-      // Establece el contenido de la celda con el valor actual
       celda.textContent = datoDomicilio[i][j];
-
-      // Agrega la celda a la fila
       fila.appendChild(celda);
     }
-
-    // Agrega la fila a la tabla
     tabla.appendChild(fila);
-
   }
-
-  console.log(datoDomicilio);
+  restablecer();
 });
 
 
+function restablecer() {
+  colDirec.classList.add("d-none");
+  colPais.classList.remove("d-none");
+  paisSelect.setAttribute("required", "true");
+  formDomicilio.reset();
 
+  for (var i = 1; i < selects.length; i++) {
+    selects[i].disabled = true;
+  }
+  for (var i = 1; i < inputs.length; i++) {
+    inputs[i].disabled = true;
+  }
+}
+
+const datoFormacion =[];
 
 function insertarTableFormación() {
-  // Capturar los valores de los campos del formulario
-  var form_profe = document.getElementById("form_profe").value;
-  var Pais = document.getElementById("Pais").value;
-  var universidad = document.getElementById("universidad").value;
-  var especialidad = document.getElementById("especialidad").value;
-  var fech_ini = document.getElementById("fech_ini").value;
-  var fech_fin = document.getElementById("fech_fin").value;
-  var grado_obte = document.getElementById("grado").value;
-  var documen_sus = document.getElementById("document_sus").value;
-  var obser = document.getElementById("miTextarea").value;
-  var form = document.getElementById("profesionalForm");
-  var table = document
-    .getElementById("FormacionTable")
-    .getElementsByTagName("tbody")[0];
 
-  // Crear una nueva fila
-  var newRow = table.insertRow(table.rows.length);
+  const ordenForma = datoFormacion.length+1;
+  const form_profeDato = document.getElementById("form_profe").value;
+  const PaisDato = document.getElementById("Pais").value;
+  const univerDato = document.getElementById("universidad").value;
+  const especiaDato = document.getElementById("especialidad").value;
+  const fech_initDato = document.getElementById("fech_ini").value;
+  const fech_finDato = document.getElementById("fech_fin").value;
+  const gradoDato = document.getElementById("grado").value;
+  // = document.getElementById("").value;
+  const textDato = document.getElementById("miTextarea").value;
+  
+  const formacion = [ordenForma,form_profeDato,PaisDato,univerDato,especiaDato,fech_initDato,fech_finDato,fech_finDato,gradoDato,textDato];
 
-  // Insertar celdas con los valores capturados
-  var cell1 = newRow.insertCell(0);
-  var cell2 = newRow.insertCell(1);
-  var cell3 = newRow.insertCell(2);
-  var cell4 = newRow.insertCell(3);
-  var cell5 = newRow.insertCell(4);
-  var cell6 = newRow.insertCell(5);
-  var cell7 = newRow.insertCell(6);
-  var cell8 = newRow.insertCell(7);
-  var cell9 = newRow.insertCell(8);
-  var cell10 = newRow.insertCell(9);
-  var cell11 = newRow.insertCell(10);
+  datoFormacion.push(formacion);
+  console.log(datoFormacion)
 
-  // Establecer el contenido de las celdas
-  cell1.innerHTML = table.rows.length - 1; // Contador de orden
-  cell2.innerHTML = form_profe;
-  cell3.innerHTML = Pais;
-  cell4.innerHTML = universidad;
-  cell5.innerHTML = especialidad;
-  cell6.innerHTML = fech_ini;
-  cell7.innerHTML = fech_fin;
-  cell8.innerHTML = grado_obte; // Cambia esto según el campo que quieras mostrar
-  cell9.innerHTML = documen_sus;
-  cell10.innerHTML = obser;
-  cell11.innerHTML =
-    '<button type="button" class="btn btn-primary"><i class="bx bxs-pencil"></i></button>';
+while (tablaFormacion.rows.length > 0) {
+  tablaFormacion.deleteRow(0);
+}
 
-  form.reset();
+for (var i = 0; i < datoFormacion.length; i++) {
+  var fila = document.createElement("tr");
+  var filaHTML = "";
+
+  for (var j = 0; j < datoFormacion[i].length; j++) {
+    var celda = document.createElement("td");
+    celda.textContent = datoFormacion[i][j];
+    fila.appendChild(celda);
+  }
+
+  filaHTML += '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1;"><i class="bx bxs-edit" style="color:#f7f7f2;"></i></button></td>';
+  filaHTML += '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1;"><i class="bx bx-minus" style="color:#f7f7f2;"></i></button></td>';
+
+
+  fila.innerHTML += filaHTML;
+
+  tablaFormacion.appendChild(fila);
+}
+
+  
+  
+  
+  
 }
