@@ -1,52 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Horarios</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
 </head>
-
 <body>
-  <form id="miFormulario">
-    <select id="miSelect" disabled>
-      <option value="opcion1">Opción 1</option>
-      <option value="opcion2">Opción 2</option>
-      <option value="opcion3">Opción 3</option>
-    </select>
-    <button type="submit">Enviar</button>
-  </form>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const formulario = document.getElementById("miFormulario");
-      formulario.addEventListener("submit", function(event) {
-        const select = document.getElementById("miSelect");
-        
-        if (select.disabled) {
-          event.preventDefault(); // Evita que el formulario se envíe
-          alert("El campo select está bloqueado y no se puede enviar el formulario.");
-        }
-      });
-    });
-    </script>
-    
+    <button id="mostrarTabla">Mostrar Tabla</button>
 
-  <!-- Bootstrap JavaScript Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+   
+        <table  id="Tabla" class="table table-striped text-center">
+        <thead>
+          <tr>
+            <th scope="col">Dia</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Horario</th>
+            <th scope="col">Marcación</th>
+            <th scope="col">Est</th>
+          </tr>
+        </thead>
+        <tbody></tbody> 
+        </table>
+       
+    <script src="script.js"></script>
+    <style>
+        #Tabla {
+    display: none;
+    width: 100%;
+    transition:  10.0s all;
+    overflow: hidden;
+}
 
-    </script>
+#Tabla.mostrar {
+    display: table;
+    height: auto;
+}
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-    </script>
-</body>
+#mostrarTabla {
+    cursor: pointer;
+}
 
-</html>
+    </style>
+<script>
+const mostrarTablaButton = document.getElementById("mostrarTabla");
+const miTabla = document.getElementById("Tabla");
+
+mostrarTablaButton.addEventListener("click", () => {
+    if (miTabla.classList.contains("mostrar")) {
+        miTabla.classList.remove("mostrar");
+    } else {
+        miTabla.classList.add("mostrar");
+    }
+});
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>

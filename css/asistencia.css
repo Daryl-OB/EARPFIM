@@ -32,6 +32,28 @@ background: #224fb1;
 margin: 10px 5px;
 
 }
+
+.content-meses{
+    margin-top:20px;
+    overflow: hidden; 
+}
+
+
+.content-table{
+    overflow: auto;
+   
+}
+.asisten-mensua{
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px 3px #cfcfcf ;
+    margin: 0px 10px;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+
+
+
 @media(max-width:720px){
     .content-asist-button{
         overflow: hidden;
@@ -55,8 +77,5 @@ margin: 10px 5px;
     } 
     
     
-    .semestre{
-      
-      
-    }
+    
 }

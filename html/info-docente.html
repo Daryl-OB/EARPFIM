@@ -342,22 +342,21 @@
                             <h3 class="title">Domicilio</h3>
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop">
+                                data-bs-target="#exampleModal">
                                 Añadir Registro
                             </button>
+
                             <!-- Modal -->
-                            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static"
-                                data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
+                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                                 aria-hidden="true">
-                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"
-                                    style="max-width: 900px;">
+                                <div class="modal-dialog" style="max-width: 800px;">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="staticBackdropLabel">Agregar Domicilio</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <form  id="DomicilioForm">
+                                        <form id="DomicilioForm">
                                             <div class="modal-body">
                                                 <div class="row g-9 ">
                                                     <div class="col-md-6 " id="col-Pais">
@@ -371,12 +370,14 @@
                                                             </select>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6  d-none" id="col-Dire-extrajera" >
+                                                    <div class="col-md-6  d-none" id="col-Dire-extrajera">
                                                         <div style="display: flex; align-items: center;">
-                                                            <i class='bx bx-left-arrow-alt'style="cursor: pointer; font-size:30px; bottom:10px;" onclick="restablecer()"></i><b>  Dirección extrajera</b>
+                                                            <i class='bx bx-left-arrow-alt'
+                                                                style="cursor: pointer; font-size:30px; bottom:10px;"
+                                                                onclick="restablecer()"></i><b> Dirección extrajera</b>
                                                         </div>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="dire_extrajera" >
+                                                            <input type="text" class="text" id="dire_extrajera">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -384,7 +385,7 @@
                                                         <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="departamento"
-                                                                 disabled required>
+                                                                disabled required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -394,17 +395,17 @@
                                                         <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="provincia"
-                                                                 disabled required>
+                                                                disabled required>
                                                                 <option value="" selected disabled>Seleccionar</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <b>Distrito</b>
-                                                        <div class="form"id="select">
+                                                        <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="distrito"
-                                                                 disabled required>
+                                                                disabled required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -419,22 +420,24 @@
                                                                 <option value="1">Calle</option>
                                                                 <option value="2">Avenida</option>
                                                                 <option value="3">Carretera</option>
-                                                               
-                                                                
+
+
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <b>Nombre de Vía</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="Nom_via" required disabled>
+                                                            <input type="text" class="text" id="Nom_via" required
+                                                                disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <b>Tipo</b>
                                                         <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="tipo" disabled required>
+                                                                aria-label=".form-select-lg example" id="tipo" disabled
+                                                                required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">One</option>
                                                                 <option value="2">Two</option>
@@ -444,7 +447,8 @@
                                                     <div class="col-md-6">
                                                         <b>Número de Inmueblo</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="N_inmueblo" required disabled>
+                                                            <input type="text" class="text" id="N_inmueblo" required
+                                                                disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -466,15 +470,16 @@
                                                     <div class="col-md-6">
                                                         <b>Nombre de la Zona</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="N_zona" required disabled>
+                                                            <input type="text" class="text" id="N_zona" required
+                                                                disabled>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="submit" class="btn btn-primary">Guardar</button>
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal" onclick="restablecer()">Cerrar</button>
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                                    onclick="restablecer()">Cerrar</button>
                                             </div>
                                         </form>
                                     </div>
@@ -497,14 +502,17 @@
                                             <th scope="col">Tipo de Zona</th>
                                             <th scope="col">Nombre de Zonas </th>
                                         </tr>
-                                    </thead >
+                                    </thead>
                                     <tbody id="tabla">
-                                       <tr><td colspan="12" style="font-size: 20px;">NO HAY DATOS EN LA TABLA</td></tr>
+                                        <tr>
+                                            <td colspan="12" style="font-size: 20px;">NO HAY DATOS EN LA TABLA</td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
                         </article>
                         <article class="content-familiar">
+                 
                             <h3 class="title" id="title">Familiar</h3>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal1">
@@ -524,7 +532,7 @@
                                                     aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body p-4">
-                                                <form id="profesionalForm">
+                                                <form id="familiarForm">
                                                     <div class="row g-9 ">
                                                         <div class="col-md-6">
                                                             <b>Apellidos y Nombres</b>
@@ -706,12 +714,12 @@
                             Fercha de Revalidación para el caso de Títulos y Grados otorgados en el Extranjero</h4>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
+                            data-bs-target="#exampleModal2">
                             Añadir Registro
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" style="max-width: 800px;">
                                 <div class="modal-content">
@@ -722,17 +730,18 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                         </div>
-                                        <div class="modal-body p-4">
-                                            <form id="profesionalForm">
+                                        <form id="profesionalForm">
+                                            <div class="modal-body p-4">
                                                 <div class="row g-9 ">
                                                     <div class="col-md-6">
                                                         <b>Formación profesional</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="form_profe">
+                                                                aria-label=".form-select-lg example" id="form_profe"
+                                                                required>
                                                                 <option value="" disabled selected>Seleccionar</option>
-                                                                <option value="1">One</option>
-                                                                <option value="2">Two</option>
+                                                                <option value="1">Titulo profesional</option>
+                                                                <option value="2">Maestria</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -740,33 +749,43 @@
                                                         <b>Pais</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="Pais">
+                                                                aria-label=".form-select-lg example" id="Pais" required>
                                                                 <option value="" disabled selected>Seleccionar</option>
-                                                                <option value="1">One</option>
+                                                                <option value="1">Perú</option>
                                                                 <option value="2">Two</option>
                                                             </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <b>Universidad
-                                                            <input type="text" class="text" id="universidad"> </b>
+                                                        <b>Universidad</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="universidad" required>
+                                                        </div>
                                                     </div>
 
                                                     <div class="col-md-6">
-                                                        <b>Especialidad
-                                                            <input type="text" class="text" id="especialidad"></b>
+                                                        <b>Especialidad</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="especialidad" required>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <b>Fecha Inicio
-                                                            <input type="date" class="date" id="fech_ini"></b>
+                                                        <b>Fecha Inicio</b>
+                                                        <div class="form">
+                                                            <input type="date" class="date" id="fech_ini" required>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <b>Fecha Final</b>
-                                                        <input type="date" class="date" id="fech_fin">
+                                                        <div class="form">
+                                                            <input type="date" class="date" id="fech_fin" required>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6 p-3">
-                                                        <b>Grado Obtenido
-                                                            <input type="text" class="text" id="grado"></b>
+                                                        <b>Grado Obtenido</b>
+                                                        <div class="form">
+                                                            <input type="text" class="text" id="grado" required>
+                                                        </div>
                                                     </div>
                                                     <div class="col-md-6 p-3">
                                                         <b>Documento Sustentado</b><br>
@@ -776,18 +795,16 @@
                                                         </button>
                                                     </div>
                                                     <b>Observación:</b>
-                                                    <textarea id="miTextarea"
+                                                    <textarea id="miTextarea" style="height: 100px;"
                                                         placeholder="Escribe algo aquí..."></textarea>
-
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary"
-                                                onclick="insertarTableFormación()">Guardar</button>
-                                        </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-bs-dismiss="modal ">Cerrar</button>
+                                                <button type="submit" class="btn btn-primary a">Guardar</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -807,11 +824,12 @@
                                         <th scope="col">Documento sustentatorio</th>
                                         <th scope="col">Observación</th>
                                         <th scope="col" colspan="2">Opciones</th>
-                                        
                                     </tr>
                                 </thead>
                                 <tbody id="bobyFormacion">
-                                    <tr><td colspan="12" style="font-size: 20px;">NO DATOS EN LA TABLA</td> </tr>
+                                    <tr>
+                                        <td colspan="12" style="font-size: 20px;">NO DATOS EN LA TABLA</td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
