@@ -1,66 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla de Horarios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
-</head>
-<body>
-    <button id="mostrarTabla">Mostrar Tabla</button>
 
-   
-        <table  id="Tabla" class="table table-striped text-center">
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <table class="table table-bordered" id="miTabla">
         <thead>
           <tr>
-            <th scope="col">Dia</th>
-            <th scope="col">Curso</th>
-            <th scope="col">Horario</th>
-            <th scope="col">Marcación</th>
-            <th scope="col">Est</th>
+            <th>Columna 1</th>
+            <th>Columna 2</th>
+            <th>Columna 3</th>
           </tr>
         </thead>
-        <tbody></tbody> 
-        </table>
-       
-    <script src="script.js"></script>
-    <style>
-        #Tabla {
-    display: none;
-    width: 100%;
-    transition:  10.0s all;
-    overflow: hidden;
-}
-
-#Tabla.mostrar {
-    display: table;
-    height: auto;
-}
-
-#mostrarTabla {
-    cursor: pointer;
-}
-
-    </style>
+        <tbody>
+          <!-- Las filas y celdas se llenarán mediante JavaScript -->
+        </tbody>
+      </table>
 <script>
-const mostrarTablaButton = document.getElementById("mostrarTabla");
-const miTabla = document.getElementById("Tabla");
-
-mostrarTablaButton.addEventListener("click", () => {
-    if (miTabla.classList.contains("mostrar")) {
-        miTabla.classList.remove("mostrar");
-    } else {
-        miTabla.classList.add("mostrar");
-    }
-});
+    const datos = [
+  ["Fila 1, Columna 1", "Fila 1, Columna 2", "Fila 1, Columna 3"],
+  ["Fila 2, Columna 1", "Fila 2, Columna 2", "Fila 2, Columna 3"],
+  ["ffffff", "Fila 3, Columna 2", "Fila 3, Columna 3"]
+];
 
 
-</script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-        </script>
+const table = document.getElementById("miTabla");
+const tbody = table.getElementsByTagName("tbody")[0];
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-        </script>
+for (let j = 0; j < datos[0].length; j++) {
+  const row = tbody.insertRow();
+  for (let i = 0; i < datos.length; i++) {
+    const cell = row.insertCell(i);
+    cell.textContent = datos[i][j];
+  }
+}
+
+    </script>      
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

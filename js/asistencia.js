@@ -18,10 +18,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 let button = "";
 var content = document.getElementById("meses");
-let table = "";
 let num = 1;
 for (var i = meses.length - 1; i >= 0 && num <= 6; i--) {
-    button += `<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${num}" aria-expanded="false" aria-controls="collapseExample">${meses[i]}</button>
+    button += `<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${num}" aria-expanded="false" aria-controls="collapseExample">${meses[i]}</button>``
     <div class="collapse" id="collapseExample${num}">
         <table class="table table-striped text-center">
             <thead>
@@ -42,6 +41,8 @@ for (var i = meses.length - 1; i >= 0 && num <= 6; i--) {
     </div>`;
     num++;
 }
+
+
 
 content.innerHTML = button;
 
