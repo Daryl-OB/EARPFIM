@@ -35,6 +35,7 @@ function desbloqueo() {
       colDirec.classList.remove("d-none");
       colPais.classList.add("d-none");
       paisSelect.removeAttribute("required");
+      dire_extra.setAttribute("required","true");
     }
   });
 
@@ -157,28 +158,41 @@ formDomicilio.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const orden = datoDomicilio.length + 1;
-  const pais = paisSelect.options[paisSelect.selectedIndex].text;
-  const depaDato =
+  var pais = paisSelect.options[paisSelect.selectedIndex].text;
+  var depaDato =
     departamentoSelect.value +
     " " +
     departamentoSelect.options[departamentoSelect.selectedIndex].text;
-  const proviDato =
+  var proviDato =
     provinciaSelect.value +
     " " +
     provinciaSelect.options[provinciaSelect.selectedIndex].text;
-  const distriDato =
+  var distriDato =
     distritoSelect.value +
     " " +
     distritoSelect.options[distritoSelect.selectedIndex].text;
-  const tip_viaDato = tip_viaSelect.options[tip_viaSelect.selectedIndex].text;
-  const tipoDato = tipoSelect.options[tipoSelect.selectedIndex].text;
-  const tipo_zonaDato =
+  var tip_viaDato = tip_viaSelect.options[tip_viaSelect.selectedIndex].text;
+var tipoDato = tipoSelect.options[tipoSelect.selectedIndex].text;
+  var tipo_zonaDato =
     tipo_zonaSelect.options[tipo_zonaSelect.selectedIndex].text;
   const n_zonaDato = document.getElementById("N_zona").value;
   const n_inmuebloDato = document.getElementById("N_inmueblo").value;
   const nom_viaDato = document.getElementById("Nom_via").value;
   const dire_extraDato = dire_extra.value;
+  
 
+  if(pais==="Seleccionar"){
+    
+    pais="Otro pais"
+    depaDato="  ";
+    proviDato="  ";
+    distriDato="  ";
+    tip_viaDato="  ";
+    tipoDato=" ";
+    tipo_zonaDato="  ";
+  }else{
+
+  }
   const dato = [
     orden,
     pais,
@@ -229,6 +243,9 @@ profesionalForm.addEventListener("submit", (evento) => {
   var docSustDatos = document.getElementById("document_sus").value;
   var textDato = document.getElementById("miTextarea").value;
 
+
+  
+
   var formacion = [
     ordenForma,
     form_profeDato,
@@ -275,6 +292,7 @@ function restablecer() {
   colDirec.classList.add("d-none");
   colPais.classList.remove("d-none");
   paisSelect.setAttribute("required", "true");
+  dire_extra.removeAttribute("required");
   formDomicilio.reset();
 
   for (var i = 1; i < selects.length; i++) {
