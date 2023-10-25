@@ -439,7 +439,7 @@
                                                                 aria-label=".form-select-lg example" id="tipo" disabled
                                                                 required>
                                                                 <option value="" disabled selected>Seleccionar</option>
-                                                                <option value="1">One</option>
+                                                                <option value="1">Mz</option>
                                                                 <option value="2">Two</option>
                                                             </select>
                                                         </div>
@@ -752,7 +752,7 @@
                                                                 aria-label=".form-select-lg example" id="Pais" required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">Perú</option>
-                                                                <option value="2">Two</option>
+                                                                <option value="2">Otro Pais</option>
                                                             </select>
                                                         </div>
                                                     </div>
@@ -789,10 +789,10 @@
                                                     </div>
                                                     <div class="col-md-6 p-3">
                                                         <b>Documento Sustentado</b><br>
-                                                        <button type="button" class="btn btn-outline-secondary"
-                                                            id="document_sus">
-                                                            <i class='bx bxs-cloud-upload'></i>
-                                                        </button>
+                                                        <input type="file"  class="hidden" id="document_sus" accept=".pdf " required>
+                                                        <label for="document_sus" class="fileLabel btn btn-outline-secondary">
+                                                            <i class="bx bxs-cloud-upload"></i>
+                                                        </label>
                                                     </div>
                                                     <b>Observación:</b>
                                                     <textarea id="miTextarea" style="height: 100px;"
@@ -801,7 +801,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal ">Cerrar</button>
+                                                    data-bs-dismiss="modal">Cerrar</button>
                                                 <button type="submit" class="btn btn-primary a">Guardar</button>
                                             </div>
                                         </form>
@@ -833,6 +833,20 @@
                                 </tbody>
                             </table>
                         </div>
+                        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5 txt-center" id="exampleModalLabel">Modal title</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" id="contenedorPDF">
+                                  
+                                </div>
+                                
+                              </div>
+                            </div>
+                          </div>
                     </article>
                 </article>
             </section>

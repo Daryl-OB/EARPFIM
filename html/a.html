@@ -1,58 +1,79 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-  <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+  <title>Subir y Mostrar Archivo PDF</title>
 </head>
-
 <body>
-    <table class="table table-bordered" id="miTabla">
-        <thead>
-          <tr>
-            <th>Columna 1</th>
-            <th>Columna 2</th>
-            <th>Columna 3</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Las filas y celdas se llenarán mediante JavaScript -->
-        </tbody>
-      </table>
-<script>
-    const datos = [
-  ["Fila 1, Columna 1", "Fila 1, Columna 2", "Fila 1, Columna 3"],
-  ["Fila 2, Columna 1", "Fila 2, Columna 2", "Fila 2, Columna 3"],
-  ["ffffff", "Fila 3, Columna 2", "Fila 3, Columna 3"]
-];
+  <input type="file" id="inputArchivo" accept=".pdf ">
+  <button id="mostrarBoton">Mostrar PDF</button>
 
+  <div id="contenedorPDF">
+    <!-- Aquí se mostrará el contenido del PDF -->
+  </div>
+  <input type="file" id="fileInput" class="hidden">
+  <label for="fileInput" class="fileLabel">
+      <i class="icon">&#x1F4C2;</i> Seleccione un archivo
+  </label>
+  <script>
+    const inputArchivo = document.getElementById("inputArchivo");
+    const mostrarBoton = document.getElementById("mostrarBoton");
+    const contenedorPDF = document.getElementById("contenedorPDF");
+    let archivoPDF;
 
-const table = document.getElementById("miTabla");
-const tbody = table.getElementsByTagName("tbody")[0];
+    inputArchivo.addEventListener("change", function (event) {
+      archivoPDF = event.target.files[0];
+    });
 
-for (let j = 0; j < datos[0].length; j++) {
-  const row = tbody.insertRow();
-  for (let i = 0; i < datos.length; i++) {
-    const cell = row.insertCell(i);
-    cell.textContent = datos[i][j];
-  }
-}
+    mostrarBoton.addEventListener("click", function () {
+      if (archivoPDF) {
+        const lector = new FileReader();
 
-    </script>      
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        lector.onload = function (e) {
+          const contenidoPDF = e.target.result;
+          // Aquí puedes utilizar la variable 'contenidoPDF' para mostrar el contenido del PDF en la página
+          // Por ejemplo, podrías utilizar una biblioteca como PDF.js para mostrarlo en un visor PDF.
+
+          // Ejemplo de cómo mostrar el contenido del PDF en un objeto <embed>:
+          const embed = document.createElement("embed");
+          embed.src = contenidoPDF;
+          embed.type = "application/pdf";
+          embed.width = "100%";
+          embed.height = "600";
+          contenedorPDF.innerHTML = ""; // Limpia el contenido anterior, si lo hay
+          contenedorPDF.appendChild(embed);
+        };
+
+        lector.readAsDataURL(archivoPDF);
+      } else {
+        alert("Selecciona un archivo PDF primero.");
+      }
+    });
   </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+  <style>/* Estilos para ocultar el input de archivo */
+    .hidden {
+        display: none;
+    }
+    
+    /* Estilos para el botón de archivo */
+    .fileLabel {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    /* Estilos para el icono (puedes usar FontAwesome o un icono personalizado) */
+    .icon {
+        margin-right: 5px;
+        font-size: 20px;
+    }
+    
+    /* Estilo cuando el botón está activo */
+    .fileLabel:hover {
+        background-color: #0056b3;
+    }
+    </style>
 </body>
-
 </html>

@@ -1,0 +1,56 @@
+[
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "viernes 12",
+    "curso": "MC510-E(TEO)",
+    "horario": "11-13",
+    "marcacion": "11:02-13:00",
+    "est": "P"
+  },
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "viernes 12",
+    "curso": "BIC01-F(PRA)",
+    "horario": "09-11",
+    "marcacion": "09:00-11:24 ",
+    "est": "P"
+  },
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "jueves 11",
+    "curso": "MB536-1(PRA)",
+    "horario": "19-22",
+    "marcacion": "19:00-22:00",
+    "est": "T"
+  },
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "viernes 05",
+    "curso": "BIC01-F(TEO)",
+    "horario": "08-09",
+    "marcacion": "07:54-09:00",
+    "est": "T"
+  },
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "jueves 04",
+    "curso": "MB536-1(PRA)",
+    "horario": "19-22",
+    "marcacion": "19:01-22:04",
+    "est": "N"
+  },
+  {
+    "semestre":"",
+    "mes":"Diciembre",
+    "dia": "miercoles 02",
+    "curso": "MB536-F(PRA)",
+    "horario": "08-11",
+    "marcacion": "08:05-11:00",
+    "est": "T"
+  }
+]

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   desbloqueo();
   ocultar();
-  
 });
 
 var paisSelect = document.getElementById("pais");
@@ -16,13 +15,16 @@ var tabla = document.getElementById("tabla");
 var tablaFormacion = document.getElementById("bobyFormacion");
 var colPais = document.getElementById("col-Pais");
 var colDirec = document.getElementById("col-Dire-extrajera");
+var docSustDatos = document.getElementById("document_sus");
 
 var profesionalForm = document.getElementById("profesionalForm");
 var formDomicilio = document.getElementById("DomicilioForm");
 var inputs = formDomicilio.querySelectorAll("input");
 var selects = formDomicilio.querySelectorAll("select");
 const datoDomicilio = [];
-const datoFormacion = [];
+var datoFormacion = [];
+
+var archivoPDF;
 
 function desbloqueo() {
   // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
@@ -35,7 +37,7 @@ function desbloqueo() {
       colDirec.classList.remove("d-none");
       colPais.classList.add("d-none");
       paisSelect.removeAttribute("required");
-      dire_extra.setAttribute("required","true");
+      dire_extra.setAttribute("required", "true");
     }
   });
 
@@ -56,7 +58,7 @@ function desbloqueo() {
     }
   });
 
-  fetch("/datos.json")
+  fetch("/json/datos.json")
     .then(function (response) {
       return response.json();
     })
@@ -153,6 +155,106 @@ function ocultar() {
       btn2.classList.add("active");
   });
 }
+function restablecer() {
+  colDirec.classList.add("d-none");
+  colPais.classList.remove("d-none");
+  paisSelect.setAttribute("required", "true");
+  dire_extra.removeAttribute("required");
+  formDomicilio.reset();
+
+  for (var i = 1; i < selects.length; i++) {
+    selects[i].disabled = true;
+  }
+  for (var i = 1; i < inputs.length; i++) {
+    inputs[i].disabled = true;
+  }
+}
+
+function agregar() {
+  while (tablaFormacion.rows.length > 0) {
+    tablaFormacion.deleteRow(0);
+  }
+
+  for (var i = 0; i < datoFormacion.length; i++) {
+    var fila = document.createElement("tr");
+    var filaHTML = "";
+
+    for (var j = 0; j < datoFormacion[i].length; j++) {
+      var celda = document.createElement("td");
+
+      if (j === 8) {
+        // Reemplaza archivoPDF con un botón
+        var botonPDF = document.createElement("button");
+        botonPDF.type = "button";
+        botonPDF.className = "btn btn-primary";
+        botonPDF.setAttribute("data-bs-toggle", "modal");
+        botonPDF.setAttribute("data-bs-target", "#exampleModal4");
+        botonPDF.style.backgroundColor = "#224fb1";
+        botonPDF.id = "mostrar";
+
+
+
+        var iconoPDF = document.createElement("i");
+        iconoPDF.className = "bx bxs-show";
+        iconoPDF.style.color = "#f7f7f2";
+
+        botonPDF.appendChild(iconoPDF);
+        celda.appendChild(botonPDF);
+      } else {
+        celda.textContent = datoFormacion[i][j];
+      }
+      fila.appendChild(celda);
+    }
+
+    filaHTML +=
+      '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1" onclick="modificar()"><i class="bx bxs-edit" style="color:#f7f7f2;"></i></button></td>';
+    filaHTML +=
+      '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1" onclick="eliminar()"><i class="bx bx-minus" style="color:#f7f7f2"; ></i></button></td>';
+
+    fila.innerHTML += filaHTML;
+
+    tablaFormacion.appendChild(fila);
+
+  }
+
+  if (datoFormacion.length === 0) {
+    var filaNoDatos = document.createElement("tr");
+    var celdaNoDatos = document.createElement("td");
+    celdaNoDatos.setAttribute("colspan", "12");
+    celdaNoDatos.style.fontSize = "20px";
+    celdaNoDatos.textContent = "NO DATOS EN LA TABLA";
+    filaNoDatos.appendChild(celdaNoDatos);
+    tablaFormacion.appendChild(filaNoDatos);
+  }
+}
+
+
+function eliminar() {
+  // Obtiene el índice de la fila
+  var filaIndex = tablaFormacion.getAttribute("data-fila-index"); // Obtiene el índice de la fila
+  var rowIndex = parseInt(filaIndex);
+
+  // Elimina la fila de la tabla
+  tablaFormacion.deleteRow(rowIndex);
+
+  // Elimina la entrada correspondiente en el array datoFormacion
+  datoFormacion.splice(rowIndex - 1, 1); // Resta 1 para obtener la posición correcta en el array
+
+  // Actualiza los índices en el array datoFormacion para mantener la coherencia
+  for (var i = 0; i < datoFormacion.length; i++) {
+    datoFormacion[i][0] = i + 1; // Actualiza los índices
+  }
+  agregar();
+
+
+}
+
+function modificar() {
+
+
+}
+
+
 
 formDomicilio.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -172,26 +274,22 @@ formDomicilio.addEventListener("submit", (e) => {
     " " +
     distritoSelect.options[distritoSelect.selectedIndex].text;
   var tip_viaDato = tip_viaSelect.options[tip_viaSelect.selectedIndex].text;
-var tipoDato = tipoSelect.options[tipoSelect.selectedIndex].text;
+  var tipoDato = tipoSelect.options[tipoSelect.selectedIndex].text;
   var tipo_zonaDato =
     tipo_zonaSelect.options[tipo_zonaSelect.selectedIndex].text;
   const n_zonaDato = document.getElementById("N_zona").value;
   const n_inmuebloDato = document.getElementById("N_inmueblo").value;
   const nom_viaDato = document.getElementById("Nom_via").value;
   const dire_extraDato = dire_extra.value;
-  
 
-  if(pais==="Seleccionar"){
-    
-    pais="Otro pais"
-    depaDato="  ";
-    proviDato="  ";
-    distriDato="  ";
-    tip_viaDato="  ";
-    tipoDato=" ";
-    tipo_zonaDato="  ";
-  }else{
-
+  if (pais === "Seleccionar") {
+    pais = "Otro pais";
+    depaDato = "  ";
+    proviDato = "  ";
+    distriDato = "  ";
+    tip_viaDato = "  ";
+    tipoDato = " ";
+    tipo_zonaDato = "  ";
   }
   const dato = [
     orden,
@@ -240,11 +338,9 @@ profesionalForm.addEventListener("submit", (evento) => {
   var fech_initDato = document.getElementById("fech_ini").value;
   var fech_finDato = document.getElementById("fech_fin").value;
   var gradoDato = document.getElementById("grado").value;
-  var docSustDatos = document.getElementById("document_sus").value;
+
   var textDato = document.getElementById("miTextarea").value;
 
-
-  
 
   var formacion = [
     ordenForma,
@@ -255,50 +351,47 @@ profesionalForm.addEventListener("submit", (evento) => {
     fech_initDato,
     fech_finDato,
     gradoDato,
-    docSustDatos,
+    archivoPDF,
     textDato,
   ];
-
+  console.log(formacion)
   datoFormacion.push(formacion);
-  console.log(datoFormacion);
 
-  while (tablaFormacion.rows.length > 0) {
-    tablaFormacion.deleteRow(0);
-  }
+  agregar();
 
-  for (var i = 0; i < datoFormacion.length; i++) {
-    var fila = document.createElement("tr");
-    var filaHTML = "";
-
-    for (var j = 0; j < datoFormacion[i].length; j++) {
-      var celda = document.createElement("td");
-      celda.textContent = datoFormacion[i][j];
-      fila.appendChild(celda);
-    }
-
-    filaHTML +=
-      '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1;"><i class="bx bxs-edit" style="color:#f7f7f2;"></i></button></td>';
-    filaHTML +=
-      '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1;"><i class="bx bx-minus" style="color:#f7f7f2;"></i></button></td>';
-
-    fila.innerHTML += filaHTML;
-
-    tablaFormacion.appendChild(fila);
-  }
-   profesionalForm.reset();
+  profesionalForm.reset();
 });
 
-function restablecer() {
-  colDirec.classList.add("d-none");
-  colPais.classList.remove("d-none");
-  paisSelect.setAttribute("required", "true");
-  dire_extra.removeAttribute("required");
-  formDomicilio.reset();
+docSustDatos.addEventListener("change", function (event) {
 
-  for (var i = 1; i < selects.length; i++) {
-    selects[i].disabled = true;
+  archivoPDF = event.target.files[0];
+
+});
+
+const mostrar = document.getElementById("mostrar");
+
+const contenedorPDF = document.getElementById("contenedorPDF");
+
+mostrar.addEventListener("click", function () {
+  const archivoPDF = formacion[8];
+  if (archivoPDF instanceof File) {
+      const lector = new FileReader();
+
+      lector.onload = function (e) {
+          const contenidoPDF = e.target.result;
+
+          const embed = document.createElement("embed");
+          embed.src = contenidoPDF;
+          embed.type = "application/pdf";
+          embed.width = "100%";
+          embed.height = "600";
+          contenedorPDF.innerHTML = ""; // Limpia cualquier contenido previo
+          contenedorPDF.appendChild(embed);
+      };
+
+      // Lee el contenido del archivo PDF como una URL de datos
+      lector.readAsDataURL(archivoPDF);
+  } else {
+      console.error("El elemento archivoPDF no es un objeto File válido.");
   }
-  for (var i = 1; i < inputs.length; i++) {
-    inputs[i].disabled = true;
-  }
-}
+});

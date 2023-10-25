@@ -73,8 +73,10 @@ h5{
     width: 100%;
     margin-top: 15px;
     text-align: center;
-    
+     
 }
+
+
 .datos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -85,7 +87,29 @@ h5{
     justify-content: flex-start;
     
 }
+.hidden {
+    display: none;
+}
 
+/* Estilos para el botón de archivo */
+.fileLabel {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    
+}
+
+.icon {
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.fileLabel:hover {
+    background-color: #0056b3;
+}
 @media (max-width:600px) {
     .content-info{
         display: grid;
