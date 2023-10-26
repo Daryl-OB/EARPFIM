@@ -1,79 +1,86 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-  <title>Subir y Mostrar Archivo PDF</title>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
+
 <body>
-  <input type="file" id="inputArchivo" accept=".pdf ">
-  <button id="mostrarBoton">Mostrar PDF</button>
-
-  <div id="contenedorPDF">
-    <!-- Aquí se mostrará el contenido del PDF -->
-  </div>
-  <input type="file" id="fileInput" class="hidden">
-  <label for="fileInput" class="fileLabel">
-      <i class="icon">&#x1F4C2;</i> Seleccione un archivo
-  </label>
-  <script>
-    const inputArchivo = document.getElementById("inputArchivo");
-    const mostrarBoton = document.getElementById("mostrarBoton");
-    const contenedorPDF = document.getElementById("contenedorPDF");
-    let archivoPDF;
-
-    inputArchivo.addEventListener("change", function (event) {
-      archivoPDF = event.target.files[0];
-    });
-
-    mostrarBoton.addEventListener("click", function () {
-      if (archivoPDF) {
-        const lector = new FileReader();
-
-        lector.onload = function (e) {
-          const contenidoPDF = e.target.result;
-          // Aquí puedes utilizar la variable 'contenidoPDF' para mostrar el contenido del PDF en la página
-          // Por ejemplo, podrías utilizar una biblioteca como PDF.js para mostrarlo en un visor PDF.
-
-          // Ejemplo de cómo mostrar el contenido del PDF en un objeto <embed>:
-          const embed = document.createElement("embed");
-          embed.src = contenidoPDF;
-          embed.type = "application/pdf";
-          embed.width = "100%";
-          embed.height = "600";
-          contenedorPDF.innerHTML = ""; // Limpia el contenido anterior, si lo hay
-          contenedorPDF.appendChild(embed);
-        };
-
-        lector.readAsDataURL(archivoPDF);
-      } else {
-        alert("Selecciona un archivo PDF primero.");
-      }
-    });
+  <section class="content-meses">
+    <div class="d-grid gap-2 " id="meses">
+        
+    </div>
+    <div class="asisten-semestre">
+        <b style="font-size: 18px">Resumen de Asistencia del Semestre</b><br>
+        <p><b>P:</b> <b>T:</b>  <b>F:</b></p> 
+    </div>
+</section>
+<script>
+  var content = document.getElementById("meses");
+  var meses = [
+    "ENERO",
+    "FEBRERO",
+    "MARZO",
+    "ABRIL",
+    "MAYO",
+    "JUNIO",
+    "JULIO",
+    "AGOSTO",
+    "SEPTIEMBRE",
+    "OCTUBRE",
+    "NOVIEMBRE",
+    "DICIEMBRE",
+  ];
+  
+  var num = 1; // Define num fuera del bucle
+  
+  var button = ""; // Inicializa la variable button fuera del bucle
+  
+  for (var i = 6; i < 7; i++) {
+    button += 
+    `<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${num}" aria-expanded="false" aria-controls="collapseExample${num}">${meses[i]}</button>
+        <div class="collapse" id="collapseExample${num}">
+            <table class="table table-striped text-center">
+            <thead>
+                 <tr>
+                 <th scope="col">Dia</th>
+                 <th scope="col">Curso</th>
+                 <th scope="col">Horario</th>
+                 <th scope="col">Marcación</th>
+                 <th scope="col">Est</th>
+                </tr>
+               </thead>
+             <tbody></tbody> 
+            </table>
+          
+        <div class="asisten-mensua">
+            <b style="font-size: 18px">Resumen de Asistencia Mensual</b><br>
+            <p><b>P:</b> <b>T:</b>  <b>F:</b></p>
+        </div>
+      </div> ` ;
+    num++; 
+    content.innerHTML = button;// Incrementa num
+  }
+  
+  
   </script>
-  <style>/* Estilos para ocultar el input de archivo */
-    .hidden {
-        display: none;
-    }
-    
-    /* Estilos para el botón de archivo */
-    .fileLabel {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    
-    /* Estilos para el icono (puedes usar FontAwesome o un icono personalizado) */
-    .icon {
-        margin-right: 5px;
-        font-size: 20px;
-    }
-    
-    /* Estilo cuando el botón está activo */
-    .fileLabel:hover {
-        background-color: #0056b3;
-    }
-    </style>
+  
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
 </body>
+
 </html>
