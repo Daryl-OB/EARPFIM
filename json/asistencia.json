@@ -1,7 +1,7 @@
 [
   {
     "semestre":"2023-2",
-    "mes":"Diciembre",
+    "mes":"Abril",
     "dia": "viernes 12",
     "curso": "MC510-E(TEO)",
     "horario": "11-13",
@@ -9,8 +9,8 @@
     "est": "P"
   },
   {
-    "semestre":"2023-1",
-    "mes":"Diciembre",
+    "semestre":"2023-2",
+    "mes":"Mayo",
     "dia": "viernes 12",
     "curso": "BIC01-F(PRA)",
     "horario": "09-11",
@@ -19,7 +19,7 @@
   },
   {
     "semestre":"2023-1",
-    "mes":"Diciembre",
+    "mes":"enero",
     "dia": "jueves 11",
     "curso": "MB536-1(PRA)",
     "horario": "19-22",
@@ -27,8 +27,8 @@
     "est": "T"
   },
   {
-    "semestre":"2023-2",
-    "mes":"Diciembre",
+    "semestre":"2023-1",
+    "mes":"enero",
     "dia": "viernes 05",
     "curso": "BIC01-F(TEO)",
     "horario": "08-09",
@@ -37,16 +37,16 @@
   },
   {
     "semestre":"2023-2",
-    "mes":"Diciembre",
+    "mes":"Junio",
     "dia": "jueves 04",
     "curso": "MB536-1(PRA)",
     "horario": "19-22",
     "marcacion": "19:01-22:04",
-    "est": "N"
+    "est": "P"
   },
   {
     "semestre":"2023-1",
-    "mes":"Diciembre",
+    "mes":"Febrero",
     "dia": "miercoles 02",
     "curso": "MB536-F(PRA)",
     "horario": "08-11",

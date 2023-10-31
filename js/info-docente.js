@@ -254,8 +254,6 @@ function modificar() {
 
 }
 
-
-
 formDomicilio.addEventListener("submit", (e) => {
   e.preventDefault();
 
