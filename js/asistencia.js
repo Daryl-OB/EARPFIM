@@ -26,12 +26,13 @@ Promise.all([
     var TotP = document.getElementById("TotP");
     var TotT = document.getElementById("TotT");
     var TotF = document.getElementById("TotF");
-    var mesesArray = []; 
+    var mesesArray = [];
     TotP.innerHTML = "";
     TotT.innerHTML = "";
     TotF.innerHTML = "";
 
     selectSeme.addEventListener("change", () => {
+      var valoresPorMes = new Map();
       content.innerHTML = "";
       var Totpuntual = 0;
       var Tottardanza = 0;
@@ -70,13 +71,11 @@ Promise.all([
                        <tbody id="${meses[i]}">
                        </tbody> 
                       </table>
-                    
                   <div class="asisten-mensua">
                       <b style="font-size: 18px">Resumen de Asistencia Mensual</b><br>
                       <p><b id="puntual-${meses[i]}">P:</b> <b id="tardanza-${meses[i]}">T:</b>  <b id="falta-${meses[i]}">F:</b></p>
                   </div>
                 </div> `;
-
             num++;
             content.innerHTML = button;
 
@@ -87,7 +86,6 @@ Promise.all([
 
       asistenciaData.forEach((asistencia) => {
         var semElegido = selectSeme.options[selectSeme.selectedIndex].text;
-
         var btnPunt = "";
         var btnTard = "";
         var btnFalta = "";
@@ -99,18 +97,15 @@ Promise.all([
         btnTard += `<button type="button" class="btn btn-success" style="background:#ff8100;">T</button>`;
         btnFalta += `<button type="button" class="btn btn-danger">F</button>`;
         btnN += `<button type="button" class="btn btn-primary">N:N</button>`;
-
         var semestre = asistencia.semestre;
         var mes = asistencia.mes.toUpperCase();
 
         if (semElegido === semestre && mesesArray.includes(mes)) {
-          console.log(mesesArray);
           var dia = asistencia.dia;
           var curso = asistencia.curso;
           var horario = asistencia.horario;
           var marcacion = asistencia.marcacion;
           var est = asistencia.est;
-
           var dato = [dia, curso, horario, marcacion, est];
           var fila = document.createElement("tr");
 
@@ -118,58 +113,71 @@ Promise.all([
             var celda = document.createElement("td");
             if (i === 4) {
               var btn = dato[4].toUpperCase();
-
               if (btn === "P") {
-                  celda.innerHTML = btnPunt;
-                  fila.appendChild(celda);
-                  puntual++;
-                  
-
+                celda.innerHTML = btnPunt;
+                fila.appendChild(celda);
+                puntual++;
               } else if (btn === "T") {
-                  celda.innerHTML = btnTard;
-                  fila.appendChild(celda);
-                  tardanza++;
-                  
-
+                celda.innerHTML = btnTard;
+                fila.appendChild(celda);
+                tardanza++;
               } else if (btn === "F") {
-                  celda.innerHTML = btnFalta;
-                  fila.appendChild(celda);
-                  falta++;
-                 
-
+                celda.innerHTML = btnFalta;
+                fila.appendChild(celda);
+                falta++;
               } else {
-                  celda.innerHTML = btnN;
-                  fila.appendChild(celda);
+                celda.innerHTML = btnN;
+                fila.appendChild(celda);
               }
             } else {
-                 celda.textContent = dato[i];
-                 fila.appendChild(celda);
-            }
-            
-            Totpuntual += puntual;
-            Tottardanza += tardanza;
-            Totfalta += falta;
-            var selectedMonth = mesesArray.find((month) => mes.includes(month));
-
-            if (selectedMonth) {
-              hasData = true;
-              var tbody = document.getElementById(selectedMonth);
-              console.log(selectedMonth)
-              if (tbody) {
-                document.getElementById(`puntual-${mes}`).innerHTML = `P: ${puntual}`;
-                document.getElementById(`tardanza-${mes}`).innerHTML = `T: ${tardanza}`;
-                document.getElementById(`falta-${mes}`).innerHTML = `F: ${falta}`;
-
-                tbody.appendChild(fila);
-                TotP.innerHTML = Totpuntual;
-                TotT.innerHTML = Tottardanza;
-                TotF.innerHTML = Totfalta;
-              }
+              celda.textContent = dato[i];
+              fila.appendChild(celda);
             }
           }
+          Totpuntual += puntual;
+          Tottardanza += tardanza;
+          Totfalta += falta;
+          var selectedMonth = mesesArray.find((month) => mes.includes(month));
+
+          if (selectedMonth) {
+            var tbody = document.getElementById(selectedMonth);
+            if (tbody) {
+                // Recupera los valores acumulados del mapa
+                var valoresMes = valoresPorMes.get(selectedMonth) || { puntual: 0, tardanza: 0, falta: 0 };
+                valoresMes.puntual += puntual;
+                valoresMes.tardanza += tardanza;
+                valoresMes.falta += falta;
+
+                // Actualiza los elementos HTML con los nuevos valores
+                document.getElementById(`puntual-${selectedMonth}`).innerHTML = `P: ${valoresMes.puntual}`;
+                document.getElementById(`tardanza-${selectedMonth}`).innerHTML = `T: ${valoresMes.tardanza}`;
+                document.getElementById(`falta-${selectedMonth}`).innerHTML = `F: ${valoresMes.falta}`;
+
+                // Almacena los valores acumulados en el mapa
+                valoresPorMes.set(selectedMonth, valoresMes);
+
+                tbody.appendChild(fila);
+            }
+        }
         }
       });
-      
+
+      mesesArray.forEach((month) => {
+        var tbody = document.getElementById(month);
+        if (tbody && tbody.children.length === 0) {
+          var noDataMessage = document.createElement("tr");
+          var noDataCell = document.createElement("td");
+          noDataCell.colSpan = 5;
+          noDataCell.textContent = "NO HAY DATOS DE LA TABLA";
+          noDataMessage.appendChild(noDataCell);
+          tbody.appendChild(noDataMessage);
+
+          document.getElementById(`puntual-${month}`).innerHTML = "P: 0";
+          document.getElementById(`tardanza-${month}`).innerHTML = "T: 0";
+          document.getElementById(`falta-${month}`).innerHTML = "F: 0";
+        }
+      });
+
     });
     selectSeme.dispatchEvent(new Event("change"));
   })
