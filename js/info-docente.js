@@ -231,7 +231,8 @@ function agregar() {
 
 function eliminar() {
   // Obtiene el índice de la fila
-  var filaIndex = tablaFormacion.getAttribute("data-fila-index"); // Obtiene el índice de la fila
+  var filaIndex = tablaFormacion.getAttribute("data-fila-index");
+  // Obtiene el índice de la fila
   var rowIndex = parseInt(filaIndex);
 
   // Elimina la fila de la tabla
@@ -352,12 +353,36 @@ profesionalForm.addEventListener("submit", (evento) => {
     archivoPDF,
     textDato,
   ];
-  console.log(formacion)
+  
   datoFormacion.push(formacion);
 
   agregar();
 
   profesionalForm.reset();
+
+
+  var botonPDF = document.getElementById("mostrar");
+
+  botonPDF.addEventListener("click", function (event) {
+    event.preventDefault();
+    var modalPDF = document.getElementById("contenedorPDF");
+
+    // Verifica si tienes un archivo PDF cargado
+    if (archivoPDF) {
+      // Crea una URL válida a partir del archivo PDF
+      var archivoURL = URL.createObjectURL(archivoPDF);
+
+      // Crea un elemento de iframe y establece el origen en la URL del archivo PDF
+      var iframe = '<embed src="' + archivoURL + '" style="width:100%; height:500px;">'
+
+      modalPDF.innerHTML = iframe;
+
+
+
+    } else {
+      console.error("No se ha seleccionado ningún archivo PDF.");
+    }
+  });
 });
 
 docSustDatos.addEventListener("change", function (event) {
@@ -366,30 +391,6 @@ docSustDatos.addEventListener("change", function (event) {
 
 });
 
-const mostrar = document.getElementById("mostrar");
 
-const contenedorPDF = document.getElementById("contenedorPDF");
 
-mostrar.addEventListener("click", function () {
-  const archivoPDF = formacion[8];
-  if (archivoPDF instanceof File) {
-      const lector = new FileReader();
 
-      lector.onload = function (e) {
-          const contenidoPDF = e.target.result;
-
-          const embed = document.createElement("embed");
-          embed.src = contenidoPDF;
-          embed.type = "application/pdf";
-          embed.width = "100%";
-          embed.height = "600";
-          contenedorPDF.innerHTML = ""; // Limpia cualquier contenido previo
-          contenedorPDF.appendChild(embed);
-      };
-
-      // Lee el contenido del archivo PDF como una URL de datos
-      lector.readAsDataURL(archivoPDF);
-  } else {
-      console.error("El elemento archivoPDF no es un objeto File válido.");
-  }
-});
