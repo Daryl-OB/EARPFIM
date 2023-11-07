@@ -17,6 +17,12 @@ var colPais = document.getElementById("col-Pais");
 var colDirec = document.getElementById("col-Dire-extrajera");
 var docSustDatos = document.getElementById("document_sus");
 
+
+var familiarForm = document.getElementById("familiarForm");
+var tablaFami = document.getElementById("bodyFamiliar");
+var datoFamiliar =[];
+
+
 var profesionalForm = document.getElementById("profesionalForm");
 var formDomicilio = document.getElementById("DomicilioForm");
 var inputs = formDomicilio.querySelectorAll("input");
@@ -177,29 +183,19 @@ function agregar() {
 
   for (var i = 0; i < datoFormacion.length; i++) {
     var fila = document.createElement("tr");
+    fila.setAttribute("data-fila-index", i); 
     var filaHTML = "";
 
     for (var j = 0; j < datoFormacion[i].length; j++) {
       var celda = document.createElement("td");
+       
 
       if (j === 8) {
-        // Reemplaza archivoPDF con un botón
-        var botonPDF = document.createElement("button");
-        botonPDF.type = "button";
-        botonPDF.className = "btn btn-primary";
-        botonPDF.setAttribute("data-bs-toggle", "modal");
-        botonPDF.setAttribute("data-bs-target", "#exampleModal4");
-        botonPDF.style.backgroundColor = "#224fb1";
-        botonPDF.id = "mostrar";
+    
+        var botonPDF ='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background-color: #224fb1" onclick="mostrarPDF(this)"><i class="bx bxs-show" color="#f7f7f2"></i></button>';
 
-
-
-        var iconoPDF = document.createElement("i");
-        iconoPDF.className = "bx bxs-show";
-        iconoPDF.style.color = "#f7f7f2";
-
-        botonPDF.appendChild(iconoPDF);
-        celda.appendChild(botonPDF);
+        
+        celda.innerHTML=botonPDF;
       } else {
         celda.textContent = datoFormacion[i][j];
       }
@@ -228,12 +224,43 @@ function agregar() {
   }
 }
 
+function mostrarPDF(button) {
+  const fila = button.closest("tr"); // Obtén la fila que contiene el botón
+  const filaIndex = fila.getAttribute("data-fila-index");
+  
+  if (filaIndex !== null) {
+    const rowIndex = parseInt(filaIndex);
+    console.log("data-fila-index:", rowIndex);
+    
+    // Puedes usar rowIndex para realizar las operaciones que necesites aquí.
+    
+    // Por ejemplo, puedes mostrar un PDF en un modal utilizando rowIndex:
+    const modalPDF = document.getElementById("contenedorPDF");
+    if (datoFormacion[rowIndex] && datoFormacion[rowIndex][8]) {
+      const archivoURL = URL.createObjectURL(datoFormacion[rowIndex][8]);
+
+      // Crea un elemento iframe para mostrar el PDF
+      const iframe = document.createElement("iframe");
+      iframe.src = archivoURL;
+      iframe.style.width = "100%";
+      iframe.style.height = "500px";
+
+      // Limpia el contenido anterior en el contenedor y agrega el iframe
+      modalPDF.innerHTML = "";
+      modalPDF.appendChild(iframe);
+    } else {
+      console.error("No se ha seleccionado ningún archivo PDF.");
+    }
+  } else {
+    console.error("El atributo 'data-fila-index' no está definido en la fila.");
+  }
+}
 
 function eliminar() {
   // Obtiene el índice de la fila
   var filaIndex = tablaFormacion.getAttribute("data-fila-index");
   // Obtiene el índice de la fila
-  var rowIndex = parseInt(filaIndex);
+  let rowIndex = parseInt(filaIndex);
 
   // Elimina la fila de la tabla
   tablaFormacion.deleteRow(rowIndex);
@@ -307,7 +334,7 @@ formDomicilio.addEventListener("submit", (e) => {
 
   datoDomicilio.push(dato);
 
-  // Resto del código sigue igual
+  
   while (tabla.rows.length > 0) {
     tabla.deleteRow(0);
   }
@@ -324,6 +351,52 @@ formDomicilio.addEventListener("submit", (e) => {
   }
   restablecer();
 });
+
+familiarForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  var ordenFami = datoFamiliar.length + 1;
+  var Ape_nom = document.getElementById("Ape_Nom").value;
+  var ParenSelect = document.getElementById("Paren");
+  var Paren = ParenSelect.options[ParenSelect.selectedIndex].text;
+  var Fech_na = document.getElementById("Fech_na").value;
+  var Esta_CiSelect = document.getElementById("Esta_Civil");
+  var Esta_Civil = Esta_CiSelect.options[Esta_CiSelect.selectedIndex].text;
+  var Nivel_estuSelect = document.getElementById("Nivel_estu");
+  var Nivel_estu = Nivel_estuSelect.options[Nivel_estuSelect.selectedIndex].text;
+  var ocupacion = document.getElementById("Ocupacion").value;
+  var seleccion = "";
+  var economico = document.querySelector('input[name="tsSelector"]:checked');
+
+  
+  if (economico) {
+    seleccion = economico.id === "true" ? "Si" : "No";
+  }
+
+  var familiar = [ordenFami, Ape_nom, Paren, Fech_na, Esta_Civil, Nivel_estu, ocupacion, seleccion];
+
+  datoFamiliar.push(familiar);
+
+  while (tablaFami.rows.length > 0) {
+    tablaFami.deleteRow(0);
+  }
+
+  for (var i = 0; i < datoFamiliar.length; i++) {
+    var fila = document.createElement("tr");
+
+    for (var j = 0; j < datoFamiliar[i].length; j++) {
+      var celda = document.createElement("td");
+      celda.textContent = datoFamiliar[i][j];
+      fila.appendChild(celda);
+    }
+    tablaFami.appendChild(fila);
+  }
+  familiarForm.reset();
+});
+
+
+
+
 
 profesionalForm.addEventListener("submit", (evento) => {
   evento.preventDefault();
@@ -358,39 +431,16 @@ profesionalForm.addEventListener("submit", (evento) => {
 
   agregar();
 
+  check.classList.add("d-none");
   profesionalForm.reset();
-
-
-  var botonPDF = document.getElementById("mostrar");
-
-  botonPDF.addEventListener("click", function (event) {
-    event.preventDefault();
-    var modalPDF = document.getElementById("contenedorPDF");
-
-    // Verifica si tienes un archivo PDF cargado
-    if (archivoPDF) {
-      // Crea una URL válida a partir del archivo PDF
-      var archivoURL = URL.createObjectURL(archivoPDF);
-
-      // Crea un elemento de iframe y establece el origen en la URL del archivo PDF
-      var iframe = '<embed src="' + archivoURL + '" style="width:100%; height:500px;">'
-
-      modalPDF.innerHTML = iframe;
-
-
-
-    } else {
-      console.error("No se ha seleccionado ningún archivo PDF.");
-    }
-  });
+ 
 });
 
 docSustDatos.addEventListener("change", function (event) {
 
   archivoPDF = event.target.files[0];
+  var check = document.getElementById("check");
+  check.classList.remove("d-none");
 
 });
-
-
-
 
