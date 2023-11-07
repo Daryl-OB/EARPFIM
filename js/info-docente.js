@@ -395,9 +395,6 @@ familiarForm.addEventListener("submit", (event) => {
 });
 
 
-
-
-
 profesionalForm.addEventListener("submit", (evento) => {
   evento.preventDefault();
   var ordenForma = datoFormacion.length + 1;

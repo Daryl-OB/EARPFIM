@@ -64,47 +64,48 @@ Promise.all([
           var button = "";
 
           for (var i = mesIni; i < mesFin; i++) {
-            button += `<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${num}" aria-expanded="false" aria-controls="collapseExample${num}">${meses[i]}  ${año}</button>
-                  <div class="collapse" id="collapseExample${num}">
-                    <table class="table table-striped text-center">
-                      <thead>
-                           <tr>
-                           <th scope="col">Dia</th>
-                           <th scope="col">Curso</th>
-                           <th scope="col">Horario</th>
-                           <th scope="col">Marcación</th>
-                           <th scope="col">Est</th>
-                          </tr>
-                      </thead>
-                      <tbody id="${meses[i]}">
-                      </tbody> 
-                    </table>
-                  <div class="asisten-mensua">
-                      <b style="font-size: 18px">Resumen de Asistencia Mensual</b><br>
-                      <p><b id="puntual-${meses[i]}">P:</b> <b id="tardanza-${meses[i]}">T:</b>  <b id="falta-${meses[i]}">F:</b></p>
-                  </div>
-                </div> `;
-            num++;
-            content.innerHTML = button;
-
             mesesArray.push(meses[i]);
+          }
+
+          mesesArray.reverse();
+          
+          for(let i = 0; i < mesesArray.length ; i++){
+            button += `<button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample${num}" aria-expanded="false" aria-controls="collapseExample${num}">${mesesArray[i]}  ${año}</button>
+            <div class="collapse" id="collapseExample${num}">
+              <table class="table table-striped text-center">
+                <thead>
+                     <tr>
+                     <th scope="col">Dia</th>
+                     <th scope="col">Curso</th>
+                     <th scope="col">Horario</th>
+                     <th scope="col">Marcación</th>
+                     <th scope="col">Est</th>
+                    </tr>
+                </thead>
+                <tbody id="${mesesArray[i]}">
+                </tbody> 
+              </table>
+            <div class="asisten-mensua">
+                <b style="font-size: 18px">Resumen de Asistencia Mensual</b><br>
+                <p><b id="puntual-${mesesArray[i]}">P:</b> <b id="tardanza-${mesesArray[i]}">T:</b>  <b id="falta-${mesesArray[i]}">F:</b></p>
+            </div>
+          </div> `;
+          num++;
+          content.innerHTML = button;
+
           }
         }
       });
       
       asistenciaData.forEach((asistencia) => {
         var semElegido = selectSeme.options[selectSeme.selectedIndex].text;
-        var btnPunt = "";
-        var btnTard = "";
-        var btnFalta = "";
-        var btnN = "";
+        const btnPunt = '<button type="button" class="btn btn-success" style="background:#28a745;">P</button>';
+        const btnTard = '<button type="button" class="btn btn-success" style="background:#ff8100;">T</button>';
+        const btnFalta = '<button type="button" class="btn btn-danger">F</button>';
         var puntual = 0;
         var tardanza = 0;
         var falta = 0;
-        btnPunt += `<button type="button" class="btn btn-success" style="background:#28a745;">P</button>`;
-        btnTard += `<button type="button" class="btn btn-success" style="background:#ff8100;">T</button>`;
-        btnFalta += `<button type="button" class="btn btn-danger">F</button>`;
-        btnN += `<button type="button" class="btn btn-primary">N:N</button>`;
+        
         var semestre = asistencia.semestre;
         var mes = asistencia.mes.toUpperCase();
 
