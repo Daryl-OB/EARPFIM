@@ -14,6 +14,7 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
+        
 </head>
 <body>
     <nav class="sidebar close">
@@ -161,7 +162,7 @@
                     <p class="text-secondary">
                         <b>Nota:</b> Presione en los cuadros a colores para listar alumnos
                     </p>
-                    <button type="button" class="btn btn-danger">
+                    <button  class="btn btn-danger" onclick="GeneraPDF()">
                         <i class="bx bxs-file-pdf"></i>Descargar PDF
                     </button>
                 </div>
@@ -200,6 +201,8 @@
     </main>
     <script src="/js/script.js"></script>
     <script src="/js/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

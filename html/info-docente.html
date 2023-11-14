@@ -205,7 +205,7 @@
                         <a class="nav-link" href="#">4to</a>
                     </li>
                 </ul>
-                <article class="frame ">
+                <article class="frame">
                     <article class="content-uno" id="content-uno">
                         <article class="content-datos">
                             <h4 class="title">1.- DATOS PERSONALES</h4>
@@ -301,7 +301,7 @@
                                     <b>País</b>
                                     <div class="form">
                                         <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example" id="">
+                                            aria-label=".form-select-lg example"  id="Lugar_pais" class="pais">
                                             <option disabled selected>Seleccionar</option>
                                             <option value="1">Perú</option>
                                             <option value="2">Otro país</option>
@@ -312,7 +312,7 @@
                                     <b>Departamento</b>
                                     <div class="form">
                                         <select class="form-select form-select-lg mb-3 fs-6 "
-                                            aria-label=".form-select-lg example" id="" disabled>
+                                            aria-label=".form-select-lg example"  id="Lugar_depa" class="departamento" disabled>
                                             <option value="" selected>Seleccionar</option>
                                         </select>
                                     </div>
@@ -321,7 +321,7 @@
                                     <b>Provincia</b>
                                     <div class="form">
                                         <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example" id="" disabled>
+                                            aria-label=".form-select-lg example"  id="Lugar_provi" class="provincia" disabled>
                                             <option value="" selected>Seleccionar</option>
 
                                         </select>
@@ -331,9 +331,10 @@
                                     <b>Distrito</b>
                                     <div class="form">
                                         <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example" id="" disabled>
+                                            aria-label=".form-select-lg example"  id="Lugar_distri" class=".my-class" disabled>
                                             <option value="" selected>Seleccionar</option>
                                         </select>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +386,7 @@
                                                         <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="departamento"
-                                                                disabled required>
+                                                                 disabled required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -747,7 +748,7 @@
                             Fercha de Revalidación para el caso de Títulos y Grados otorgados en el Extranjero</h4>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal2">
+                            data-bs-target="#exampleModal2" onclick="borrar()">
                             Añadir Registro
                         </button>
 
@@ -758,7 +759,7 @@
                                 <div class="modal-content">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="staticBackdropLabel">Agregar Formación
+                                            <h5 class="modal-title " id="title_profe">Agregar Formación
                                                 Profesional</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
@@ -782,7 +783,7 @@
                                                         <b>Pais</b>
                                                         <div class="form">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="Pais" required>
+                                                                aria-label=".form-select-lg example" id="Pais" required >
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                                 <option value="1">Perú</option>
                                                                 <option value="2">Otro Pais</option>
@@ -847,6 +848,7 @@
                                             </div>
                                         </form>
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -874,20 +876,19 @@
                                 </tbody>
                             </table>
                         </div>
+                        <!-- Modal para PDF -->
                         <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog" style="max-width: 900px;">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5 txt-center" id="exampleModalLabel">Modal title</h1>
+                                        <h5 class="modal-title fs-5 txt-center" id="exampleModalLabel">Modal title</h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
                                         <div id="contenedorPDF">
-
                                         </div>
-
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  introducir();
   desbloqueo();
   ocultar();
 });
@@ -15,24 +16,43 @@ var tabla = document.getElementById("tabla");
 var tablaFormacion = document.getElementById("bobyFormacion");
 var colPais = document.getElementById("col-Pais");
 var colDirec = document.getElementById("col-Dire-extrajera");
-var docSustDatos = document.getElementById("document_sus");
-
 
 var familiarForm = document.getElementById("familiarForm");
 var tablaFami = document.getElementById("bodyFamiliar");
-var datoFamiliar =[];
-
+var datoFamiliar = [];
 
 var profesionalForm = document.getElementById("profesionalForm");
 var formDomicilio = document.getElementById("DomicilioForm");
+var docSustDatos = document.getElementById("document_sus");
 var inputs = formDomicilio.querySelectorAll("input");
 var selects = formDomicilio.querySelectorAll("select");
 const datoDomicilio = [];
 var datoFormacion = [];
 
 var archivoPDF;
-
+var modi = 0;
+var rowIndexM = "";
+const title_profe= document.getElementById("title_profe");
 function desbloqueo() {
+  let Lugar_pais = document.getElementById("Lugar_pais");
+  let Lugar_depa = document.getElementById("Lugar_depa");
+  let Lugar_provi = document.getElementById("Lugar_provi");
+  let Lugar_distri = document.getElementById("Lugar_distri");
+
+  Lugar_pais.addEventListener("change", function () {
+    if (Lugar_pais.value === "1") {
+      Lugar_depa.removeAttribute("disabled");
+    }
+  });
+
+  Lugar_depa.addEventListener("change", function () {
+    Lugar_provi.removeAttribute("disabled");
+  });
+
+  Lugar_provi.addEventListener("change", function () {
+    Lugar_distri.removeAttribute("disabled");
+  });
+
   // Obtén una referencia al elemento select de id "pais", "departamento","provincia","distrito"
 
   paisSelect.addEventListener("change", function () {
@@ -63,13 +83,23 @@ function desbloqueo() {
       inputs[i].disabled = false;
     }
   });
+}
+function introducir() {
+  cargarDatos("Lugar_depa", "Lugar_provi", "Lugar_distri");
+  cargarDatos("departamento", "provincia", "distrito");
+}
+
+function cargarDatos(departamentoId, provinciaId, distritoId) {
+  var departamentoSelect = document.getElementById(departamentoId);
+  var provinciaSelect = document.getElementById(provinciaId);
+  var distritoSelect = document.getElementById(distritoId);
 
   fetch("/json/datos.json")
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      // Llenar el primer select con opciones de departamentos
+      // Llenar el select de departamento
       data.forEach(function (departamento) {
         var option = document.createElement("option");
         option.value = departamento.id;
@@ -77,24 +107,21 @@ function desbloqueo() {
         departamentoSelect.appendChild(option);
       });
 
-      // Agregar un evento de cambio al primer select (departamento)
+      // Agregar un evento de cambio al select de departamento
       departamentoSelect.addEventListener("change", function () {
-        // Obtener el ID del departamento seleccionado
         var selectedDepartamentoId = departamentoSelect.value;
 
-        // Limpiar los select de provincia y distrito
         provinciaSelect.innerHTML =
           '<option value="" selected disabled>Seleccionar</option>';
         distritoSelect.innerHTML =
           '<option value="" selected disabled>Seleccionar</option>';
 
-        // Buscar las provincias correspondientes al departamento seleccionado
         var selectedDepartamento = data.find(function (departamento) {
           return departamento.id === selectedDepartamentoId;
         });
 
         if (selectedDepartamento) {
-          // Llenar el segundo select con opciones de provincias
+          // Llenar el select de provincia
           selectedDepartamento.provincias.forEach(function (provincia) {
             var option = document.createElement("option");
             option.value = provincia.id;
@@ -104,19 +131,14 @@ function desbloqueo() {
         }
       });
 
-      // Agregar un evento de cambio al segundo select (provincias)
+      // Agregar un evento de cambio al select de provincia
       provinciaSelect.addEventListener("change", function () {
-        // Obtener el ID de la provincia seleccionada
         var selectedProvinciaId = provinciaSelect.value;
-
-        // Limpiar el select de distritos
         distritoSelect.innerHTML =
           '<option value="" selected disabled>Seleccionar</option>';
 
-        // Obtener el ID del departamento seleccionado
         var selectedDepartamentoId = departamentoSelect.value;
 
-        // Buscar los distritos correspondientes a la provincia seleccionada
         var selectedDepartamento = data.find(function (departamento) {
           return departamento.id === selectedDepartamentoId;
         });
@@ -129,7 +151,7 @@ function desbloqueo() {
           );
 
           if (selectedProvincia) {
-            // Llenar el tercer select con opciones de distritos
+            // Llenar el select de distrito
             selectedProvincia.distritos.forEach(function (distrito) {
               var option = document.createElement("option");
               option.value = distrito.id;
@@ -161,6 +183,7 @@ function ocultar() {
       btn2.classList.add("active");
   });
 }
+
 function restablecer() {
   colDirec.classList.add("d-none");
   colPais.classList.remove("d-none");
@@ -183,19 +206,17 @@ function agregar() {
 
   for (var i = 0; i < datoFormacion.length; i++) {
     var fila = document.createElement("tr");
-    fila.setAttribute("data-fila-index", i); 
+    fila.setAttribute("data-fila-index", i);
     var filaHTML = "";
 
     for (var j = 0; j < datoFormacion[i].length; j++) {
       var celda = document.createElement("td");
-       
 
       if (j === 8) {
-    
-        var botonPDF ='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background-color: #224fb1" onclick="mostrarPDF(this)"><i class="bx bxs-show" color="#f7f7f2"></i></button>';
+        var botonPDF =
+          '<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4" style="background-color: #224fb1" onclick="mostrarPDF(this)"><i class="bx bxs-show" color="#f7f7f2"></i></button>';
 
-        
-        celda.innerHTML=botonPDF;
+        celda.innerHTML = botonPDF;
       } else {
         celda.textContent = datoFormacion[i][j];
       }
@@ -203,14 +224,14 @@ function agregar() {
     }
 
     filaHTML +=
-      '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1" onclick="modificar()"><i class="bx bxs-edit" style="color:#f7f7f2;"></i></button></td>';
+      '<td><button type="button" class="btn btn-primary" data-bs-toggle="modal"data-bs-target="#exampleModal2" style="background:#224fb1" onclick="modificar(this)"><i class="bx bxs-edit" style="color:#f7f7f2;"></i></button></td>';
+
     filaHTML +=
       '<td><button type="button" class="btn btn-primary" data-bs-toggle="button" aria-pressed="false" autocomplete="off" style="background:#224fb1" onclick="eliminar()"><i class="bx bx-minus" style="color:#f7f7f2"; ></i></button></td>';
 
     fila.innerHTML += filaHTML;
 
     tablaFormacion.appendChild(fila);
-
   }
 
   if (datoFormacion.length === 0) {
@@ -225,27 +246,22 @@ function agregar() {
 }
 
 function mostrarPDF(button) {
-  const fila = button.closest("tr"); // Obtén la fila que contiene el botón
+  const fila = button.closest("tr");
   const filaIndex = fila.getAttribute("data-fila-index");
-  
+
   if (filaIndex !== null) {
-    const rowIndex = parseInt(filaIndex);
+    let rowIndex = parseInt(filaIndex);
     console.log("data-fila-index:", rowIndex);
-    
-    // Puedes usar rowIndex para realizar las operaciones que necesites aquí.
-    
-    // Por ejemplo, puedes mostrar un PDF en un modal utilizando rowIndex:
+
     const modalPDF = document.getElementById("contenedorPDF");
     if (datoFormacion[rowIndex] && datoFormacion[rowIndex][8]) {
       const archivoURL = URL.createObjectURL(datoFormacion[rowIndex][8]);
 
-      // Crea un elemento iframe para mostrar el PDF
       const iframe = document.createElement("iframe");
       iframe.src = archivoURL;
       iframe.style.width = "100%";
       iframe.style.height = "500px";
 
-      // Limpia el contenido anterior en el contenedor y agrega el iframe
       modalPDF.innerHTML = "";
       modalPDF.appendChild(iframe);
     } else {
@@ -273,12 +289,16 @@ function eliminar() {
     datoFormacion[i][0] = i + 1; // Actualiza los índices
   }
   agregar();
-
-
 }
 
-function modificar() {
-
+function modificar(button) {
+  
+  const fila = button.closest("tr");
+  const filaIndex = fila.getAttribute("data-fila-index");
+  rowIndexM = parseInt(filaIndex);
+  modi = 1;
+   
+  title_profe.innerHTML += " (Modificar) ";
 
 }
 
@@ -334,7 +354,6 @@ formDomicilio.addEventListener("submit", (e) => {
 
   datoDomicilio.push(dato);
 
-  
   while (tabla.rows.length > 0) {
     tabla.deleteRow(0);
   }
@@ -363,17 +382,26 @@ familiarForm.addEventListener("submit", (event) => {
   var Esta_CiSelect = document.getElementById("Esta_Civil");
   var Esta_Civil = Esta_CiSelect.options[Esta_CiSelect.selectedIndex].text;
   var Nivel_estuSelect = document.getElementById("Nivel_estu");
-  var Nivel_estu = Nivel_estuSelect.options[Nivel_estuSelect.selectedIndex].text;
+  var Nivel_estu =
+    Nivel_estuSelect.options[Nivel_estuSelect.selectedIndex].text;
   var ocupacion = document.getElementById("Ocupacion").value;
   var seleccion = "";
   var economico = document.querySelector('input[name="tsSelector"]:checked');
 
-  
   if (economico) {
     seleccion = economico.id === "true" ? "Si" : "No";
   }
 
-  var familiar = [ordenFami, Ape_nom, Paren, Fech_na, Esta_Civil, Nivel_estu, ocupacion, seleccion];
+  var familiar = [
+    ordenFami,
+    Ape_nom,
+    Paren,
+    Fech_na,
+    Esta_Civil,
+    Nivel_estu,
+    ocupacion,
+    seleccion,
+  ];
 
   datoFamiliar.push(familiar);
 
@@ -394,7 +422,6 @@ familiarForm.addEventListener("submit", (event) => {
   familiarForm.reset();
 });
 
-
 profesionalForm.addEventListener("submit", (evento) => {
   evento.preventDefault();
   var ordenForma = datoFormacion.length + 1;
@@ -407,10 +434,9 @@ profesionalForm.addEventListener("submit", (evento) => {
   var fech_initDato = document.getElementById("fech_ini").value;
   var fech_finDato = document.getElementById("fech_fin").value;
   var gradoDato = document.getElementById("grado").value;
-
   var textDato = document.getElementById("miTextarea").value;
 
-
+   
   var formacion = [
     ordenForma,
     form_profeDato,
@@ -423,21 +449,32 @@ profesionalForm.addEventListener("submit", (evento) => {
     archivoPDF,
     textDato,
   ];
-  
-  datoFormacion.push(formacion);
+  if (modi === 0) {
 
-  agregar();
+    datoFormacion.push(formacion);
+
+  } else if (modi === 1) {
+    
+    datoFormacion[rowIndexM]= formacion ;
+    for (var i = 0; i < datoFormacion.length; i++) {
+      datoFormacion[i][0] = i + 1; // Actualiza los índices
+    }
+  }
+  agregar()
 
   check.classList.add("d-none");
   profesionalForm.reset();
- 
 });
 
 docSustDatos.addEventListener("change", function (event) {
-
   archivoPDF = event.target.files[0];
   var check = document.getElementById("check");
   check.classList.remove("d-none");
-
 });
+
+function borrar(){
+  let title = "(Modificar)";
+  title_profe.innerHTML = title_profe.innerHTML.replace(title, " ")
+
+}
 

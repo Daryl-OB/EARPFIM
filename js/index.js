@@ -1,4 +1,21 @@
-const table = document.getElementById("horarioTable").getElementsByTagName("tbody")[0];
+
+const horario = document.getElementById("horarioTable")
+const table = horario.getElementsByTagName("tbody")[0];
+
+function GeneraPDF() {
+  var element = document.querySelector('.table-bordered');
+
+  html2pdf(element, {
+      margin: 10,
+      filename: 'tabla.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: { scale: 10 }, // Ajusta el valor de escala según tus necesidades
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'landscape', width: 297, height: 210 }
+  }).then(function () {
+      console.log('PDF generado correctamente');
+  });
+}
+
 
 
 function crearceldas() {
