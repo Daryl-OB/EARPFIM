@@ -1,0 +1,40 @@
+.content-informa{
+     background:rgb(245, 245, 245);
+     margin: 60px 30px;
+     padding: 50px;
+     height: 550px;
+     overflow: auto;
+     border-radius: 5px;
+}
+.content-columm{
+   margin-top: 30px;
+}
+.title{
+    color: black;
+}
+.sub-title{
+    color: rgb(34, 79, 177);
+    font-size: 25px;
+    
+}
+
+.cod-user{
+    background-color: #ffff;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 1px  #c0bfbf;
+}
+.usuario{
+ font-size: 19px;
+ font-weight: 500;
+}
+.cod{
+    color:rgb(34, 79, 177);
+    font-size: 35px;
+}
+small{
+    color: #9f9f9f;
+}
+select{
+    
+}
