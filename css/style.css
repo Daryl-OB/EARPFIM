@@ -146,7 +146,7 @@ después de un elemento `.sidebar` con la clase `.close`. */
 }
 /**/
 .content-nav{
-  height: 64px;
+  height: 71px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,6 +155,8 @@ después de un elemento `.sidebar` con la clase `.close`. */
   color: white;
   font-size: 18px;
   padding-left: 20px;
+  
+ 
 }
 .content-nav .name {
   margin-top:15px ;
@@ -162,13 +164,14 @@ después de un elemento `.sidebar` con la clase `.close`. */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 400;
 }
 .content-nav .vertical-rounded {
   position: relative; 
 }
 .content{
-  margin:20px 50px;
+  margin:40px 50px;
 }
 
 @media (max-width:1025px) {

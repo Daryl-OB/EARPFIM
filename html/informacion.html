@@ -159,7 +159,7 @@
         </section>
         <section class="content">
             <section class="content-informa">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between ">
                     <div>
                         <h1 class="title">MI INFORMACIÓN</h1>
                         <span class="sub-title">OBREGON RAMOS, MAXIMO</span>
@@ -169,93 +169,95 @@
                         <span class="cod">75921759</span>
                     </div>
                 </div>
-                <div>
-                    <form>
-                        <div class="content-columm" >
+                <form>
+                    <div>
+                        <div class="content-columm">
                             <div class="column">
-                                <div class="row g-4" >
+                                <div class="row g-4">
                                     <div class="col-md" dissbled>
-                                        <b>Documento de Identidad</b>
+                                        <label>Documento de Identidad</label>
                                         <div class="form">
                                             <input type="text" class="form-control" aria-label="Sizing example input"
-                                                aria-describedby="inputGroup-sizing-sm"disabled >
+                                                aria-describedby="inputGroup-sizing-sm" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md"  >
+                                        <label>Dirección de correo electronico</label>
+                                        <div class="form"  >
+                                            <input type="email" aria-label="First name" class="form-control">
+                                            <small>Si poseé mas de un correo electronico separelo por espacios en blanco</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row g-4">
+                                    <div class="col-md">
+                                        <label>Área / cargo</label>
+                                        <div class="form">
+                                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-sm" disabled>
                                         </div>
                                     </div>
                                     <div class="col-md">
-                                        <b>Dirección de correo electronico</b>
-                                        <div class="form input-group">
-                                            <input type="email" aria-label="First name" class="form-control">
-                                            <input type="email" aria-label="Last name" class="form-control">
+                                        <label>Dirección de domicilio</label>
+                                        <div class="form">
+                                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-sm">
                                         </div>
                                     </div>
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <b>Área / cargo</b>
-                                            <div class="form">
-                                                <input type="text" class="form-control"
-                                                    aria-label="Sizing example input"
-                                                    aria-describedby="inputGroup-sizing-sm"disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <b>Dirección de domicilio</b>
-                                            <div class="form">
-                                                <input type="text" class="form-control"
-                                                    aria-label="Sizing example input"
-                                                    aria-describedby="inputGroup-sizing-sm">
-                                            </div>
+                                </div>
+                                <div class="row g-4">
+                                    <div class="col-md">
+                                        <label>Número de telefono fijo</label>
+                                        <div class="form">
+                                            <input type="number" class="form-control" aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-sm">
+                                            <small>Si poseé mas de un número telefonico separelo por espacios en
+                                                blanco</small>
                                         </div>
                                     </div>
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <b>Número de telefono fijo</b>
-                                            <div class="form">
-                                                <input type="number" class="form-control"
-                                                    aria-label="Sizing example input"
-                                                    aria-describedby="inputGroup-sizing-sm">
-                                                <small>Si poseé mas de un número telefonico separelo por espacios en
-                                                    blanco</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <div class="form-floating">
-                                                <b>Comentario</b>
-                                                <textarea class="form-control" placeholder="Leave a comment here"
-                                                    id="floatingTextarea2" style="height: 100px"></textarea>
-                                            </div>
+                                    <div class="col-md">
+                                        <div class="form">
+                                            <b style="color:rgb(34, 79, 177);font-weight: 600;">Comentario</b>
+                                            <textarea class="form-control" placeholder="...."
+                                                id="floatingTextarea2" style="height: 100px"></textarea>
                                         </div>
                                     </div>
-                                    <div class="form">
-                                        <b>Número de celular</b>
+                                </div>
+                                <div class="row g-4">
+                                    <div class="col-md">
+                                        <label>Número de celular</label>
                                         <div class="form">
                                             <input type="text" class="form-control" aria-label="Sizing example input"
                                                 aria-describedby="inputGroup-sizing-sm">
                                             <small>Si poseé mas de un número separelo por espacios en blanco</small>
                                         </div>
                                     </div>
-                                    <div class="select" >
-                                        <b>Sexo *</b>
-                                        <select class="form-select select" aria-label="Default select example">
-                                            <option selected disabled>Seleccionar</option>
-                                            <option value="M">Masculino</option>
-                                            <option value="F">Femenino</option>
-                                        </select>
-
-                                        <b>Fecha Nac *</b><br>
-                                        <input type="date" name="" id="">
+                                    <div class="col-md">
                                     </div>
                                 </div>
-                            </div>        
+
+                            </div>
+                            <div class="select">
+                                <label>Sexo *</label>
+                                <select class="form-select " aria-label="Default select example">
+                                    <option selected disabled>Seleccionar</option>
+                                    <option value="M">Masculino</option>
+                                    <option value="F">Femenino</option>
+                                </select>
+                                <br>
+                                <label>Fecha Nac *</label>
+                                <input type="date" class="date" id="">
+                            </div>
                         </div>
-                        <div>
-                            <button type="submit" class="btn btn-primary">Guardar</button>
-                            <button type="button" onclick="window.location.href='/html/login.html'" class="btn btn-secondary">
-                                <i class='bx bx-x'></i>Cerrar
-                              </button>
-                              
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="grou-buttom d-flex">
+                        <button type="submit" class="envio">GUARDAR CAMBIOS</button>
+                        <button type="button"  onclick="window.location.href='/html/login.html'"
+                            class="Cerrar">
+                           <i class='bx bx-x'></i>CERRAR
+                        </button>
+                    </div>
+                </form>
             </section>
         </section>
     </main>
