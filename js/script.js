@@ -38,18 +38,10 @@ function cerrar_sesion() {
         timer: 1500,
       });
       setTimeout(function () {
-        window.location.href = "https://www.google.com/?authuser=0";
+        window.location.href = "/html/login.html";
       }, 2000);
     }
   });
 }
-/*function mensaje() {
-  Swal.fire({
-    position: "center",
-    icon: "success",
-    title: "Enviado",
-    showConfirmButton: false,
-    timer: 1500,
-  });
-}*/
+
 
