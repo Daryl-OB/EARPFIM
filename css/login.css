@@ -30,7 +30,9 @@
     padding-top: 23px;
     
   }
-
+ .link{
+  text-decoration: none;
+ }
   .login {
     display: grid;
     grid-template-columns: 1fr;
