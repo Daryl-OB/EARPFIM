@@ -167,6 +167,7 @@ después de un elemento `.sidebar` con la clase `.close`. */
   text-overflow: ellipsis;
   font-size: 22px;
   font-weight: 400;
+  text-transform: uppercase;
 }
 .content-nav .vertical-rounded {
   position: relative; 

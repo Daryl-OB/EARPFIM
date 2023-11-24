@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
-  <link href="/css/login.css" rel="stylesheet">
+  <link href="/public/assets/css/index.css" rel="stylesheet">
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -20,7 +21,7 @@
   <header>
     <!-- place navbar here -->
     <nav id="barra">
-      <img src="/img/logo2.png">
+      <img src="/public/assets/img/logo2.png">
       <span class="name" id="uni">UNIVERSIDAD NACIONAL DE INGENERÍA<br>FACULTAD DE INGENERÍA MECÁNICA</span>
     </nav>
   </header>
@@ -28,17 +29,25 @@
     <b style="font-size: 25px ;" class="text-center">INTRANET EARPFIM</b>
     <span style="font-size: 22px;" class="text-center">Sistema de Planificación de Recursos Académicos y
       Empresariales</span>
-    <form class="login">
+
+    <form class="login" action="validacion.php" method="post" >
       <span>Usuario:</span>
-      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+        <input type="text" class="form-control" name="usuario" aria-label="Default" aria-describedby="inputGroup-sizing-default"
         required>
       <span>Contraseña:</span>
-      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"
-        required><br>
-      <button type="submit" class="ini_sesion">INICIAR SESIÓN</button><br>
+        <input type="password" class="form-control" name="clave" aria-label="Default" aria-describedby="inputGroup-sizing-default"
+        required>
+        <br>
+      <button type="submit" class="ini_sesion" >INICIAR SESIÓN</button>
+
+      <?php if(isset($_SESSION['error_message'])) : ?>
+      <div class="error-message" style="color: red; font-size :14px;"><?php echo $_SESSION['error_message']; ?></div>
+      <?php unset($_SESSION['error_message']); // Limpiar el mensaje de error después de mostrarlo ?>
+      <?php endif; ?>
+      
       <a href="#" class="link" >¿Olvido su contraseña?</a>
       <hr>
-      <button type="submit" class="sesion_google"><img src="/img/google.png" class="google"> Sesión con Google</button>
+      <button type="submit" class="sesion_google"><img src="/public/assets/img/google.png" class="google"> Sesión con Google</button>
       <p>Temporalmente solo para docentes</p>
       <button type="button" class="comunicados" onclick="window.open('http://estadisticafim.uni.edu.pe', '_blank')"
         ;>VER COMUNICADOS</button>
