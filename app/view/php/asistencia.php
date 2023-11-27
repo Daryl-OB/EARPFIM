@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -46,11 +48,11 @@
                                     FIM</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/horario.html" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario de
+                                <a href="/app/view/php/horario.php" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario de
                                     clases</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/info-docente.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/info-docente.php" class="dropdown__anchor"><i
                                         class='bx bxs-user-rectangle'></i>Información Docente</a>
                             </li>
                             <li class="dropdown__li">
@@ -62,7 +64,7 @@
                                     Alumnos</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/asistencia.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/asistencia.php" class="dropdown__anchor"><i
                                         class='bx bxs-book-bookmark'></i>Asistencia</a>
                             </li>
                             <li class="dropdown__li">
@@ -135,7 +137,12 @@
         <section class="content-nav">
           
             <i class="bx bx-menu toggle a"></i>
-            <p class="name">OBREGON RAMOS, MAXIMO</p>
+            <p class="name">
+                <?php 
+                    $usuario = $_SESSION['usuario'];
+                    echo $usuario;
+                ?>
+            </p>
       
             <div class="vertical-rounded">
              
@@ -150,7 +157,7 @@
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="/app/view/html/informacion.html">Mi información</a></li>
+                <li><a class="dropdown-item" href="/app/view/php/informacion.php">Mi información</a></li>
                 <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
                 <li><a class="dropdown-item" href="#"  onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                 </ul>

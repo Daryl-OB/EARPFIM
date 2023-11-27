@@ -8,11 +8,14 @@
    $resultado = mysqli_query($con,$consulta);
 
    $fila = mysqli_num_rows($resultado);
+   session_start(); 
+
    if($fila){
-    header("Location:/app/view/html/home.html");
+    $_SESSION[$usuario]=$usuario;
+    header("Location:/app/view/php/home.php");
 
    }else{
-      session_start(); 
+      
       $_SESSION['error_message'] = "Credenciales incorrectas. Por favor, inténtalo de nuevo.";
       header("Location:index.php");
    }

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,12 +47,12 @@
                                     FIM</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/horario.html" class="dropdown__anchor"><i class="bx bxs-pencil"></i>Mi horario de
+                                <a href="/app/view/php/horario.php" class="dropdown__anchor"><i class="bx bxs-pencil"></i>Mi horario de
                                     clases</a>
                             </li>
 
                             <li class="dropdown__li">
-                                <a href="/app/view/html/info-docente.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/info-docente.php" class="dropdown__anchor"><i
                                         class="bx bxs-user-rectangle"></i>Información Docente</a>
                             </li>
                             <li class="dropdown__li">
@@ -62,7 +64,7 @@
                                     Alumnos</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/asistencia.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/asistencia.php" class="dropdown__anchor"><i
                                         class="bx bxs-book-bookmark"></i>Asistencia</a>
                             </li>
                             <li class="dropdown__li">
@@ -133,7 +135,12 @@
     <main class="home">
         <section class="content-nav">
             <i class="bx bx-menu toggle"></i>
-            <p class="name">OBREGON RAMOS, MAXIMO</p>
+            <p class="name">
+                <?php 
+                    $usuario = $_SESSION['usuario'];
+                    echo $usuario;
+                ?>
+            </p>
             <div class="vertical-rounded">
                 <div class="dropdown ms-3 dots-vertical-rounded">
                     <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
@@ -146,7 +153,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/app/view/html/informacion.html">Mi información</a></li>
+                        <li><a class="dropdown-item" href="/app/view/php/informacion.php">Mi información</a></li>
                         <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
@@ -201,7 +208,7 @@
     </main>
     <script src="/public/assets/js/script.js"></script>
     <script src="/public/assets/js/horario.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/php2pdf.js/0.10.1/php2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

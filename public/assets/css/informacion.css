@@ -5,10 +5,7 @@
      height: 550px;
      overflow: auto;
      border-radius: 5px;
-    
-    
-    box-shadow: 1px 1px 10px 1px rgb(203, 203, 203);
-     
+    box-shadow: 1px 1px 10px 1px rgb(203, 203, 203);  
 }
 
 .content-columm{
@@ -19,8 +16,7 @@
 }
 .sub-title{
     color: rgb(34, 79, 177);
-    font-size: 25px;
-    
+    font-size: 25px;  
 }
 label{
     color: rgb(34, 79, 177);
@@ -96,7 +92,6 @@ small{
   box-shadow:  0px 0px 5px 0px rgb(100, 100, 100);
 }
 .Cerrar:hover , .envio:hover{
-
     transform: translateY(-1px) scale(1.0);
     box-shadow: 1px 1px 10px 1px rgb(141, 140, 140);
 

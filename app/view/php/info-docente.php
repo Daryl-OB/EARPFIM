@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -47,12 +49,12 @@
                                     FIM</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/horario.html" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario de
+                                <a href="/app/view/php/horario.php" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario de
                                     clases</a>
                             </li>
 
                             <li class="dropdown__li">
-                                <a href="/app/view/html/info-docente.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/info-docente.php" class="dropdown__anchor"><i
                                         class='bx bxs-user-rectangle'></i>Información Docente</a>
                             </li>
                             <li class="dropdown__li">
@@ -64,7 +66,7 @@
                                     Alumnos</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/html/asistencia.html" class="dropdown__anchor"><i
+                                <a href="/app/view/php/asistencia.php" class="dropdown__anchor"><i
                                         class='bx bxs-book-bookmark'></i>Asistencia</a>
                             </li>
                             <li class="dropdown__li">
@@ -136,7 +138,12 @@
     <main class="home">
         <section class="content-nav">
             <i class="bx bx-menu toggle"></i>
-            <p class="name">OBREGON RAMOS, MAXIMO</p>
+            <p class="name">
+                <?php 
+                    $usuario = $_SESSION['usuario'];
+                    echo $usuario;
+                ?>
+            </p>
             <div class="vertical-rounded">
                 <div class="dropdown ms-3 dots-vertical-rounded">
                     <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
@@ -149,7 +156,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/html/informacion.html">Mi información</a></li>
+                        <li><a class="dropdown-item" href="/php/informacion.php">Mi información</a></li>
                         <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
