@@ -7,11 +7,14 @@
    $consulta ="SELECT * FROM accesso where codAcceso='$usuario'and clave='$clave'";
    $resultado = mysqli_query($con,$consulta);
 
+   $rol= "SELECT rol FROM `accesso` WHERE codAcceso = '$usuario'";
+   $resul = mysqli_query($con,$rol);
+
    $fila = mysqli_num_rows($resultado);
    session_start(); 
 
    if($fila){
-    $_SESSION[$usuario]=$usuario;
+    $_SESSION['usuario']=$usuario;
     header("Location:/app/view/php/home.php");
 
    }else{

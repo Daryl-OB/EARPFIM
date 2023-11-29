@@ -6,12 +6,15 @@ function conectar(){
     $pass = "";
     $bd = "uni";
 
-    $con=mysqli_connect($localhost,$user,$pass);
-    mysqli_select_db($con,$bd);
-   
+    try {
+        $con = mysqli_connect($localhost, $user, $pass);
+        mysqli_select_db($con, $bd);
 
-    return $con;
-  
+        return $con;
+    } catch (Exception $e) {
+        // Manejar la excepción
+        die("Error: " . $e->getMessage());
+    }
 }
 
 ?>

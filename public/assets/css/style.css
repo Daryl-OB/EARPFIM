@@ -170,7 +170,9 @@ después de un elemento `.sidebar` con la clase `.close`. */
   text-transform: uppercase;
 }
 .content-nav .vertical-rounded {
-  position: relative; 
+  position: relative;
+  z-index: 2;
+  
 }
 .content{
   margin:40px 50px;

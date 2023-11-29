@@ -157,7 +157,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li><a class="dropdown-item" href="/php/informacion.php">Mi información</a></li>
-                        <li><a class="dropdown-item" href="#">Reinciar clave</a></li>
+                        <li><a class="dropdown-item" href="/app/view/php/miClave.php">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
                     </li>
