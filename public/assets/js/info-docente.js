@@ -207,6 +207,7 @@ function agregar() {
   for (var i = 0; i < datoFormacion.length; i++) {
     var fila = document.createElement("tr");
     fila.setAttribute("data-fila-index", i);
+    fila.id="datos";
     var filaHTML = "";
 
     for (var j = 0; j < datoFormacion[i].length; j++) {
@@ -411,6 +412,7 @@ familiarForm.addEventListener("submit", (event) => {
 
   for (var i = 0; i < datoFamiliar.length; i++) {
     var fila = document.createElement("tr");
+    fila.id="datos";
 
     for (var j = 0; j < datoFamiliar[i].length; j++) {
       var celda = document.createElement("td");

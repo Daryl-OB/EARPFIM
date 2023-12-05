@@ -45,7 +45,7 @@
       <?php unset($_SESSION['error_message']); // Limpiar el mensaje de error después de mostrarlo ?>
       <?php endif; ?>
       
-      <a href="#" class="link" >¿Olvido su contraseña?</a>
+      <a href="/app/view/php/forgot_password.php" class="link" >¿Olvido su contraseña?</a>
       <hr>
       <button type="submit" class="sesion_google"><img src="/public/assets/img/google.png" class="google"> Sesión con Google</button>
       <p>Temporalmente solo para docentes</p>

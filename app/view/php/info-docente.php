@@ -514,7 +514,7 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tabla">
-                                        <tr>
+                                        <tr >
                                             <td colspan="12" style="font-size: 20px;">NO HAY DATOS EN LA TABLA</td>
                                         </tr>
                                     </tbody>

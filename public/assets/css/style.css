@@ -180,6 +180,9 @@ después de un elemento `.sidebar` con la clase `.close`. */
 .bx-menu{
   cursor: pointer;
 }
+/* #datos:hover{ */
+  /* background: rgb(181, 199, 248); */
+/* } */
 
 @media (max-width:1025px) {
   
