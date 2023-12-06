@@ -21,7 +21,7 @@
 <body>
     <nav class="sidebar close">
         <header>
-            <div class="image-text" onclick="window.open('/app/view/php/home.php')">
+            <div class="image-text" onclick="window.location.href = '/app/view/php/home.php';">
                 <spam class="imge">
                     <img src="/public/assets/img/logo.png" alt="logo" />
                 </spam>
