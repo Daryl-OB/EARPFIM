@@ -1,21 +1,25 @@
 /*Activar y desactivar modal*/
-const body = document.querySelector("body"),
-  sidebar = body.querySelector(".sidebar"),
-  toggle = body.querySelector(".toggle"),
-  pant = body.querySelector(".pant");
-  
+document.addEventListener("DOMContentLoaded", function() {
+  const body = document.querySelector("body"),
+    sidebar = body.querySelector(".sidebar"),
+    toggle = body.querySelector(".toggle"),
+    pant = body.querySelector(".pant");
+
   toggle.addEventListener("click", () => {
     sidebar.classList.toggle("close");
     if (window.innerWidth <= 1025) {
-      pant.classList.toggle("d-none");   
+      pant.classList.toggle("d-none");
     }
+  });
+
+  pant.addEventListener("click", () => {
+    if (window.innerWidth <= 1025) {
+      pant.classList.toggle("d-none");
+      sidebar.classList.toggle("close");
+    }
+  });
 });
-pant.addEventListener("click", () => {
-  if (window.innerWidth <= 1025) {
-    pant.classList.toggle("d-none");
-    sidebar.classList.toggle("close");
-  }
-});
+
 
 
 /* Sweet Alert 2 */

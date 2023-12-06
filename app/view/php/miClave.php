@@ -21,13 +21,14 @@
 <body>
     <nav class="sidebar close">
         <header>
-            <div class="image-text">
+            <div class="image-text" onclick="window.open('/app/view/php/home.php')>
                 <spam class="imge">
                     <img src="/public/assets/img/logo.png" alt="logo" />
                 </spam>
-                <div class="header-text">
+                <div class="header-text" >
                     <span class="empresa">UNI EARFIM</span>
                     <spam class="profession">DOCENTE</spam>
+                
                 </div>
             </div>
         </header>
@@ -204,7 +205,7 @@
                 overflow: hidden;
                 background: #f5f5f5;
                 padding: 30px;
-                width: 50%;
+                width: 466px;
                 height: 100%;
                 border-radius: 5px;
             }
@@ -220,7 +221,9 @@
                 box-shadow: 0px 0px 5px 0px rgb(100, 100, 100);
             }
 
-
+            input{
+                width:0%;
+            }
             small {
                 text-align: center;
                 padding: 0px 5px;
@@ -241,11 +244,11 @@
                 }
             }
         </script>
-
+         <script src="/public/assets/js/script.js"></script>
         <!-- Bootstrap JavaScript Libraries -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
-            </script>
+            </s>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">

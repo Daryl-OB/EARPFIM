@@ -27,7 +27,7 @@
   </header>
   <main class="content-login">
     <b style="font-size: 25px ;" class="text-center">INTRANET EARPFIM</b>
-    <span style="font-size: 22px;" class="text-center">Sistema de Planificación de Recursos Académicos y
+    <span style="font-size: 22px;  " class="text-center">Sistema de Planificación de Recursos Académicos y
       Empresariales</span>
 
     <form class="login" action="validacion.php" method="post" >
@@ -47,7 +47,7 @@
       
       <a href="/app/view/php/forgot_password.php" class="link" >¿Olvido su contraseña?</a>
       <hr>
-      <button type="submit" class="sesion_google"><img src="/public/assets/img/google.png" class="google"> Sesión con Google</button>
+      <button type="submit" class="sesion_google"><img src="/public/assets/img/google.png" class="google">Iniciar Sesión con Google</button>
       <p>Temporalmente solo para docentes</p>
       <button type="button" class="comunicados" onclick="window.open('http://estadisticafim.uni.edu.pe', '_blank')"
         ;>VER COMUNICADOS</button>
@@ -56,21 +56,28 @@
   </main>
 
   <script>
-    var nav = document.getElementById("barra");
-    var uni = document.getElementById("uni");
-    var barra = document.getElementById("barra");
+     document.addEventListener("DOMContentLoaded", function () {
+        var nav = document.getElementById("barra");
+        var uni = document.getElementById("uni");
+        var barra = document.getElementById("barra");
 
-    window.addEventListener("resize", function () {
-      if (window.innerWidth <= 770) {
-        barra.style.justifyContent = "initial";
-        let title = '<b style="font-size:26px; ">UNI FIM</b>';
-        uni.innerHTML = title;
-      } else {
-        barra.style.justifyContent = "center";
-        let title = '<span>UNIVERSIDAD NACIONAL DE INGENIERÍA<br>FACULTAD DE INGENIERÍA MECÁNICA</span>';
-        uni.innerHTML = title;
+        function ajustarContenido() {
+            if (window.innerWidth <= 770) {
+                barra.style.justifyContent = "initial";
+                let title = '<b style="font-size:26px; ">UNI FIM</b>';
+                uni.innerHTML = title;
+            } else {
+                barra.style.justifyContent = "center";
+                let title = '<span>UNIVERSIDAD NACIONAL DE INGENIERÍA<br>FACULTAD DE INGENIERÍA MECÁNICA</span>';
+                uni.innerHTML = title;
+            }
+        }
 
-      }
+        // Llama a la función inicialmente
+        ajustarContenido();
+
+        // Agrega el evento de cambio de tamaño de la ventana
+        window.addEventListener("resize", ajustarContenido);
     });
 
   </script>
