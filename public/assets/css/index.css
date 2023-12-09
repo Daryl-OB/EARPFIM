@@ -4,7 +4,6 @@
   font-family: "Open Sans", sans-serif;
 }
 
-
 #barra {
   background-color: #3f51b5;
   display: flex;
@@ -49,7 +48,6 @@ img {
   border: 1px solid #b9b8b8;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   overflow: hidden;
-  
 }
 
 .login:hover {
@@ -102,9 +100,8 @@ p {
 .google {
   height: 35px;
 }
-@media (max-width: 425px){
-  .login{
+@media (max-width: 425px) {
+  .login {
     width: 0px;
   }
-
 }

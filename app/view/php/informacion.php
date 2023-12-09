@@ -159,13 +159,13 @@
                         <li><a class="dropdown-item" href="/app/view/php/miClave.php">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
-                    </li>
+                    
                 </div>
             </div>
         </section>
         <section class="content">
             <section class="content-informa">
-                <div class="d-flex justify-content-between ">
+                <div class="informa">
                     <div>
                         <h1 class="title">MI INFORMACIÓN</h1>
                         <span class="sub-title">OBREGON RAMOS, MAXIMO</span>
@@ -241,7 +241,6 @@
                                     <div class="col-md">
                                     </div>
                                 </div>
-
                             </div>
                             <div class="select">
                                 <label>Sexo *</label>
@@ -256,7 +255,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="grou-buttom d-flex">
+                    <div class="grou-buttom" >
                         <button type="submit" class="envio">GUARDAR CAMBIOS</button>
                         <button type="button"  onclick="window.location.href='/php/login.php'"
                             class="Cerrar">

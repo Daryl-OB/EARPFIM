@@ -147,8 +147,8 @@
             </p>
             <div class="vertical-rounded">
                 <div class="dropdown ms-3 dots-vertical-rounded">
-                    <button class="btn btn-bd-light dropdown position-relative" id="bd-versions"
-                        data-bs-toggle="dropdown" aria-expanded="false" data-bs-display="static">
+                    <button class="btn btn-bd-light dropdown" id="bd-versions" data-bs-toggle="dropdown"
+                        aria-expanded="false" data-bs-display="static">
                         <i class='bx bx-dots-vertical-rounded' style="color: white;"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
@@ -228,6 +228,11 @@
                 text-align: center;
                 padding: 0px 5px;
             }
+            @media (max-width:500px) {
+                .content{
+                    margin:0px;
+                }
+            }
         </style>
         <script>
             function compararEntradas() {
@@ -246,11 +251,11 @@
         </script>
          <script src="/public/assets/js/script.js"></script>
         <!-- Bootstrap JavaScript Libraries -->
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
             </s>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
             </script>
 </body>

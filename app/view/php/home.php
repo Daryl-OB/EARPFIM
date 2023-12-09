@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="/public/assets/css/home.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -169,13 +170,13 @@
                 </div>
             </div>
         </section>
-        <section class="content" >
-            <div style="margin-top: 100px;  overflow: hidden;" >
-                <div class="text-center" style="font-size:48px; font-family: 'M PLUS Rounded 1c', sans-serif;  letter-spacing: 10.5px;">
-                    <p  >BIENVENIDO AL EARFIM</p>
-                    <p  style="font-weight:600;">ZONA USUARIO</p>
+        <section class="contenedor" >
+            <div class="content-bienvenido">
+                <div class="bienvenido-principal">
+                    <p class="title">BIENVENIDO AL EARFIM</p>
+                    <p class="zona" style="font-weight:600;">ZONA USUARIO</p>
                 </div>
-                <div class="d-flex align-items-center justify-content-center" >
+                <div class="tuerca" >
                     <img src="/public/assets/img/tuerca.gif" style="width: max-content;height: 200px;">
                 </div>
             </div>

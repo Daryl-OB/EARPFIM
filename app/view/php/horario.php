@@ -157,7 +157,7 @@
                         <li><a class="dropdown-item" href="/app/view/php/miClave.php">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
-                    </li>
+                  
                 </div>
                 <div class="pant" id="toggle"></div>
             </div>

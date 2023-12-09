@@ -33,8 +33,7 @@
                 <div class="group-button d-flex justify-content-center ">
                     <button type="submit" class="recuperar">RECUPERAR CONTRASEÑA</button>
                     <button class="cancelar"><i class='bx bx-chevron-left' style="font-size: 25px;"></i>CANCELAR</button>
-                </div>
-                
+                </div>  
             </form>
         </div>
     </section>

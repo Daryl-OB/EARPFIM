@@ -1,43 +1,33 @@
+.content-clase {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.carga-horaria {
+  color: #969992;
 
-.content-clase{
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 30px;
+  float: right;
 }
-.carga-horaria{
-    color:#969992;
-    
-    float: right;  
+.content-table {
+  overflow: auto;
 }
-.content-table{
-    overflow: auto;
-   
+.table {
+  width: 100%;
+  margin-top: 15px;
 }
-.table{
-    width: 100%;
-    margin-top: 15px;
-   
-}
-td{
-    max-width: 200px;
-    max-width: 100px;
-    text-align: center;
-    
-
+td {
+  max-width: 200px;
+  max-width: 100px;
+  text-align: center;
 }
 /* Estilo para las celdas de los cursos */
 
-  
-@media (max-width:600px) {
-    .content-clase{
-        display: grid;
-        grid-template-rows: 1fr 1fr;   
-    }
-    .content-año{
-        padding-top: 20px;
-    }
-   
+@media (max-width: 600px) {
+  .content-clase {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+  }
+  .content-año {
+    padding-top: 20px;
+  }
 }
-   
-   
-    

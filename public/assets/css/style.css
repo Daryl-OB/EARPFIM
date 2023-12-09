@@ -148,7 +148,7 @@ después de un elemento `.sidebar` con la clase `.close`. */
 }
 /**/
 .content-nav{
-  height: 71px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: space-between;

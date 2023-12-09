@@ -1,0 +1,44 @@
+.content-bienvenido {
+  margin-top: 100px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+.bienvenido-principal {
+  font-size: 48px;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: 10.5px;
+  text-align: center;
+}
+
+.tuerca {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .bienvenido-principal {
+    font-size: 40px;
+    letter-spacing: 5.5px;
+  }
+
+  .zona {
+    font-size: 25px;
+  }
+
+  .content {
+    margin: none;
+  }
+
+  .tuerca {
+    margin-top: 50px;
+    height: 100px;
+  }
+
+  .content-bienvenido {
+    padding-bottom: 50px;
+    margin-top: 55px;
+  }
+}
