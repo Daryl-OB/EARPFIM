@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!doctype html>
 <html lang="en">
 
@@ -9,27 +7,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" type="image/png" href="https://www.earpunifim.com/laravel_fim/public/img/general/uni.png">
-    <link rel="stylesheet" href="/public/assets/css/style.css">
-    <link rel="stylesheet" href="/public/assets/css/info-docente.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/info-docente.css">
     <!-- Boxicons CSS -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <nav class="sidebar close">
         <header>
-            <div class="image-text" onclick="window.location.href = '/app/view/php/home.php';">
-                <spam class="imge">
-                    <img src="/public/assets/img/logo.png" alt="logo" />
-                </spam>
-                <div class="header-text">
+            <div class="org-text d-flex mt-2 px-2" onclick="window.location.href = 'home.html';">
+                <picture class="imge">
+                    <img src="/img/logo.png" alt="LOGO UNI EARFIM">
+                </picture>
+                <div class="header-text mt-1">
                     <span class="empresa">UNI EARFIM</span>
-                    <spam class="profession">DOCENTE</spam>
+                    <span class="profession">DOCENTE</span>
                 </div>
             </div>
         </header>
@@ -49,12 +49,13 @@
                                     FIM</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/php/horario.php" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario de
+                                <a href="horario.html" class="dropdown__anchor"><i class='bx bxs-pencil'></i>Mi horario
+                                    de
                                     clases</a>
                             </li>
 
                             <li class="dropdown__li">
-                                <a href="/app/view/php/info-docente.php" class="dropdown__anchor"><i
+                                <a href="info-docente.html" class="dropdown__anchor"><i
                                         class='bx bxs-user-rectangle'></i>Información Docente</a>
                             </li>
                             <li class="dropdown__li">
@@ -66,7 +67,7 @@
                                     Alumnos</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/php/asistencia.php" class="dropdown__anchor"><i
+                                <a href="asistencia.html" class="dropdown__anchor"><i
                                         class='bx bxs-book-bookmark'></i>Asistencia</a>
                             </li>
                             <li class="dropdown__li">
@@ -139,10 +140,7 @@
         <section class="content-nav">
             <i class="bx bx-menu toggle"></i>
             <p class="name">
-                <?php 
-                    $usuario = $_SESSION['usuario'];
-                    echo $usuario;
-                ?>
+
             </p>
             <div class="vertical-rounded">
                 <div class="dropdown ms-3 dots-vertical-rounded">
@@ -151,13 +149,14 @@
                         <i class='bx bx-dots-vertical-rounded' style="color: white;"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
-                        <li>Roles</li>
-                        <li><img src="/public/assets/img/perfil.jpg"> DOCENTE</li>
+                        <li class="px-3">Roles</li>
+                        <li class="px-2"><img src="/img/images.jpg" style="object-fit: cover; width: 50; height: 50px;">
+                            DOCENTE</li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/php/informacion.php">Mi información</a></li>
-                        <li><a class="dropdown-item" href="/app/view/php/miClave.php">Reinciar clave</a></li>
+                        <li><a class="dropdown-item" href="/html/informacion.html">Mi información</a></li>
+                        <li><a class="dropdown-item" href="miClave.html">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
                 </div>
@@ -166,20 +165,22 @@
         <section class="content">
             <section class="">
                 <div class="content-info">
-                    <img src="/public/assets/img/perfil.jpg" alt="" class="perfil">
-                    <div class="name">
-                        <h4>OBREGON RAMOS, MAXIMO<p>0B16078</p>
-                        </h4>
-                        <div class="button-option d-flex">
-                            <div class="m-2">
-                                <p>Actualizar</p>
-                                <button type="button" class="btn btn-outline-secondary"><i
-                                        class='bx bxs-cloud-upload'></i></button>
-                            </div>
-                            <div class="m-2">
-                                <p>Historial</p>
-                                <button type="button" class="btn btn-outline-secondary"><i
-                                        class='bx bxs-copy-alt'></i></button>
+                    <div class="d-flex gap-2">
+                        <img src="/img/images.jpg" alt="" class="" style="width: 150px; height: 150px;">
+                        <div class="name">
+                            <h4>OBREGON RAMOS, MAXIMO<p>1200B16078</p>
+                            </h4>
+                            <div class="button-option d-flex">
+                                <div class="m-2">
+                                    <p>Actualizar</p>
+                                    <button type="button" class="btn btn-outline-secondary"><i
+                                            class='bx bxs-cloud-upload'></i></button>
+                                </div>
+                                <div class="m-2">
+                                    <p>Historial</p>
+                                    <button type="button" class="btn btn-outline-secondary"><i
+                                            class='bx bxs-copy-alt'></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -213,77 +214,28 @@
                 </ul>
                 <article class="frame">
                     <article class="content-uno" id="content-uno">
-                        <form action=""> 
-                        <article class="content-datos">
-                            <h4 class="title">1.- DATOS PERSONALES</h4>
-                            <div class="content-columm">
-                                <div class="datos-column-1">
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <b>Sexo</b>
-                                            <div class="form">
-                                                <select class="form-select form-select-lg mb-3 fs-6 fs-6"
-                                                    aria-label=".form-select-lg example" required>
-                                                    <option value="" disabled selected>Seleccionar</option>
-                                                    <option value="1">Masculino</option>
-                                                    <option value="2">Femenino</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <b>Fecha Nacimiento</b>
-                                            <div class="form">
-                                                <input type="date" class="date">
-                                            </div>
-                                        </div>
+                        <form action="">
+                            <div class="container">
+                                <div class="row mt-3">
+                                    <div class="col-md-3">
+                                        <label for="sexo" class="form-label">Sexo</label>
+                                        <select id="sexo" class="form-select" required>
+                                            <option value="" disabled selected>Seleccionar</option>
+                                            <option value="1">Masculino</option>
+                                            <option value="2">Femenino</option>
+                                        </select>
                                     </div>
-                                    <b>Telefono Fijo<i class='bx bxs-pencil' style='color:#4178f0'></i><input
-                                            class="text" type="text"></b>
-                                    <b>RUC<input class="text" type="text"></b>
-                                    <b>Brevete y Categoria<input class="text" type="text"></b>
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <b>Estado Civil</b>
-                                            <div class="form">
-                                                <select class="form-select form-select-lg mb-3 fs-6"
-                                                    aria-label=".form-select-lg example">
-                                                    <option value="" disabled selected>Seleccionar</option>
-                                                    <option value="1">Soltero</option>
-                                                    <option value="2">Casado</option>
-                                                    <option value="3">Viudo</option>
-                                                    <option value="4">Divorciado</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <b>Fecha de Matrimonio</b>
-                                            <div class="form">
-                                                <input type="date" class="date">
-                                            </div>
-                                        </div>
+                                    <div class="col-md-3">
+                                        <label for="fecha_nacimiento" class="form-label">Fecha Nacimiento</label>
+                                        <input type="date" id="fecha_nacimiento" class="form-control">
                                     </div>
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <div class="form">
-                                                <b>E-mail (S)<input class="text" type="email"></b>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <div class="form">
-                                                <br><input class="text" type="email"></br>
-                                            </div>
-                                        </div>
+                                    <div class="col-md-3">
+                                        <label for="dni" class="form-label">DNI</label>
+                                        <input type="text" id="dni" class="form-control">
                                     </div>
-                                </div>
-                                <div class="datos-column-2 ">
-                                    <div class="row g-4">
-                                        <div class="col-md">
-                                            <b>DNI</b><i class='bx bx-check-circle' style='color:#228903'></i>
-                                            <div class="form">
-                                                <input type="text" name="" id="" class="text">
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
+                                    <div class="col-md-3">
+                                        <label>Acciones</label>
+                                        <div class="btn-group">
                                             <button type="submit" class="btn btn-outline-secondary"><i
                                                     class='bx bxs-cloud-upload'></i></button>
                                             <button type="button" class="btn btn-outline-secondary"><i
@@ -292,65 +244,74 @@
                                                     class='bx bx-trash-alt'></i></button>
                                         </div>
                                     </div>
-                                    <b>Celular<i class='bx bxs-pencil' style='color:#4178f0'></i><input type="tel"
-                                            class="text"></b>
-                                    <b>Lib Militar<input type="text" class="text"></b>
-                                    <b>Si cuenta con vehiculo,indicar modelo,placa,año,color<input type="text"
-                                            class="text"></b>
-                                    <b>Grupo Sanguineo<input type="text" class="text"></b>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="telefono_fijo" class="form-label">Teléfono Fijo</label>
+                                        <input type="text" id="telefono_fijo" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="celular" class="form-label">Celular</label>
+                                        <input type="tel" id="celular" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="ruc" class="form-label">RUC</label>
+                                        <input type="text" id="ruc" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lib_militar" class="form-label">Libreta Militar</label>
+                                        <input type="text" id="lib_militar" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="brevete_categoria" class="form-label">Brevete y Categoría</label>
+                                        <input type="text" id="brevete_categoria" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="vehiculo" class="form-label">Vehículo</label>
+                                        <input type="text" id="vehiculo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-4">
+                                        <label for="estado_civil" class="form-label">Estado Civil</label>
+                                        <select id="estado_civil" class="form-select">
+                                            <option value="" disabled selected>Seleccionar</option>
+                                            <option value="1">Soltero</option>
+                                            <option value="2">Casado</option>
+                                            <option value="3">Viudo</option>
+                                            <option value="4">Divorciado</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="fecha_matrimonio" class="form-label">Fecha de Matrimonio</label>
+                                        <input type="date" id="fecha_matrimonio" class="form-control">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="grupo_sanguineo" class="form-label">Grupo Sanguíneo</label>
+                                        <input type="text" id="grupo_sanguineo" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-md-6">
+                                        <label for="email_1" class="form-label">Email (S)</label>
+                                        <input type="email" id="email_1" class="form-control">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email_2" class="form-label">Otro Email</label>
+                                        <input type="email" id="email_2" class="form-control">
+                                    </div>
                                 </div>
                             </div>
-                        </article>
-                        <article class="content-lugar-naci">
-                            <h3 class="title">Lugar de Nacimiento</h3>
-                            <div class="row g-9 ">
-                                <div class="col-md-6">
-                                    <b>País</b>
-                                    <div class="form">
-                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example"  id="Lugar_pais" class="pais">
-                                            <option disabled selected>Seleccionar</option>
-                                            <option value="1">Perú</option>
-                                            <option value="2">Otro país</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Departamento</b>
-                                    <div class="form">
-                                        <select class="form-select form-select-lg mb-3 fs-6 "
-                                            aria-label=".form-select-lg example"  id="Lugar_depa" class="departamento" disabled>
-                                            <option value="" selected>Seleccionar</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Provincia</b>
-                                    <div class="form">
-                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example"  id="Lugar_provi" class="provincia" disabled>
-                                            <option value="" selected>Seleccionar</option>
+                        </form>
 
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <b>Distrito</b>
-                                    <div class="form">
-                                        <select class="form-select form-select-lg mb-3 fs-6"
-                                            aria-label=".form-select-lg example"  id="Lugar_distri" class=".my-class" disabled>
-                                            <option value="" selected>Seleccionar</option>
-                                        </select>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        </form> 
-                        <article class="content-domicilio">
+                        <article class="content-domicilio mt-4">
                             <h3 class="title">Domicilio</h3>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 Añadir Registro
                             </button>
@@ -394,7 +355,7 @@
                                                         <div class="form" id="select">
                                                             <select class="form-select form-select-lg mb-3 fs-6"
                                                                 aria-label=".form-select-lg example" id="departamento"
-                                                                 disabled required>
+                                                                disabled required>
                                                                 <option value="" disabled selected>Seleccionar</option>
                                                             </select>
                                                         </div>
@@ -437,8 +398,8 @@
                                                     <div class="col-md-6">
                                                         <b>Nombre de Vía</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="Nom_via" required
-                                                                disabled>
+                                                            <input type="text" class="text form-control" id="Nom_via"
+                                                                required disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -456,8 +417,8 @@
                                                     <div class="col-md-6">
                                                         <b>Número de Inmueblo</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="N_inmueblo" required
-                                                                disabled>
+                                                            <input type="text" class="text form-control" id="N_inmueblo"
+                                                                required disabled>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6">
@@ -479,8 +440,8 @@
                                                     <div class="col-md-6">
                                                         <b>Nombre de la Zona</b>
                                                         <div class="form">
-                                                            <input type="text" class="text" id="N_zona" required
-                                                                disabled>
+                                                            <input type="text" class="text form-control" id="N_zona"
+                                                                required disabled>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -494,7 +455,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="content-table">
+                            <div class="table-responsive">
                                 <table class="table table-bordered" id="DomicilioTable">
                                     <thead>
                                         <tr>
@@ -513,17 +474,29 @@
                                         </tr>
                                     </thead>
                                     <tbody id="tabla">
-                                        <tr >
-                                            <td colspan="12" style="font-size: 20px;">NO HAY DATOS EN LA TABLA</td>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Perú</td>
+                                            <td>Ejemplo Dirección</td>
+                                            <td>Lima</td>
+                                            <td>Lima</td>
+                                            <td>Lima</td>
+                                            <td>Calle</td>
+                                            <td>Ejemplo Vía</td>
+                                            <td>Casa</td>
+                                            <td>123</td>
+                                            <td>Urbana</td>
+                                            <td>Ejemplo Zona</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+
                         </article>
-                        <article class="content-familiar">
+                        <article class="content-familiar mt-4">
                             <article>
                                 <h3 class="title" id="title">Familiar</h3>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal1">
                                     Añadir Registro
                                 </button>
@@ -535,8 +508,8 @@
                                         <div class="modal-content">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Formación
-                                                        Profesional</h5>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Familiar
+                                                    </h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                                 </div>
@@ -547,8 +520,8 @@
                                                             <div class="col-md-6">
                                                                 <b>Apellidos y Nombres</b>
                                                                 <div class="form">
-                                                                    <input type="text" class="text" id="Ape_Nom"
-                                                                        required>
+                                                                    <input type="text" class="text form-control"
+                                                                        id="Ape_Nom" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -568,8 +541,8 @@
                                                             <div class="col-md-6">
                                                                 <b>Fecha de Nacimiento</b>
                                                                 <div class="form">
-                                                                    <input type="date" class="date" name="" id="Fech_na"
-                                                                        required>
+                                                                    <input type="date" class="date form-control" name=""
+                                                                        id="Fech_na" required>
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
@@ -604,15 +577,22 @@
                                                             <div class="col-md-6">
                                                                 <b>Ocupación</b>
                                                                 <div class="form">
-                                                                    <input type="text" class="text" id="Ocupacion">
+                                                                    <input type="text" class="text form-control"
+                                                                        id="Ocupacion">
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-6">
-                                                                <b>¿Dependes economicamente de Ud.?</b>
-                                                                <div class="form">
-                                                                    <input type="radio" name="tsSelector" id="true">Si
-                                                                    <input type="radio" name="tsSelector" id="false">No
+                                                                <div class="d-flex gap-2">
+                                                                    <b>¿Dependes economicamente de
+                                                                        Ud.?</b>
+                                                                    <div class="form">
+                                                                        <input type="radio" name="tsSelector" id="true">
+                                                                        Si
+                                                                        <input type="radio" name="tsSelector"
+                                                                            id="false"> No
+                                                                    </div>
                                                                 </div>
+
                                                             </div>
                                                         </div>
                                                     </div>
@@ -627,7 +607,7 @@
                                     </div>
                                 </div>
                             </article>
-                            <div class="content-table">
+                            <div class="table-responsive">
                                 <table class="table table-bordered" id="FamiliarTable">
                                     <thead>
                                         <tr>
@@ -638,252 +618,379 @@
                                             <th scope="col">Estado Civil</th>
                                             <th scope="col">Nivel de Estudio</th>
                                             <th scope="col">Ocupación</th>
-                                            <th scope="col">Dependencia Economica</th>
+                                            <th scope="col">Dependencia Económica</th>
                                         </tr>
                                     </thead>
                                     <tbody id="bodyFamiliar">
                                         <tr>
-                                            <td colspan="12" style="font-size: 20px;">NO DATOS EN LA TABLA</td>
+                                            <td>1</td>
+                                            <td>Juan Pérez</td>
+                                            <td>Hijo</td>
+                                            <td>1995-05-10</td>
+                                            <td>Soltero</td>
+                                            <td>Universitario</td>
+                                            <td>Estudiante</td>
+                                            <td>Dependiente</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Maria García</td>
+                                            <td>Esposa</td>
+                                            <td>1988-12-20</td>
+                                            <td>Casado</td>
+                                            <td>Secundario</td>
+                                            <td>Docente</td>
+                                            <td>Independiente</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Carlos López</td>
+                                            <td>Hijo</td>
+                                            <td>2000-07-15</td>
+                                            <td>Soltero</td>
+                                            <td>Secundario</td>
+                                            <td>Estudiante</td>
+                                            <td>Dependiente</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+
                         </article>
-                        <article class="content-caso-sos">
-                            <h3 class="title">1.1.-PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
-                            <div class="contacto">
-                                <h5>Contacto 1 (*)</h5>
-                                <div class="content-columm">
-                                    <b>Apellidos y Nombres
-                                        <input type="text" class="text"></b>
-                                    <div class="content-columm">
-                                        <b>Parentesco
-                                            <input type="text" class="text"></b>
-                                        <b>Celular
-                                            <input type="tel" class="text"></b>
-                                    </div>
+                        <article class="content-caso-sos mt-4">
+                            <h3 class="title">1.1.- PERSONAS A COMUNICAR EN CASO DE EMERGENCIA:</h3>
+                            <div class="contacto row mt-3">
+                                <div class="col-md-4">
+                                    <label for="nombre1" class="form-label">Apellidos y Nombres</label>
+                                    <input type="text" id="nombre1" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="parentesco1" class="form-label">Parentesco</label>
+                                    <input type="text" id="parentesco1" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="celular1" class="form-label">Celular</label>
+                                    <input type="tel" id="celular1" class="form-control">
                                 </div>
                             </div>
-                            <div class="contacto">
-                                <h5>Contacto 2 (*)</h5>
-                                <div class="content-columm">
-                                    <b>Apellidos y Nombres
-                                        <input type="text" class="text"></b>
-                                    <div class="content-columm">
-                                        <b>Parentesco
-                                            <input type="text" class="text"></b>
-                                        <b>Celular
-                                            <input type="tel" class="text"></b>
-                                    </div>
+                            <div class="contacto row mt-3">
+                                <div class="col-md-4">
+                                    <label for="nombre2" class="form-label">Apellidos y Nombres</label>
+                                    <input type="text" id="nombre2" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="parentesco2" class="form-label">Parentesco</label>
+                                    <input type="text" id="parentesco2" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="celular2" class="form-label">Celular</label>
+                                    <input type="tel" id="celular2" class="form-control">
                                 </div>
                             </div>
-                            <div class="contacto">
-                                <h5>Contacto 3 (*)</h5>
-                                <div class="content-columm">
-                                    <b>Apellidos y Nombres
-                                        <input type="text" class="text"></b>
-                                    <div class="content-columm">
-                                        <b>Parentesco
-                                            <input type="text" class="text"></b>
-                                        <b>Celular
-                                            <input type="tel" class="text"></b>
-                                    </div>
+                            <div class="contacto row mt-3">
+                                <div class="col-md-4">
+                                    <label for="nombre3" class="form-label">Apellidos y Nombres</label>
+                                    <input type="text" id="nombre3" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="parentesco3" class="form-label">Parentesco</label>
+                                    <input type="text" id="parentesco3" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="celular3" class="form-label">Celular</label>
+                                    <input type="tel" id="celular3" class="form-control">
                                 </div>
                             </div>
                         </article>
-                        <article class="content-datos-laborales">
+
+                        <article class="content-datos-laborales mt-4">
                             <h3 class="title">2.- DATOS LABORABLES</h3>
-                            <div class="datos">
-                                <b>Condición (C/N)
-                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                            <div class="datos row mt-3">
+                                <div class="col-md-3">
+                                    <label for="condicion" class="form-label">Condición</label>
+                                    <select id="condicion" class="form-select">
                                         <option disabled selected>Seleccionar</option>
                                         <option value="1">Contratado</option>
                                         <option value="2">Two</option>
-                                    </select></b>
-                                <b>Categoria
-                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="categoria" class="form-label">Categoría</label>
+                                    <select id="categoria" class="form-select">
                                         <option disabled selected>Seleccionar</option>
                                         <option value="1">Plantilla</option>
                                         <option value="2">Two</option>
-                                    </select></b>
-                                <b>Dedicación
-                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="dedicacion" class="form-label">Dedicación</label>
+                                    <select id="dedicacion" class="form-select">
                                         <option disabled selected>Seleccionar</option>
                                         <option value="1">B1</option>
                                         <option value="2">Two</option>
-                                    </select></b>
-                                <b>Horas<br>
-                                    <input type="datetime" class="text"></b>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="horas" class="form-label">Horas</label>
+                                    <input type="datetime" id="horas" class="form-control">
+                                </div>
                             </div>
-                            <div class="dato">
-                                <b>Horas Lectivas
-                                    <input type="text" class="text"></b>
-                                <b style="padding-left: 40px;">Dependecia donde Laboral(Actual)
-                                    <input type="text" class="text"></b>
+                            <div class="dato row mt-3">
+                                <div class="col-md-6">
+                                    <label for="horas_lectivas" class="form-label">Horas Lectivas</label>
+                                    <input type="text" id="horas_lectivas" class="form-control">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dependencia_laboral" class="form-label">Dependencia donde Laboral
+                                        (Actual)</label>
+                                    <input type="text" id="dependencia_laboral" class="form-control">
+                                </div>
                             </div>
-                            <div class="datos">
-                                <b>Fecha de ingreso FIM
-                                    <input type="date" class="date"></b>
-                                <b>Fecha.Nombramiento
-                                    <input type="date" class="date"></b>
-                                <b>Regimen Seminario
-                                    <select class="form-select form-select-lg mb-3 fs-6"
-                                        aria-label=".form-select-lg example">
+                            <div class="datos row mt-3">
+                                <div class="col-md-4">
+                                    <label for="fecha_ingreso" class="form-label">Fecha de ingreso FIM</label>
+                                    <input type="date" id="fecha_ingreso" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="fecha_nombramiento" class="form-label">Fecha Nombramiento</label>
+                                    <input type="date" id="fecha_nombramiento" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="regimen_pensionario" class="form-label">Régimen Pensionario</label>
+                                    <select id="regimen_pensionario" class="form-select">
                                         <option disabled selected>Seleccionar</option>
                                         <option value="1">AFP</option>
                                         <option value="2">ONP</option>
                                     </select>
-                                </b>
-                            </div>
-                            <div class="datos">
-                                <b>AFP (Nombre)
-                                    <input type="text" name="" id="" class="text"></b>
-                                <b>Cód.AFP
-                                    <input type="text" name="" id="" class="text"></b>
-                                <b>Cód.EsSalud
-                                    <input type="text" name="" id="" class="text"></b>
-                                <b>Otro tipo de Seguro
-                                    <input type="text" name="" id="" class="text"></b>
-                            </div>
-                        </article>
-                    </article>
-                    <article class="content-dos d-none" id="content-dos">
-                        <h4 class="title">3.-DATOS DE FORMACIÓN PROFESIONAL: Indicar Grados y Títulos
-                            obtenidos,señalando
-                            Fercha de Revalidación para el caso de Títulos y Grados otorgados en el Extranjero</h4>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal2" onclick="borrar()">
-                            Añadir Registro
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" style="max-width: 800px;">
-                                <div class="modal-content">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title " id="title_profe">Agregar Formación
-                                                Profesional</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                aria-label="Close"></button>
-                                        </div>
-                                        <form id="profesionalForm">
-                                            <div class="modal-body p-4">
-                                                <div class="row g-9 ">
-                                                    <div class="col-md-6">
-                                                        <b>Formación profesional</b>
-                                                        <div class="form">
-                                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="form_profe"
-                                                                required>
-                                                                <option value="" disabled selected>Seleccionar</option>
-                                                                <option value="1">Titulo profesional</option>
-                                                                <option value="2">Maestria</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Pais</b>
-                                                        <div class="form">
-                                                            <select class="form-select form-select-lg mb-3 fs-6"
-                                                                aria-label=".form-select-lg example" id="Pais" required >
-                                                                <option value="" disabled selected>Seleccionar</option>
-                                                                <option value="1">Perú</option>
-                                                                <option value="2">Otro Pais</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Universidad</b>
-                                                        <div class="form">
-                                                            <input type="text" class="text" id="universidad" required>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <b>Especialidad</b>
-                                                        <div class="form">
-                                                            <input type="text" class="text" id="especialidad" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Fecha Inicio</b>
-                                                        <div class="form">
-                                                            <input type="date" class="date" id="fech_ini" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <b>Fecha Final</b>
-                                                        <div class="form">
-                                                            <input type="date" class="date" id="fech_fin" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 p-3">
-                                                        <b>Grado Obtenido</b>
-                                                        <div class="form">
-                                                            <input type="text" class="text" id="grado" required>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 p-3 ">
-                                                        <b>Documento Sustentado</b><br>
-                                                        <div class="d-flex  align-items-center">
-                                                            <input type="file" class="hidden" id="document_sus"
-                                                                accept=".pdf " required>
-                                                            <label for="document_sus"
-                                                                class="fileLabel btn btn-outline-secondary">
-                                                                <i class="bx bxs-cloud-upload"></i>
-                                                            </label>
-
-                                                            <i class='bx bx-check-circle bx-tada d-none' id="check"
-                                                                style='color:#31c10d; font-size: 30px;'></i>
-                                                        </div>
-
-                                                    </div>
-                                                    <b>Observación:</b>
-                                                    <textarea id="miTextarea" style="height: 100px;"
-                                                        placeholder="Escribe algo aquí..."></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-                                                    onclick="reset()">Cerrar</button>
-                                                <button type="submit" class="btn btn-primary a">Guardar</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    
                                 </div>
                             </div>
+                            <div class="datos row mt-3">
+                                <div class="col-md-3">
+                                    <label for="afp_nombre" class="form-label">AFP (Nombre)</label>
+                                    <input type="text" id="afp_nombre" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cod_afp" class="form-label">Cód. AFP</label>
+                                    <input type="text" id="cod_afp" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cod_essalud" class="form-label">Cód. EsSalud</label>
+                                    <input type="text" id="cod_essalud" class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="otro_seguro" class="form-label">Otro tipo de Seguro</label>
+                                    <input type="text" id="otro_seguro" class="form-control">
+                                </div>
+                            </div>
+                        </article>
+
+                        <div class="mt-4">
+                            <h4 class="title">3.- DATOS DE FORMACIÓN PROFESIONAL: Indicar Grados y Títulos
+                                obtenidos,señalando
+                                Fercha de Revalidación para el caso de Títulos y Grados otorgados en el Extranjero</h4>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary mt-2 mb-3" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal2" onclick="borrar()">
+                                Añadir Registro
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog" style="max-width: 800px;">
+                                    <div class="modal-content">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title " id="title_profe">Agregar Formación
+                                                    Profesional</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <form id="profesionalForm">
+                                                <div class="modal-body p-4">
+                                                    <div class="row g-9 ">
+                                                        <div class="col-md-6">
+                                                            <b>Formación profesional</b>
+                                                            <div class="form">
+                                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                                    aria-label=".form-select-lg example" id="form_profe"
+                                                                    required>
+                                                                    <option value="" disabled selected>Seleccionar
+                                                                    </option>
+                                                                    <option value="1">Titulo profesional</option>
+                                                                    <option value="2">Maestria</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <b>Pais</b>
+                                                            <div class="form">
+                                                                <select class="form-select form-select-lg mb-3 fs-6"
+                                                                    aria-label=".form-select-lg example" id="Pais"
+                                                                    required>
+                                                                    <option value="" disabled selected>Seleccionar
+                                                                    </option>
+                                                                    <option value="1">Perú</option>
+                                                                    <option value="2">Otro Pais</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <b>Universidad</b>
+                                                            <div class="form">
+                                                                <input type="text" class="text form-control"
+                                                                    id="universidad" required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <b>Especialidad</b>
+                                                            <div class="form">
+                                                                <input type="text" class="text form-control"
+                                                                    id="especialidad" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mt-3">
+                                                            <b>Fecha Inicio</b>
+                                                            <div class="form">
+                                                                <input type="date" class="date form-control"
+                                                                    id="fech_ini" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 mt-3">
+                                                            <b>Fecha Final</b>
+                                                            <div class="form">
+                                                                <input type="date" class="date form-control"
+                                                                    id="fech_fin" required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 p-3">
+                                                            <b>Grado Obtenido</b>
+                                                            <div class="form">
+                                                                <input type="text" class="text form-control" id="grado"
+                                                                    required>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6 p-3 ">
+                                                            <div class="d-flex align-items-center mt-4 gap-2">
+                                                                <b>Documento Sustentado</b>
+                                                                <label for="document_sus"
+                                                                    class="fileLabel btn btn-outline-secondary">
+                                                                    <i class="bx bxs-cloud-upload"></i>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-12 p-3">
+                                                            <b>Observación:</b>
+                                                            <textarea id="miTextarea" class="form-control"
+                                                                style="height: 100px;"
+                                                                placeholder="Escribe algo aquí..."></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal" onclick="reset()">Cerrar</button>
+                                                    <button type="submit" class="btn btn-primary a">Guardar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="FormacionTable">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Orden</th>
+                                            <th scope="col">Formación Profesional</th>
+                                            <th scope="col">País</th>
+                                            <th scope="col">Universidad</th>
+                                            <th scope="col">Especialidad</th>
+                                            <th scope="col">Fecha Inicio</th>
+                                            <th scope="col">Fecha Final</th>
+                                            <th scope="col">Grado Obtenido</th>
+                                            <th scope="col">Documento sustentatorio</th>
+                                            <th scope="col">Observación</th>
+                                            <th scope="col" colspan="2">Opciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="bobyFormacion">
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Formación 1</td>
+                                            <td>País 1</td>
+                                            <td>Universidad 1</td>
+                                            <td>Especialidad 1</td>
+                                            <td>2022-01-01</td>
+                                            <td>2023-01-01</td>
+                                            <td>Grado 1</td>
+                                            <td>Documento 1</td>
+                                            <td>Observación 1</td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Formación 2</td>
+                                            <td>País 2</td>
+                                            <td>Universidad 2</td>
+                                            <td>Especialidad 2</td>
+                                            <td>2021-01-01</td>
+                                            <td>2022-01-01</td>
+                                            <td>Grado 2</td>
+                                            <td>Documento 2</td>
+                                            <td>Observación 2</td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Formación 3</td>
+                                            <td>País 3</td>
+                                            <td>Universidad 3</td>
+                                            <td>Especialidad 3</td>
+                                            <td>2020-01-01</td>
+                                            <td>2021-01-01</td>
+                                            <td>Grado 3</td>
+                                            <td>Documento 3</td>
+                                            <td>Observación 3</td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-edit"></i></button>
+                                            </td>
+                                            <td style="background-color: #4178f0;">
+                                                <button class="btn btn-outline-light"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
                         </div>
-                        <div class="content-table">
-                            <table class="table table-bordered" id="FormacionTable">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Orden</th>
-                                        <th scope="col">Formación Profesional</th>
-                                        <th scope="col">País</th>
-                                        <th scope="col">Universidad</th>
-                                        <th scope="col">Especialidad</th>
-                                        <th scope="col">Fecha Inicio</th>
-                                        <th scope="col">Fecha Final</th>
-                                        <th scope="col">Grado Obtenido</th>
-                                        <th scope="col">Documento sustentatorio</th>
-                                        <th scope="col">Observación</th>
-                                        <th scope="col" colspan="2">Opciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="bobyFormacion">
-                                    <tr>
-                                        <td colspan="12" style="font-size: 20px;">NO DATOS EN LA TABLA</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+
+                    </article>
+                    <article class="content-dos d-none" id="content-dos">
+
+
+
+
                         <!-- Modal para PDF -->
                         <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
@@ -907,8 +1014,8 @@
         </section>
 
     </main>
-    <script src="/public/assets/js/script.js"></script>
-    <script src="/public/assets/js/info-docente.js"> </script>
+    <script src="/js/script.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>

@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,23 +7,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="icon" type="image/png" href="https://www.earpunifim.com/laravel_fim/public/img/general/uni.png" />
-    <link rel="stylesheet" href="/public/assets/css/style.css" />
-    <link rel="stylesheet" href="/public/assets/css/horario.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/horario.css" />
     <!-- Boxicons CSS -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous" />
-        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
+
 <body>
     <nav class="sidebar close">
         <header>
-            <div class="image-text" onclick="window.location.href = '/app/view/php/home.php';">
-                <spam class="imge">
-                    <img src="/public/assets/img/logo.png" alt="logo" />
-                </spam>
-                <div class="header-text">
+            <div class="org-text d-flex p-2 px-3" onclick="window.location.href = 'home.html';">
+                <picture class="imge">
+                    <img src="/img/logo.png" alt="LOGO UNI EARFIM">
+                </picture>
+                <div class="header-text mt-1">
                     <span class="empresa">UNI EARFIM</span>
                     <span class="profession">DOCENTE</span>
                 </div>
@@ -47,12 +47,13 @@
                                     FIM</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/php/horario.php" class="dropdown__anchor"><i class="bx bxs-pencil"></i>Mi horario de
+                                <a href="horario.html" class="dropdown__anchor"><i class="bx bxs-pencil"></i>Mi horario
+                                    de
                                     clases</a>
                             </li>
 
                             <li class="dropdown__li">
-                                <a href="/app/view/php/info-docente.php" class="dropdown__anchor"><i
+                                <a href="info-docente.html" class="dropdown__anchor"><i
                                         class="bx bxs-user-rectangle"></i>Información Docente</a>
                             </li>
                             <li class="dropdown__li">
@@ -64,7 +65,7 @@
                                     Alumnos</a>
                             </li>
                             <li class="dropdown__li">
-                                <a href="/app/view/php/asistencia.php" class="dropdown__anchor"><i
+                                <a href="asistencia.html" class="dropdown__anchor"><i
                                         class="bx bxs-book-bookmark"></i>Asistencia</a>
                             </li>
                             <li class="dropdown__li">
@@ -136,10 +137,7 @@
         <section class="content-nav">
             <i class="bx bx-menu toggle"></i>
             <p class="name">
-                <?php 
-                    $usuario = $_SESSION['usuario'];
-                    echo $usuario;
-                ?>
+
             </p>
             <div class="vertical-rounded">
                 <div class="dropdown ms-3 dots-vertical-rounded">
@@ -148,16 +146,16 @@
                         <i class='bx bx-dots-vertical-rounded' style="color: white;"></i>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-versions">
-                        <li>Roles</li>
-                        <li><img src="/public/assets/img/perfil.jpg"> DOCENTE</li>
+                        <li class="px-3">Roles</li>
+                        <li class="px-2"><img src="/img/images.jpg" style="object-fit: cover; width: 50; height: 50px;"> DOCENTE</li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
-                        <li><a class="dropdown-item" href="/app/view/php/informacion.php">Mi información</a></li>
-                        <li><a class="dropdown-item" href="/app/view/php/miClave.php">Reinciar clave</a></li>
+                        <li><a class="dropdown-item" href="html/informacion.html">Mi información</a></li>
+                        <li><a class="dropdown-item" href="html/miClave.html">Reinciar clave</a></li>
                         <li><a class="dropdown-item" href="#" onclick="cerrar_sesion()">Cerrar Sesion</a></li>
                     </ul>
-                  
+
                 </div>
                 <div class="pant" id="toggle"></div>
             </div>
@@ -169,21 +167,22 @@
                     <p class="text-secondary">
                         <b>Nota:</b> Presione en los cuadros a colores para listar alumnos
                     </p>
-                    <button  class="btn btn-danger" onclick="GeneraPDF()">
+                    <button class="btn btn-danger align-items-center d-flex btn-info text-white" onclick="GeneraPDF()">
                         <i class="bx bxs-file-pdf"></i>Descargar PDF
                     </button>
                 </div>
                 <div class="content-año">
                     <div>
-                        <select class="form-select form-select-lg mb-3 fs-6 fs-6" aria-label=".form-select-lg example" id="periodo">
-                           <option value="20223" >20223</option>
-                           <option value="20222">20222</option>
+                        <select class="form-select form-select-lg mb-3 fs-6 fs-6" aria-label=".form-select-lg example"
+                            id="periodo">
+                            <option value="20223">20223</option>
+                            <option value="20222">20222</option>
                         </select>
                         <b style="color: #224fb1;font-size: 20px;">DEFINITIVO</b>
                     </div>
             </article>
             <article class="content-table">
-                <h5 class="carga-horaria">CARGA HORARIA: 16 HRS</h5>
+                <h6 class="carga-horaria">CARGA HORARIA: 16 HRS</h6>
                 <div>
                     <table class="table table-bordered text-center" id="horarioTable">
                         <thead>
@@ -191,25 +190,139 @@
                                 <th scope="col">HORA</th>
                                 <th scope="col">LUNES</th>
                                 <th scope="col">MARTES</th>
-                                <th scope="col">MIERCOLES</th>
+                                <th scope="col">MIÉRCOLES</th>
                                 <th scope="col">JUEVES</th>
                                 <th scope="col">VIERNES</th>
-                                <th scope="col">SABADO</th>
+                                <th scope="col">SÁBADO</th>
                                 <th scope="col">DOMINGO</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            <tr>
+                                <th>07-08</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>08-09</th>
+                                <td></td>
+                                <td class="text-white" style="font-size: 13px;  background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>09-10</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-white" style="font-size: 13px;  background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td class="text-white" style="font-size: 13px; background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>10-11</th>
+                                <td></td>
+                                <td class="text-white" style="font-size: 13px;  background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>11-12</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class=" text-white" style="font-size: 13px;  background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>12-13</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class=" text-white" style="font-size: 13px;  background-color: #224fb1;"><i
+                                        class="fas fa-user fs-5"></i>(35)
+                                    MB5456-C /[VIRTUAL](T)</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>13-14</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>14-15</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>15-16</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th>16-17</th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
                         </tbody>
                     </table>
+
                 </div>
             </article>
         </section>
     </main>
-    <script src="/public/assets/js/script.js"></script>
-    <script src="/public/assets/js/horario.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/php2pdf.js/0.10.1/php2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    
+    <script src="/js/script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
@@ -220,6 +333,32 @@
         </script>
     <!-- Swee alert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Script para generar PDF -->
+    <script>
+        function GeneraPDF() {
+            const element = document.querySelector('#horarioTable');
+            html2pdf()
+                .from(element)
+                .set({
+                    margin: 1,
+                    filename: 'Horario_de_Clase.pdf',
+                    image: {
+                        type: 'jpeg',
+                        quality: 0.98
+                    },
+                    html2canvas: {
+                        scale: 2
+                    },
+                    jsPDF: {
+                        unit: 'in',
+                        format: 'letter',
+                        orientation: 'portrait'
+                    }
+                })
+                .save();
+        }
+    </script>
 </body>
 
 </html>
